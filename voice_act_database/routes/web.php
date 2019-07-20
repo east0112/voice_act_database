@@ -17,4 +17,6 @@ Route::get('/', function () {
 });
 */
 
-Route::get("/","viewController@index");
+Route::get("/","homeController@home");
+Route::get("/about","aboutController@about");
+Route::get("/library","libraryController@library");
