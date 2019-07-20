@@ -6,7 +6,7 @@
 <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
 <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-<link href="css/parent.css" rel="stylesheet" type="text/css">
+<link href="{{ asset('css/parent.css') }}" rel="stylesheet">
 
 <head>
     <meta charset="UTF-8">
@@ -18,8 +18,8 @@
         <a href="#" class="brand-logo center">anju_inami Library</a>
         <ul id="nav-mobile" class="left hide-on-med-and-down">
           <li><a href="/">Home</a></li>
-          <li><a href="about">About</a></li>
-          <li><a href="library">Library</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/library">Library</a></li>
         </ul>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
           <li><a href="#"><i class="fa fa-twitter"></i></a></li>

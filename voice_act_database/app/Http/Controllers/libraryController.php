@@ -20,7 +20,6 @@ class libraryController extends Controller
       return view("library",["items" => $items ]);
     }
 
-
     /**
      * 一覧検索表示
      *
@@ -40,4 +39,14 @@ class libraryController extends Controller
       return view("library",["items" => $items ,"type" => $type]);
     }
 
+    /**
+     * 詳細情報表示
+     *
+     * @param Request $request
+     * @return Response
+     */
+    public function seacrchEvent(Request $request,$id){
+
+      return view("event",["id" => $id ]);
+    }
 }

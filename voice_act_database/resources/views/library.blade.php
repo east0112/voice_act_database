@@ -76,7 +76,7 @@ if(empty($type) == false){
                         <tr>
                             <td>{{ $item->date }}</td>
                             <td>{{ $item->type_name }}</td>
-                            <td>{{ $item->event_name }}</td>
+                            <td><a href="/library/event/{{ $item->event_id }}">{{ $item->event_name }}</a></td>
                         </tr>
                     @endforeach
                 </tbody>
