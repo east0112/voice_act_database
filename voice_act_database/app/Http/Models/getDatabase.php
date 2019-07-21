@@ -26,42 +26,17 @@ class getDatabase
      * @return items $items
      */
     public static function searchList($searchWord,$type){
-        if($searchWord){
-            if(empty($type)){
-                $items = DB::table("events")
-                    ->join("event_type","events.event_type","=","event_type.type_id")
-                    ->where("events.event_name","LIKE","%".$searchWord."%")
-                    ->orderByRaw("events.date DESC")
-                    ->orderByRaw("events.start_time DESC")
-                    ->get();
-                return $items;
-            }else{
-                $items = DB::table("events")
-                    ->join("event_type","events.event_type","=","event_type.type_id")
-                    ->where("events.event_name","LIKE","%".$searchWord."%")
-                    ->whereIn("events.event_type",$type)
-                    ->orderByRaw("events.date DESC")
-                    ->orderByRaw("events.start_time DESC")
-                    ->get();
-                return $items;
-            }
-        }else{
-            if(empty($type)){
-                $items = DB::table("events")
-                    ->join("event_type","events.event_type","=","event_type.type_id")
-                    ->orderByRaw("events.date DESC")
-                    ->orderByRaw("events.start_time DESC")
-                    ->get();
-                return $items;
-            }else{
-                $items = DB::table("events")
-                    ->join("event_type","events.event_type","=","event_type.type_id")
-                    ->whereIn("events.event_type",$type)
-                    ->orderByRaw("events.date DESC")
-                    ->orderByRaw("events.start_time DESC")
-                    ->get();
-                return $items;
-            }
-        }
-      }
+        $items = DB::table("events")
+            ->join("event_type","events.event_type","=","event_type.type_id")
+            ->when($searchWord, function ($query) use($searchWord) {
+                return $query->where("events.event_name","LIKE","%".$searchWord."%");
+            })
+            ->when(!empty($type), function ($query) use($type) {
+                return $query->whereIn("events.event_type",$type);
+            })
+            ->orderByRaw("events.date DESC")
+            ->orderByRaw("events.start_time DESC")
+            ->get();
+        return $items;
+    }
   }
