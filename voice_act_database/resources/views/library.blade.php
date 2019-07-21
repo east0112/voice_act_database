@@ -1,10 +1,11 @@
-<link href="css/library.css" rel="stylesheet" type="text/css">
+<link href="/css/library.css" rel="stylesheet" type="text/css">
 
 <?php
 $checkEvent = "";
 $checkRadio = "";
 $checkMedia = "";
 $checkProgram = "";
+$checkStage = "";
 if(empty($type) == false){
     if(in_array("1",$type)){
         $checkEvent = "checked";
@@ -17,6 +18,9 @@ if(empty($type) == false){
     }
     if(in_array("4",$type)){
         $checkProgram = "checked";
+    }
+    if(in_array("5",$type)){
+        $checkStage = "checked";
     }
 }
 
@@ -38,6 +42,10 @@ if(empty($type) == false){
                     <div class="col s2">
                     <input type="checkbox" id="checkEvent" value="1" name="checkEvent" {{ $checkEvent }} />
                     <label for="checkEvent">イベント</label>
+                    </div>
+                    <div class="col s2">
+                    <input type="checkbox" id="checkStage" value="5" name="checkStage" {{ $checkStage }} />
+                    <label for="checkStage">舞台</label>
                     </div>
                     <div class="col s2">
                     <input type="checkbox" id="checkRadio" value="2" name="checkRadio" {{ $checkRadio }} />
@@ -68,7 +76,7 @@ if(empty($type) == false){
                     <tr>
                         <th class="dateCol">日時</th>
                         <th class="typeCol">種類</th>
-                        <th class="nameCol">イベント名</th>
+                        <th class="nameCol">タイトル</th>
                     </tr>
                 </thead>
                 <tbody>

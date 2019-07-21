@@ -4,20 +4,48 @@ namespace App\Http\Models;
 
 use Illuminate\Support\Facades\DB;
 
-class getDatabase
+class getEventDetail
 {
     /**
-     * 一覧表示用データの取得（初期）
+     * 詳細表示用データの取得（イベント情報）
      *
-     * @return items $items
+     * @param String $eventId
+     * @return array $eventDetail
      */
-    public static function getList(){
+    public static function getDetail(String $eventId){
 
-      $items = DB::table("events")
+      $eventDetail = DB::table("events")
         ->join("event_type","events.event_type","=","event_type.type_id")
-        ->orderByRaw("events.date DESC")
-        ->orderByRaw("events.start_time DESC")
+        ->leftjoin("places","events.place_id","=","places.place_id")
+        ->where("events.event_id","=",$eventId)
+        ->first();
+      return $eventDetail;
+    }
+    /**
+     * 詳細表示用データの取得（セットリスト）
+     *
+     * @param String $eventId
+     * @return array $eventSetlist
+     */
+    public static function getSetlist(String $eventId){
+
+      $eventSetlist = DB::table("event_song")
+        ->join("songs","event_song.song_id","=","songs.song_id")
+        ->where("event_song.event_id","=",$eventId)
         ->get();
-      return $items;
+      return $eventSetlist;
+    }
+    /**
+     * 詳細表示用データの取得（関連サイト）
+     *
+     * @param String $eventId
+     * @return array $eventUrl
+     */
+    public static function getUrl(String $eventId){
+
+      $eventUrl = DB::table("event_url")
+        ->where("event_url.event_id","=",$eventId)
+        ->get();
+      return $eventUrl;
     }
   }

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\DB;
 use App\Http\Models\getDatabase;
+use App\Http\Models\getEventDetail;
 
 class libraryController extends Controller
 {
@@ -31,6 +32,7 @@ class libraryController extends Controller
       $searchWord = $request->input("search");
       $type = array();
       if($request->input("checkEvent")){array_push($type,$request->input("checkEvent"));}
+      if($request->input("checkStage")){array_push($type,$request->input("checkStage"));}
       if($request->input("checkRadio")){array_push($type,$request->input("checkRadio"));}
       if($request->input("checkProgram")){array_push($type,$request->input("checkProgram"));}
       if($request->input("checkMedia")){array_push($type,$request->input("checkMedia"));}
@@ -46,7 +48,9 @@ class libraryController extends Controller
      * @return Response
      */
     public function seacrchEvent(Request $request,$id){
-
-      return view("event",["id" => $id ]);
+      $eventDetail = getEventDetail::getDetail($id);
+      $eventSetlist = getEventDetail::getSetlist($id);
+      $eventUrl = getEventDetail::getUrl($id);
+      return view("event",["eventDetail" => $eventDetail,"eventSetlist" => $eventSetlist,"eventUrl" => $eventUrl ]);
     }
 }

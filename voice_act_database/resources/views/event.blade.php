@@ -1,26 +1,77 @@
+<link href="/css/event.css" rel="stylesheet" type="text/css">
+
 @extends("layouts.parent")
 @section("content")
 <div class="row">
     <div class="col s10 push-s1">
         <div class="card">
             <div class="card-content">
-            <span class="card-title">音楽の日2019</span>
-            <p>{{ $id }}</p>
-            <p>種別：番組</p>
-            <p>日時：2019-07-13</p>
+            <span class="card-title">{{$eventDetail->event_name}}</span>
+            <table>
+                <tbody>
+                        <tr>
+                            <th class="thcol">日時</th>
+                            <td class="tdcol">{{$eventDetail->date}} {{$eventDetail->start_time}}</td>
+                        </tr>
+                        <tr class="detail">
+                            <th class="thcol">種類</th>
+                            <td class="tdcol">{{$eventDetail->type_name}}</td>
+                        </tr>
+                        @if($eventDetail->place_name)
+                        <tr class="detail">
+                            <th class="thcol">会場</th>
+                            <td class="tdcol">{{$eventDetail->place_name}}</td>
+                        </tr>
+                        @endif
+                        @if($eventDetail->capacity)
+                        <tr class="detail">
+                        <th class="thcol">キャパ</th>
+                        <td class="tdcol">{{$eventDetail->capacity}} 人</td>
+                        </tr>
+                        @endif
+                </tbody>
+            </table>
             </div>
         </div>
     </div>
+    @if(sizeof($eventSetlist) >0)
+    <div class="col s10 push-s1">
+        <div class="card">
+            <div class="card-content">
+            <span class="card-title">セットリスト</span>
+            <br>
+            <table class="striped">
+                <tbody>
+                    <thead>
+                        <tr>
+                            <th class="setTrunCol">曲順</th>
+                            <th class="setNameCol">曲名</th>
+                        </tr>
+                    </thead>
+                    @foreach($eventSetlist as $setlist)
+                        <tr>
+                            <td>{{ $setlist->turn }}.</td>
+                            <td>{{ $setlist->song_name }}</td>
+                        </tr>
+                    @endforeach
+                </tbody>
+            </table>
+            </div>
+        </div>
+    </div>
+    @endif
+    @if(sizeof($eventUrl) >0)
     <div class="col s10 push-s1">
         <div class="card">
             <div class="card-content">
             <span class="card-title">関連情報 Webサイト</span>
-            <p>{{ $id }}</p>
-            <p>履歴２</p>
-            <p>履歴３</p>
+                @foreach($eventUrl as $url)
+                    <a href={{ $url->url }}>{{ $url->url }}</a></br>
+                @endforeach
             </div>
         </div>
     </div>
+    @endif
     <div class="col s5 push-s1">
         <div class="card">
             <div class="card-content">
