@@ -40,9 +40,9 @@
               </div>
               <div class="col l4 offset-l2 s12">
                 <ul>
-                  <li><a class="grey-text text-lighten-3" href="http://smavoice.jp/">SMA VOICE</a></li>
-                  <li><a class="grey-text text-lighten-3" href="https://anjuinami.com/">伊波杏樹 Official Site</a></li>
-                  <li><a class="grey-text text-lighten-3" href="https://lineblog.me/anju_inami/">伊波杏樹 公式ブログ</a></li>
+                  <li><a class="grey-text text-lighten-3" href="http://smavoice.jp/"target="_blank">SMA VOICE</a></li>
+                  <li><a class="grey-text text-lighten-3" href="https://anjuinami.com/"target="_blank">伊波杏樹 Official Site</a></li>
+                  <li><a class="grey-text text-lighten-3" href="https://lineblog.me/anju_inami/"target="_blank">伊波杏樹 公式ブログ</a></li>
                 </ul>
               </div>
             </div>
