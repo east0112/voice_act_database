@@ -48,9 +48,14 @@ class libraryController extends Controller
      * @return Response
      */
     public function seacrchEvent(Request $request,$id){
+      //イベント詳細情報取得
       $eventDetail = getEventDetail::getDetail($id);
+      //イベントセットリスト取得
       $eventSetlist = getEventDetail::getSetlist($id);
+      //イベント関連URL取得
       $eventUrl = getEventDetail::getUrl($id);
-      return view("event",["eventDetail" => $eventDetail,"eventSetlist" => $eventSetlist,"eventUrl" => $eventUrl ]);
+      //イベント関連本人ツイート取得
+      $eventTweetSelf = getEventDetail::getTweetSelf($id);
+      return view("event",["eventDetail" => $eventDetail,"eventSetlist" => $eventSetlist,"eventUrl" => $eventUrl,"eventTweetSelf" => $eventTweetSelf ]);
     }
 }
