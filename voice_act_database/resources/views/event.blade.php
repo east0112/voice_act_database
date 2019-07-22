@@ -17,6 +17,12 @@
                             <th class="thcol">種類</th>
                             <td class="tdcol">{{$eventDetail->type_name}}</td>
                         </tr>
+                        @if($eventDetail->act_name)
+                        <tr class="detail">
+                            <th class="thcol">役名</th>
+                            <td class="tdcol">{{$eventDetail->act_name}} 役</td>
+                        </tr>
+                        @endif
                         @if($eventDetail->place_name)
                         <tr class="detail">
                             <th class="thcol">会場</th>
