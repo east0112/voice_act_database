@@ -6,6 +6,9 @@ $checkRadio = "";
 $checkMedia = "";
 $checkProgram = "";
 $checkStage = "";
+$radioDesc = "checked";
+$radioAsc = "";
+//チェックボックスの保持
 if(empty($type) == false){
     if(in_array("1",$type)){
         $checkEvent = "checked";
@@ -22,6 +25,11 @@ if(empty($type) == false){
     if(in_array("5",$type)){
         $checkStage = "checked";
     }
+}
+//ソート順の保持
+if($sort == "old"){
+    $radioDesc = "";
+    $radioAsc = "checked";
 }
 
 ?>
@@ -58,6 +66,16 @@ if(empty($type) == false){
                     <div class="col s2">
                     <input type="checkbox" id="checkProgram" value="4" name="checkProgram" {{ $checkProgram }} />
                     <label for="checkProgram">番組出演</label>
+                    </div>
+                    </br>
+                    </br>
+                    <div class="col s3">
+                    <input type="radio" id="radioDesc" value="new" name="radioSort" {{ $radioDesc }} />
+                    <label for="radioDesc">日時が新しい順</label>
+                    </div>
+                    <div class="col s3">
+                    <input type="radio" id="radioAsc" value="old" name="radioSort" {{ $radioAsc }} />
+                    <label for="radioAsc">日時が古い順</label>
                     </div>
                     </br>
                     </br>

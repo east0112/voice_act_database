@@ -16,10 +16,12 @@ class libraryController extends Controller
      * @return Response
      */
     public function initDisplay(){
+      //ソート設定
+      $sort = "new";
       //イベント一覧情報取得
       $items = getDatabase::getList();
 
-      return view("library",["items" => $items ]);
+      return view("library",["items" => $items, "sort" => $sort ]);
     }
 
     /**
@@ -29,18 +31,21 @@ class libraryController extends Controller
      * @return Response
      */
     public function seacrchDisplay(Request $request){
-      //リクエストの取得
+      //リクエストの取得・検索ワード
       $searchWord = $request->input("search");
+      //リクエストの取得・種類
       $type = array();
       if($request->input("checkEvent")){array_push($type,$request->input("checkEvent"));}
       if($request->input("checkStage")){array_push($type,$request->input("checkStage"));}
       if($request->input("checkRadio")){array_push($type,$request->input("checkRadio"));}
       if($request->input("checkProgram")){array_push($type,$request->input("checkProgram"));}
       if($request->input("checkMedia")){array_push($type,$request->input("checkMedia"));}
+      //リクエストの取得・ソート
+      $sort = $request->input("radioSort");
       //イベント一覧情報取得
-      $items = getDatabase::searchList($searchWord,$type);
+      $items = getDatabase::searchList($searchWord,$type,$sort);
 
-      return view("library",["items" => $items ,"type" => $type]);
+      return view("library",["items" => $items ,"type" => $type,"sort" => $sort]);
     }
 
     /**
