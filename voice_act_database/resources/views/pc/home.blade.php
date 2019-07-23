@@ -5,10 +5,10 @@
       <div class="card">
         <div class="card-image">
           <img src="images/home001.png">
-          <span class="card-title">anju_inami Library</span>
+          <span class="card-title"></span>
         </div>
         <div class="card-content">
-          <p>「anju_inami Library」は、声優・舞台女優として活躍する伊波杏樹さんのイベントやラジオ、雑誌等の出演情報をまとめた非公式ファンサイトです。</p>
+          <p>「inaminfo」は、声優・舞台女優として活躍する伊波杏樹さんのイベントやラジオ、雑誌等の出演情報をまとめた非公式ファンサイトです。</p>
         </div>
         <div class="card-action">
           <a href="about">当サイトについて</a>

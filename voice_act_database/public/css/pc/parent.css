@@ -1,0 +1,22 @@
+.fa {
+    font-size: 1.5em;
+    user-select: none;
+}
+[class*="fa-twitter"] {color: white;}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    font-family: 'Hiragino Kaku Gothic Pro','ヒラギノ角ゴ Pro W3','メイリオ',Meiryo,'ＭＳ Ｐゴシック',sans-serif;
+    background-image: url("../../images/bg.png"); /*背景画像指定*/
+    width: calc(100vw - 15px); /*スクロールバーでズレる対応*/
+}
+
+ .container {
+    margin:0 auto;  /* 中央寄せ */
+  }
+
+main {
+    flex: 1 0 auto;
+}

@@ -1,0 +1,15 @@
+tr.detail {
+  border-top: 1px solid #C0C0C0;
+}
+th.thCol{
+  width: 15%;
+}
+td.tdCol{
+  width: 85%;
+}
+th.setTrunCol{
+  width: 15%;
+}
+th.setNameCol{
+  width: 85%;
+}

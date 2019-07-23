@@ -6,25 +6,29 @@
 <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
 <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-<link href="{{ asset('/css/parent.css') }}" rel="stylesheet">
+<link href="{{ asset('/css/pc/parent.css') }}" rel="stylesheet">
+<script src="{{ asset('/js/parent.js') }}"></script>
 
 <head>
     <meta charset="UTF-8">
-    <title>anju_inami Library</title>
+    <title>inaminfo</title>
 </head>
 <body>
 <nav class="pink accent-2">
-      <div class="nav-wrapper">
-        <a href="/" class="brand-logo center">anju_inami Library</a>
-        <ul id="nav-mobile" class="left hide-on-med-and-down">
-          <li><a href="/">Home</a></li>
-          <li><a href="/about">About</a></li>
-          <li><a href="/library">Library</a></li>
-        </ul>
-        <ul id="nav-mobile" class="right hide-on-med-and-down">
-          <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-        </ul>
-      </div>
+  <div class="nav-wrapper">
+            <a href="/" class="brand-logo center"><img src="../../images/logo.png" alt="Liruu design" /></a>
+            <a href="/" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+            <ul class="left hide-on-med-and-down">
+              <li><a href="/">Home</a></li>
+              <li><a href="/about">About</a></li>
+              <li><a href="/library">Library</a></li>
+            </ul>
+            <ul class="side-nav" id="mobile-demo">
+              <li><a href="/">Home</a></li>
+              <li><a href="/about">About</a></li>
+              <li><a href="/library">Library</a></li>
+            </ul>
+  </div>
 </nav>
 <main>
     <div class="container">

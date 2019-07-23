@@ -1,4 +1,4 @@
-<link href="/css/library.css" rel="stylesheet" type="text/css">
+<link href="/css/mobile/library.css" rel="stylesheet" type="text/css">
 
 <?php
 $checkEvent = "";
@@ -33,63 +33,64 @@ if($sort == "old"){
 }
 
 ?>
-@extends("layouts.parent")
+@extends("layouts.parentMobile")
 @section("content")
-<div class="row">
     <div class="col s10 push-s1">
         <div class="card">
             <div class="card-content">
-                <span class="card-title">データベース検索</span>
-                <p>イベントやラジオ、雑誌等の出演情報を検索できます。</p>
+                <span class="card-title" style="font-size:30px">データベース検索</span>
+                <p style="font-size:25px">イベントやラジオ、雑誌等の出演情報を検索できます。</p>
                 <form action="/library" method="POST">
                 @csrf
-                    <div class="input-field">
-                        <input name="search" type="search" placeholder="キーワードを入力してください">
+                </br>
+                <div class="input-field">
+                        <input name="search" type="search"  placeholder="キーワードを入力してください">
                         <i class="material-icons">close</i>
                     </div>
-                    <div class="col s2">
-                    <input type="checkbox" id="checkEvent" value="1" name="checkEvent" {{ $checkEvent }} />
-                    <label for="checkEvent">イベント</label>
-                    </div>
-                    <div class="col s2">
-                    <input type="checkbox" id="checkStage" value="5" name="checkStage" {{ $checkStage }} />
-                    <label for="checkStage">舞台</label>
-                    </div>
-                    <div class="col s2">
-                    <input type="checkbox" id="checkRadio" value="2" name="checkRadio" {{ $checkRadio }} />
-                    <label for="checkRadio">ラジオ</label>
-                    </div>
-                    <div class="col s2">
-                    <input type="checkbox" id="checkMedia" value="3" name="checkMedia" {{ $checkMedia }} />
-                    <label for="checkMedia">雑誌</label>
-                    </div>
-                    <div class="col s2">
-                    <input type="checkbox" id="checkProgram" value="4" name="checkProgram" {{ $checkProgram }} />
-                    <label for="checkProgram">番組出演</label>
+                    </br>
+                    <div class="row">
+                        <div class="col s2">
+                        <input type="checkbox" id="checkEvent" value="1" name="checkEvent" {{ $checkEvent }} />
+                        <label for="checkEvent" style="font-size:23px">イベント</label>
+                        </div>
+                        <div class="col s2">
+                        <input type="checkbox" id="checkStage" value="5" name="checkStage" {{ $checkStage }} />
+                        <label for="checkStage" style="font-size:23px">舞台</label>
+                        </div>
+                        <div class="col s2">
+                        <input type="checkbox" id="checkRadio" value="2" name="checkRadio" {{ $checkRadio }} />
+                        <label for="checkRadio" style="font-size:23px">ラジオ</label>
+                        </div>
+                        <div class="col s2">
+                        <input type="checkbox" id="checkMedia" value="3" name="checkMedia" {{ $checkMedia }} />
+                        <label for="checkMedia" style="font-size:23px">雑誌</label>
+                        </div>
+                        <div class="col s2">
+                        <input type="checkbox" id="checkProgram" value="4" name="checkProgram" {{ $checkProgram }} />
+                        <label for="checkProgram" style="font-size:23px">番組出演</label>
+                        </div>
                     </div>
                     </br>
-                    </br>
-                    <div class="col s3">
-                    <input type="radio" id="radioDesc" value="new" name="radioSort" {{ $radioDesc }} />
-                    <label for="radioDesc">日時が新しい順</label>
+                    <div class="row">
+                        <div class="col s3">
+                        <input type="radio" id="radioDesc" value="new" name="radioSort" {{ $radioDesc }} />
+                        <label for="radioDesc" style="font-size:23px">日時が新しい順</label>
+                        </div>
+                        <div class="col s3">
+                        <input type="radio" id="radioAsc" value="old" name="radioSort" {{ $radioAsc }} />
+                        <label for="radioAsc" style="font-size:23px">日時が古い順</label>
+                        </div>
                     </div>
-                    <div class="col s3">
-                    <input type="radio" id="radioAsc" value="old" name="radioSort" {{ $radioAsc }} />
-                    <label for="radioAsc">日時が古い順</label>
-                    </div>
                     </br>
-                    </br>
-                    <button class="btn waves-effect waves-light pink accent-2" type="submit" name="action">検索</button>
+                    <button class="btn-large waves-effect waves-light pink accent-2" style="font-size:23px" type="submit" name="action">検索</button>
                 </form>
             </div>
         </div>
     </div>
-</div>
-<div class="row">
     <div class="col s10 push-s1">
         <div class="card">
             <div class="card-content">
-            <table class="striped">
+            <table class="striped" style ="font-size:25px">
                 <thead>
                     <tr>
                         <th class="dateCol">日時</th>
@@ -110,5 +111,4 @@ if($sort == "old"){
             </div>
         </div>
     </div>
-</div>
 @endsection

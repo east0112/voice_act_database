@@ -1,4 +1,4 @@
-<link href="/css/library.css" rel="stylesheet" type="text/css">
+<link href="/css/pc/library.css" rel="stylesheet" type="text/css">
 
 <?php
 $checkEvent = "";
