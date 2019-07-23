@@ -101,12 +101,26 @@
         </div>
     </div>
     @endif
+    @if(sizeof($eventTweetOther) >0)
     <div class="col s5 push-s1">
         <div class="card">
             <div class="card-content">
             <span class="card-title">関係者のTwitter</span>
+            @foreach($eventTweetOther as $tweet)
+                <div id= <?php echo '"containerOther'.$tweet->turn.'"' ?>></div>
+                <script>
+                    twttr.widgets.createTweet(
+                        <?php echo '"'.$tweet->tweet_id.'"' ?>,
+                        document.getElementById(<?php echo '"containerOther'.$tweet->turn.'"' ?>),
+                        {
+                            theme: "white"
+                        }
+                    );
+                </script>
+            @endforeach
             </div>
         </div>
     </div>
+    @endif
 </div>
 @endsection

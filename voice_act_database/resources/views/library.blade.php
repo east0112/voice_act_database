@@ -36,7 +36,7 @@ if(empty($type) == false){
                 <form action="/library" method="POST">
                 @csrf
                     <div class="input-field">
-                        <input name="search" type="search" placeholder="キーワードを入力してください" >
+                        <input name="search" type="search" placeholder="キーワードを入力してください">
                         <i class="material-icons">close</i>
                     </div>
                     <div class="col s2">

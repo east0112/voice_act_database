@@ -15,7 +15,7 @@
 <body>
 <nav class="pink accent-2">
       <div class="nav-wrapper">
-        <a href="#" class="brand-logo center">anju_inami Library</a>
+        <a href="/" class="brand-logo center">anju_inami Library</a>
         <ul id="nav-mobile" class="left hide-on-med-and-down">
           <li><a href="/">Home</a></li>
           <li><a href="/about">About</a></li>

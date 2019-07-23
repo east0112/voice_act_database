@@ -64,4 +64,18 @@ class getEventDetail
         ->get();
       return $eventTweetSelf;
     }
+    /**
+     * 詳細表示用データの取得（関係者ツイート）
+     *
+     * @param String $eventId
+     * @return array $eventTweetSelf
+     */
+    public static function getTweetOther(String $eventId){
+
+      $eventTweetOther = DB::table("event_tweet_other")
+        ->where("event_tweet_other.event_id","=",$eventId)
+        ->orderByRaw("event_tweet_other.turn ASC")
+        ->get();
+      return $eventTweetOther;
+    }
   }

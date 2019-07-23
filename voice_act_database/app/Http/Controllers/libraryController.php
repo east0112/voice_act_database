@@ -16,8 +16,9 @@ class libraryController extends Controller
      * @return Response
      */
     public function initDisplay(){
-
+      //イベント一覧情報取得
       $items = getDatabase::getList();
+
       return view("library",["items" => $items ]);
     }
 
@@ -36,8 +37,9 @@ class libraryController extends Controller
       if($request->input("checkRadio")){array_push($type,$request->input("checkRadio"));}
       if($request->input("checkProgram")){array_push($type,$request->input("checkProgram"));}
       if($request->input("checkMedia")){array_push($type,$request->input("checkMedia"));}
-
+      //イベント一覧情報取得
       $items = getDatabase::searchList($searchWord,$type);
+
       return view("library",["items" => $items ,"type" => $type]);
     }
 
@@ -56,6 +58,9 @@ class libraryController extends Controller
       $eventUrl = getEventDetail::getUrl($id);
       //イベント関連本人ツイート取得
       $eventTweetSelf = getEventDetail::getTweetSelf($id);
-      return view("event",["eventDetail" => $eventDetail,"eventSetlist" => $eventSetlist,"eventUrl" => $eventUrl,"eventTweetSelf" => $eventTweetSelf ]);
+      //イベント関連関係者ツイート取得
+      $eventTweetOther = getEventDetail::getTweetOther($id);
+
+      return view("event",["eventDetail" => $eventDetail,"eventSetlist" => $eventSetlist,"eventUrl" => $eventUrl,"eventTweetSelf" => $eventTweetSelf,"eventTweetOther" => $eventTweetOther ]);
     }
 }

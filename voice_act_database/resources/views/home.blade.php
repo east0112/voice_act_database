@@ -27,7 +27,7 @@
                     <tr>
                         <th class="dateCol">日時</th>
                         <th class="typeCol">種類</th>
-                        <th class="nameCol">イベント名</th>
+                        <th class="nameCol">タイトル</th>
                     </tr>
                 </thead>
                 <tbody>
