@@ -7,21 +7,25 @@ use Illuminate\Http\Response;
 use Illuminate\Support\Facades\DB;
 use App\Http\Models\getDatabase;
 use App\Http\Models\getEventDetail;
+use App\Http\Models\common;
 
 class libraryController extends Controller
 {
     /**
      * 一覧初期表示
      *
+     * @param Request $request
      * @return Response
      */
-    public function initDisplay(){
+    public function initDisplay(Request $request){
+      //端末判定
+      $view = common::getDevice($request,"library");
       //ソート設定
       $sort = "new";
       //イベント一覧情報取得
       $items = getDatabase::getList();
 
-      return view("library",["items" => $items, "sort" => $sort ]);
+      return view($view,["items" => $items, "sort" => $sort ]);
     }
 
     /**
@@ -31,6 +35,8 @@ class libraryController extends Controller
      * @return Response
      */
     public function seacrchDisplay(Request $request){
+      //端末判定
+      $view = common::getDevice($request,"library");
       //リクエストの取得・検索ワード
       $searchWord = $request->input("search");
       //リクエストの取得・種類
@@ -45,7 +51,7 @@ class libraryController extends Controller
       //イベント一覧情報取得
       $items = getDatabase::searchList($searchWord,$type,$sort);
 
-      return view("library",["items" => $items ,"type" => $type,"sort" => $sort]);
+      return view($view,["items" => $items ,"type" => $type,"sort" => $sort]);
     }
 
     /**
@@ -55,6 +61,8 @@ class libraryController extends Controller
      * @return Response
      */
     public function seacrchEvent(Request $request,$id){
+      //端末判定
+      $view = common::getDevice($request,"event");
       //イベント詳細情報取得
       $eventDetail = getEventDetail::getDetail($id);
       //イベントセットリスト取得
@@ -66,6 +74,6 @@ class libraryController extends Controller
       //イベント関連関係者ツイート取得
       $eventTweetOther = getEventDetail::getTweetOther($id);
 
-      return view("event",["eventDetail" => $eventDetail,"eventSetlist" => $eventSetlist,"eventUrl" => $eventUrl,"eventTweetSelf" => $eventTweetSelf,"eventTweetOther" => $eventTweetOther ]);
+      return view($view,["eventDetail" => $eventDetail,"eventSetlist" => $eventSetlist,"eventUrl" => $eventUrl,"eventTweetSelf" => $eventTweetSelf,"eventTweetOther" => $eventTweetOther ]);
     }
 }

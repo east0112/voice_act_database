@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use App\Http\Models\common;
 
 class aboutController extends Controller
 {
@@ -14,6 +15,9 @@ class aboutController extends Controller
      * @return Response
      */
     public function about(Request $request){
-      return view("about");
+      //端末判定
+      $view = common::getDevice($request,"about");
+
+      return view($view);
     }
 }

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\DB;
+use App\Http\Models\common;
 
 class homeController extends Controller
 {
@@ -14,8 +15,10 @@ class homeController extends Controller
      * @param Request $request
      * @return Response
      */
-    public function home(Request $request){
+    public static function home(Request $request){
+      //端末判定
+      $view = common::getDevice($request,"home");
 
-      return view("home");
+      return view($view);
     }
 }
