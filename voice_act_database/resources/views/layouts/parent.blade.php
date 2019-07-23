@@ -15,18 +15,18 @@
 </head>
 <body>
 <nav class="pink accent-2">
-  <div class="nav-wrapper">
-            <a href="/" class="brand-logo center"><img src="../../images/logo.png" alt="Liruu design" /></a>
-            <a href="/" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+<div class="nav-wrapper">
+            <a href="/" class="brand-logo center"><img src="{{ asset('images/logo.png') }}" alt="inaminfo" /></a>
+            <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
             <ul class="left hide-on-med-and-down">
               <li><a href="/">Home</a></li>
               <li><a href="/about">About</a></li>
               <li><a href="/library">Library</a></li>
             </ul>
             <ul class="side-nav" id="mobile-demo">
-              <li><a href="/">Home</a></li>
-              <li><a href="/about">About</a></li>
-              <li><a href="/library">Library</a></li>
+              <li><a href="/" style ="font-size:25px">Home</a></li>
+              <li><a href="/about" style ="font-size:25px">About</a></li>
+              <li><a href="/library" style ="font-size:25px">Library</a></li>
             </ul>
   </div>
 </nav>
