@@ -16,17 +16,22 @@
 <body>
 <nav class="pink accent-2">
   <div class="nav-wrapper">
+          <div class="ncontent">
             <a href="/" class="brand-logo center"><img src="{{ asset('images/logo.png') }}" alt="inaminfo" /></a>
-            <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+            <a href="/" data-activates="mobile-demo" class="button-collapse"><i class="large material-icons large-size">menu</i></a>
+          </div>
             <ul class="left hide-on-med-and-down">
               <li><a href="/">Home</a></li>
               <li><a href="/about">About</a></li>
               <li><a href="/library">Library</a></li>
             </ul>
-            <ul class="side-nav" id="mobile-demo">
-              <li><a href="/" style ="font-size:25px">Home</a></li>
-              <li><a href="/about" style ="font-size:25px">About</a></li>
-              <li><a href="/library" style ="font-size:25px">Library</a></li>
+            <ul class="side-nav pink accent-1" id="mobile-demo">
+              <ul class="collection">
+                <li class="collection-header"><h4>Menu</h4></li>
+                <li class="collection-item"><a href="/" style ="font-size:30px">Home</a></li>
+                <li class="collection-item"><a href="/about" style ="font-size:30px">About</a></li>
+                <li class="collection-item"><a href="/library" style ="font-size:30px">Library</a></li>
+              </ul>
             </ul>
   </div>
 </nav>

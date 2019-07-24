@@ -4,12 +4,10 @@
 
 @extends("layouts.parentMobile")
 @section("content")
-<div class="row">
-    <div class="col s10 push-s1">
         <div class="card">
             <div class="card-content">
-            <span class="card-title">{{$eventDetail->event_name}}</span>
-            <table>
+            <span class="card-title" style="font-size:30px">{{$eventDetail->event_name}}</span>
+            <table style="font-size:25px">
                 <tbody>
                         <tr>
                             <th class="thcol">日時</th>
@@ -41,14 +39,12 @@
             </table>
             </div>
         </div>
-    </div>
     @if(sizeof($eventSetlist) >0)
-    <div class="col s10 push-s1">
         <div class="card">
             <div class="card-content">
-            <span class="card-title">セットリスト</span>
+            <span class="card-title" style="font-size:30px">セットリスト</span>
             <br>
-            <table class="striped">
+            <table class="striped" style="font-size:25px">
                 <tbody>
                     <thead>
                         <tr>
@@ -66,25 +62,23 @@
             </table>
             </div>
         </div>
-    </div>
     @endif
     @if(sizeof($eventUrl) >0)
-    <div class="col s10 push-s1">
         <div class="card">
             <div class="card-content">
-            <span class="card-title">関連情報 Webサイト</span>
+            <span class="card-title" style="font-size:30px">関連情報 Webサイト</span>
                 @foreach($eventUrl as $url)
                     <a href={{ $url->url }}>{{ $url->url }}</a></br>
                 @endforeach
             </div>
         </div>
-    </div>
     @endif
     @if(sizeof($eventTweetSelf) >0)
-    <div class="col s5 push-s1">
+    <div class="row">
+    <div class="col s10 push-s1">
         <div class="card">
             <div class="card-content">
-            <span class="card-title">ご本人のTwitter</span>
+            <span class="card-title" style="font-size:30px">ご本人のTwitter</span>
             @foreach($eventTweetSelf as $tweet)
                 <div id= <?php echo '"container'.$tweet->turn.'"' ?>></div>
                 <script>
@@ -102,10 +96,10 @@
     </div>
     @endif
     @if(sizeof($eventTweetOther) >0)
-    <div class="col s5 push-s1">
+    <div class="col s10 push-s1">
         <div class="card">
             <div class="card-content">
-            <span class="card-title">関係者のTwitter</span>
+            <span class="card-title" style="font-size:30px">関係者のTwitter</span>
             @foreach($eventTweetOther as $tweet)
                 <div id= <?php echo '"containerOther'.$tweet->turn.'"' ?>></div>
                 <script>
@@ -122,5 +116,6 @@
         </div>
     </div>
     @endif
+    </div>
 </div>
 @endsection
