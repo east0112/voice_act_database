@@ -41,11 +41,11 @@
                     <td>番組出演</td>
                     <td><a href="/library/event/4">音楽の日2019</a></td>
                   </tr>
-            </table
+              </table>
             </div>
             <div class="card-action">
-          <a href="about">詳細を見る</a>
-        </div>
+              <a href="about">詳細を見る</a>
+           </div>
         </div>
     </div>
 </div>

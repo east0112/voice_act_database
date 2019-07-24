@@ -23,10 +23,13 @@
               <li><a href="/about">About</a></li>
               <li><a href="/library">Library</a></li>
             </ul>
-            <ul class="side-nav" id="mobile-demo">
-              <li><a href="/" style ="font-size:25px">Home</a></li>
-              <li><a href="/about" style ="font-size:25px">About</a></li>
-              <li><a href="/library" style ="font-size:25px">Library</a></li>
+            <ul class="side-nav pink accent-1" id="mobile-demo">
+              <ul class="collection">
+                <li class="collection-header"><h4>Menu</h4></li>
+                <li class="collection-item"><a href="/" style ="font-size:30px">Home</a></li>
+                <li class="collection-item"><a href="/about" style ="font-size:30px">About</a></li>
+                <li class="collection-item"><a href="/library" style ="font-size:30px">Library</a></li>
+              </ul>
             </ul>
   </div>
 </nav>
