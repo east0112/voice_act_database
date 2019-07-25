@@ -6,6 +6,8 @@ $checkRadio = "checked";
 $checkMedia = "checked";
 $checkProgram = "checked";
 $checkStage = "checked";
+$dateFrom = "";
+$dateTo = "";
 $radioDesc = "checked";
 $radioAsc = "";
 $textSearch = "";
@@ -31,6 +33,14 @@ if(empty($type) == false){
         $checkStage = "";
     }
 }
+//日付指定の保持（From）
+if(!empty($from)){
+    $dateFrom = $from;
+}
+//日付指定の保持（To）
+if(!empty($to)){
+    $dateTo = $to;
+}
 //ソート順の保持
 if($sort == "old"){
     $radioDesc = "";
@@ -47,8 +57,8 @@ if($sort == "old"){
                 <p style="font-size:25px">イベントやラジオ、雑誌等の出演情報を検索できます。</p>
                 <form action="/library" method="POST">
                 @csrf
-                </br>
-                <div class="input-field">
+                    </br>
+                    <div class="input-field">
                         <input name="search" type="text" style="height:60px;font-size: 200%;" placeholder="キーワードを入力してください" value={{ $textSearch }} >
                     </div>
                     </br>
@@ -72,6 +82,18 @@ if($sort == "old"){
                         <div class="col s2">
                         <input type="checkbox" id="checkProgram" value="4" name="checkProgram" {{ $checkProgram }} />
                         <label for="checkProgram" style="font-size:23px">番組出演</label>
+                        </div>
+                    </div>
+                    </br>
+                    <div class="row">
+                        <div class="col s3">
+                        <input type="date" id="dateFrom" name="dateFrom" style="height:60px;font-size: 150%;" value={{ $dateFrom }} ></label>
+                        </div>
+                        <div class="col s1"">
+                        <p style="text-align:center;line-height:75px;font-size:30px;">～</p>
+                        </div>
+                        <div class="col s3">
+                        <input type="date" id="dateTo" name="dateTo" style="height:60px;font-size: 150%;" value={{ $dateTo }} ></label>
                         </div>
                     </div>
                     </br>
@@ -105,7 +127,7 @@ if($sort == "old"){
                 <tbody>
                     @foreach($items as $item)
                         <tr>
-                            <td>{{ $item->date }}</td>
+                            <td><?php echo(date("Y/m/d",(strtotime($item->date)))) ?></td>
                             <td>{{ $item->type_name }}</td>
                             <td><a href="/library/event/{{ $item->event_id }}">{{ $item->event_name }}</a></td>
                         </tr>

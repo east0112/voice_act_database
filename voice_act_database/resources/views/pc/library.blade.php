@@ -11,6 +11,8 @@ $checkRadio = "checked";
 $checkMedia = "checked";
 $checkProgram = "checked";
 $checkStage = "checked";
+$dateFrom = "";
+$dateTo = "";
 $radioDesc = "checked";
 $radioAsc = "";
 $textSearch = "";
@@ -35,6 +37,14 @@ if(empty($type) == false){
     if(!in_array("5",$type)){
         $checkStage = "";
     }
+}
+//日付指定の保持（From）
+if(!empty($from)){
+    $dateFrom = $from;
+}
+//日付指定の保持（To）
+if(!empty($to)){
+    $dateTo = $to;
 }
 //ソート順の保持
 if($sort == "old"){
@@ -78,6 +88,17 @@ if($sort == "old"){
                     </div>
                     </br>
                     </br>
+                    <div class="row">
+                        <div class="col s3">
+                        <input type="date" id="dateFrom" name="dateFrom" value={{ $dateFrom }} ></label>
+                        </div>
+                        <div class="col s1"">
+                        <p style="text-align:center;line-height:60px;font-size:15px;">～</p>
+                        </div>
+                        <div class="col s3">
+                        <input type="date" id="dateTo" name="dateTo" value={{ $dateTo }} ></label>
+                        </div>
+                    </div>
                     <div class="col s3">
                     <input type="radio" id="radioDesc" value="new" name="radioSort" {{ $radioDesc }} />
                     <label for="radioDesc">日時が新しい順</label>
@@ -109,7 +130,7 @@ if($sort == "old"){
                 <tbody>
                     @foreach($items as $item)
                         <tr>
-                            <td>{{ $item->date }}</td>
+                        <td><?php echo(date("Y/m/d",(strtotime($item->date)))) ?></td>
                             <td>{{ $item->type_name }}</td>
                             <td><a href="/library/event/{{ $item->event_id }}">{{ $item->event_name }}</a></td>
                         </tr>

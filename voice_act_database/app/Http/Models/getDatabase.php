@@ -25,7 +25,7 @@ class getDatabase
      *
      * @return items $items
      */
-    public static function searchList($searchWord,$type,$sort){
+    public static function searchList($searchWord,$type,$sort,$from,$to){
         $items = DB::table("events")
             ->join("event_type","events.event_type","=","event_type.type_id")
             ->when($searchWord, function ($query) {
@@ -39,6 +39,12 @@ class getDatabase
             })
             ->when(!empty($type), function ($query) use($type) {
                 return $query->whereIn("events.event_type",$type);
+            })
+            ->when($from, function ($query) use($from) {
+              return $query->whereDate("events.date",">=",$from);
+            })
+            ->when($to, function ($query) use($to) {
+              return $query->whereDate("events.date","<=",$to);
             })
             ->when($sort == "new", function ($query) use($type) {
               return $query->orderByRaw("events.date DESC");

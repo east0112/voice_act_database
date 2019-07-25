@@ -24,10 +24,13 @@ class libraryController extends Controller
       $sort = "new";
       //検索キーワード設定
       $searchWord = "";
+      //日付指定
+      $from = "";
+      $to = "";
       //イベント一覧情報取得
       $items = getDatabase::getList();
 
-      return view($view,["items" => $items, "sort" => $sort, "searchWord" => $searchWord ]);
+      return view($view,["items" => $items, "sort" => $sort, "searchWord" => $searchWord,"from" => $from,"to" => $to ]);
     }
 
     /**
@@ -48,12 +51,15 @@ class libraryController extends Controller
       if($request->input("checkRadio")){array_push($type,$request->input("checkRadio"));}
       if($request->input("checkProgram")){array_push($type,$request->input("checkProgram"));}
       if($request->input("checkMedia")){array_push($type,$request->input("checkMedia"));}
+      //リクエストの取得・日付指定
+      $from = $request->input("dateFrom");
+      $to = $request->input("dateTo");
       //リクエストの取得・ソート
       $sort = $request->input("radioSort");
       //イベント一覧情報取得
-      $items = getDatabase::searchList($searchWord,$type,$sort);
+      $items = getDatabase::searchList($searchWord,$type,$sort,$from,$to);
 
-      return view($view,["items" => $items ,"type" => $type,"sort" => $sort,"searchWord" => $searchWord]);
+      return view($view,["items" => $items ,"type" => $type,"sort" => $sort,"searchWord" => $searchWord,"from" => $from,"to" => $to ]);
     }
 
     /**
