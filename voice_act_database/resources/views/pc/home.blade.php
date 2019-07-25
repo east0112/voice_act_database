@@ -11,7 +11,7 @@
           <p>「inaminfo」は、声優・舞台女優として活躍する伊波杏樹さんのイベントやラジオ、雑誌等の出演情報をまとめた非公式ファンサイトです。</p>
         </div>
         <div class="card-action">
-          <a href="about">当サイトについて</a>
+          <a href="/about">当サイトについて</a>
         </div>
     </div>
     </div>
@@ -42,7 +42,7 @@
             </table>
             </div>
             <div class="card-action">
-              <a href="about">詳細を見る</a>
+              <a href="/library">詳細を見る</a>
            </div>
         </div>
     </div>
