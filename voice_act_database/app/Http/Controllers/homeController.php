@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\DB;
 use App\Http\Models\common;
+use App\Http\Models\getDatabase;
 
 class homeController extends Controller
 {
@@ -18,7 +19,9 @@ class homeController extends Controller
     public static function home(Request $request){
       //端末判定
       $view = common::getDevice($request,"home");
+      //当月のデータ取得
+      $items = getDatabase::getListThisMonth();
 
-      return view($view);
+      return view($view,["items" => $items]);
     }
 }

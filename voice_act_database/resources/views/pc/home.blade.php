@@ -31,17 +31,15 @@
                     </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td>2019-07-15</td>
-                    <td>ラジオ</td>
-                    <td><a href="/library/event/5">アッパレ伊波！1名様やってまーす 7月15日放送分</a></td>
-                  </tr>
-                  <tr>
-                    <td>2019-07-13</td>
-                    <td>番組出演</td>
-                    <td><a href="/library/event/4">音楽の日2019</a></td>
-                  </tr>
-              </table>
+                    @foreach($items as $item)
+                        <tr>
+                        <td><?php echo(date("Y/m/d",(strtotime($item->date)))) ?></td>
+                            <td>{{ $item->type_name }}</td>
+                            <td><a href="/library/event/{{ $item->event_id }}">{{ $item->event_name }}</a></td>
+                        </tr>
+                    @endforeach
+                </tbody>
+            </table>
             </div>
             <div class="card-action">
               <a href="about">詳細を見る</a>

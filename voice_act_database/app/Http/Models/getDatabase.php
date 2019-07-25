@@ -7,6 +7,22 @@ use Illuminate\Support\Facades\DB;
 class getDatabase
 {
     /**
+     * 一覧表示用データの取得（トップ画面・当月データ検索）
+     *
+     * @return items $items
+     */
+    public static function getListThisMonth(){
+
+      $items = DB::table("events")
+        ->join("event_type","events.event_type","=","event_type.type_id")
+        ->whereYear("events.date","=",date("Y"))
+        ->whereMonth("events.date","=",date("m"))
+        ->orderByRaw("events.date ASC")
+        ->orderByRaw("events.start_time ASC")
+        ->get();
+      return $items;
+    }
+    /**
      * 一覧表示用データの取得（初期）
      *
      * @return items $items
