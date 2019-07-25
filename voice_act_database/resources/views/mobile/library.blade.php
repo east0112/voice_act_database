@@ -1,29 +1,29 @@
 <link href="/css/mobile/library.css" rel="stylesheet" type="text/css">
 
 <?php
-$checkEvent = "";
-$checkRadio = "";
-$checkMedia = "";
-$checkProgram = "";
-$checkStage = "";
+$checkEvent = "checked";
+$checkRadio = "checked";
+$checkMedia = "checked";
+$checkProgram = "checked";
+$checkStage = "checked";
 $radioDesc = "checked";
 $radioAsc = "";
 //チェックボックスの保持
 if(empty($type) == false){
-    if(in_array("1",$type)){
-        $checkEvent = "checked";
+    if(!in_array("1",$type)){
+        $checkEvent = "";
     }
-    if(in_array("2",$type)){
-        $checkRadio = "checked";
+    if(!in_array("2",$type)){
+        $checkRadio = "";
     }
-    if(in_array("3",$type)){
-        $checkMedia = "checked";
+    if(!in_array("3",$type)){
+        $checkMedia = "";
     }
-    if(in_array("4",$type)){
-        $checkProgram = "checked";
+    if(!in_array("4",$type)){
+        $checkProgram = "";
     }
-    if(in_array("5",$type)){
-        $checkStage = "checked";
+    if(!in_array("5",$type)){
+        $checkStage = "";
     }
 }
 //ソート順の保持
@@ -44,8 +44,7 @@ if($sort == "old"){
                 @csrf
                 </br>
                 <div class="input-field">
-                        <input name="search" type="search"  placeholder="キーワードを入力してください">
-                        <i class="material-icons">close</i>
+                        <input name="search" type="text"  placeholder="キーワードを入力してください">
                     </div>
                     </br>
                     <div class="row">

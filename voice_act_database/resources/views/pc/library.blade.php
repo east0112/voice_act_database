@@ -1,29 +1,34 @@
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+
 <link href="/css/pc/library.css" rel="stylesheet" type="text/css">
+<script src="{{ asset('/js/library.js') }}"></script>
+
 
 <?php
-$checkEvent = "";
-$checkRadio = "";
-$checkMedia = "";
-$checkProgram = "";
-$checkStage = "";
+$checkEvent = "checked";
+$checkRadio = "checked";
+$checkMedia = "checked";
+$checkProgram = "checked";
+$checkStage = "checked";
 $radioDesc = "checked";
 $radioAsc = "";
 //チェックボックスの保持
 if(empty($type) == false){
-    if(in_array("1",$type)){
-        $checkEvent = "checked";
+    if(!in_array("1",$type)){
+        $checkEvent = "";
     }
-    if(in_array("2",$type)){
-        $checkRadio = "checked";
+    if(!in_array("2",$type)){
+        $checkRadio = "";
     }
-    if(in_array("3",$type)){
-        $checkMedia = "checked";
+    if(!in_array("3",$type)){
+        $checkMedia = "";
     }
-    if(in_array("4",$type)){
-        $checkProgram = "checked";
+    if(!in_array("4",$type)){
+        $checkProgram = "";
     }
-    if(in_array("5",$type)){
-        $checkStage = "checked";
+    if(!in_array("5",$type)){
+        $checkStage = "";
     }
 }
 //ソート順の保持
@@ -44,8 +49,7 @@ if($sort == "old"){
                 <form action="/library" method="POST">
                 @csrf
                     <div class="input-field">
-                        <input name="search" type="search" placeholder="キーワードを入力してください">
-                        <i class="material-icons">close</i>
+                        <input name="search" type="text" placeholder="キーワードを入力してください">
                     </div>
                     <div class="col s2">
                     <input type="checkbox" id="checkEvent" value="1" name="checkEvent" {{ $checkEvent }} />

@@ -28,8 +28,14 @@ class getDatabase
     public static function searchList($searchWord,$type,$sort){
         $items = DB::table("events")
             ->join("event_type","events.event_type","=","event_type.type_id")
+            ->when($searchWord, function ($query) {
+              return $query->leftjoin("acts","events.act_id","=","acts.act_id");
+            })
             ->when($searchWord, function ($query) use($searchWord) {
                 return $query->where("events.event_name","LIKE","%".$searchWord."%");
+            })
+            ->when($searchWord, function ($query) use($searchWord) {
+              return $query->orwhere("acts.act_name","LIKE","%".$searchWord."%");
             })
             ->when(!empty($type), function ($query) use($type) {
                 return $query->whereIn("events.event_type",$type);
