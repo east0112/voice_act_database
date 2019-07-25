@@ -8,6 +8,11 @@ $checkProgram = "checked";
 $checkStage = "checked";
 $radioDesc = "checked";
 $radioAsc = "";
+$textSearch = "";
+//検索キーワードの保持
+if(!empty($searchWord)){
+    $textSearch = $searchWord;
+}
 //チェックボックスの保持
 if(empty($type) == false){
     if(!in_array("1",$type)){
@@ -44,7 +49,7 @@ if($sort == "old"){
                 @csrf
                 </br>
                 <div class="input-field">
-                        <input name="search" type="text" style="height:60px;font-size: 200%;" placeholder="キーワードを入力してください">
+                        <input name="search" type="text" style="height:60px;font-size: 200%;" placeholder="キーワードを入力してください" value={{ $textSearch }} >
                     </div>
                     </br>
                     <div class="row">

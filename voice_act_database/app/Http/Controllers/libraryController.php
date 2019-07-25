@@ -22,10 +22,12 @@ class libraryController extends Controller
       $view = common::getDevice($request,"library");
       //ソート設定
       $sort = "new";
+      //検索キーワード設定
+      $searchWord = "";
       //イベント一覧情報取得
       $items = getDatabase::getList();
 
-      return view($view,["items" => $items, "sort" => $sort ]);
+      return view($view,["items" => $items, "sort" => $sort, "searchWord" => $searchWord ]);
     }
 
     /**
@@ -51,7 +53,7 @@ class libraryController extends Controller
       //イベント一覧情報取得
       $items = getDatabase::searchList($searchWord,$type,$sort);
 
-      return view($view,["items" => $items ,"type" => $type,"sort" => $sort]);
+      return view($view,["items" => $items ,"type" => $type,"sort" => $sort,"searchWord" => $searchWord]);
     }
 
     /**

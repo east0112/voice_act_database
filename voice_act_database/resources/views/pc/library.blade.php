@@ -13,6 +13,11 @@ $checkProgram = "checked";
 $checkStage = "checked";
 $radioDesc = "checked";
 $radioAsc = "";
+$textSearch = "";
+//検索キーワードの保持
+if(!empty($searchWord)){
+    $textSearch = $searchWord;
+}
 //チェックボックスの保持
 if(empty($type) == false){
     if(!in_array("1",$type)){
@@ -49,7 +54,7 @@ if($sort == "old"){
                 <form action="/library" method="POST">
                 @csrf
                     <div class="input-field">
-                        <input name="search" type="text" placeholder="キーワードを入力してください">
+                        <input name="search" type="text" placeholder="キーワードを入力してください" value={{ $textSearch }} >
                     </div>
                     <div class="col s2">
                     <input type="checkbox" id="checkEvent" value="1" name="checkEvent" {{ $checkEvent }} />
