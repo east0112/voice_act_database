@@ -24,13 +24,41 @@
               <li><a href="/library">Library</a></li>
             </ul>
             <ul class="side-nav pink accent-1" id="mobile-demo">
-              <ul class="collection">
-                <li class="collection-header"><h4>Menu</h4></li>
-                <li class="collection-item"><a href="/">Home</a></li>
-                <li class="collection-item"><a href="/about">About</a></li>
-                <li class="collection-item"><a href="/library">Library</a></li>
-              </ul>
-            </ul>
+            <div class="pink accent-1">
+            <br>
+            </div>
+            <ul class="collection">
+                    <a href="/" class="collection-item" style ="font-size:30px;height:120px;line-height: 95px;">
+                    <div class="row">
+                      <div class="col s2">
+                      <i class="material-icons menu">home</i>
+                      </div>
+                      <div class="col s10">
+                      トップページ
+                      </div>
+                    </div>
+                    </a>
+                    <a href="/about" class="collection-item" style ="font-size:30px;height:120px;line-height: 95px;">
+                    <div class="row">
+                      <div class="col s2">
+                      <i class="material-icons menu">info</i>
+                      </div>
+                      <div class="col s10">
+                      当サイトについて
+                      </div>
+                    </div>
+                    </a>
+                    <a href="/library" class="collection-item" style ="font-size:30px;height:120px;line-height: 95px;">
+                    <div class="row">
+                      <div class="col s2">
+                      <i class="material-icons menu">library_books</i>
+                      </div>
+                      <div class="col s10">
+                      データベース
+                      </div>
+                    </div>
+                    </a>
+              </ul>            </ul>
   </div>
 </nav>
 <main>

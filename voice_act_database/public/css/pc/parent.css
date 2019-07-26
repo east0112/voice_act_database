@@ -20,3 +20,14 @@ body {
 main {
     flex: 1 0 auto;
 }
+
+.material-icons.menu {
+	font-size: 60px;
+  color:gray;
+  line-height: 95px;
+}
+
+.ncontent {
+  position: relative;
+  top: 20%;
+}

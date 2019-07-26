@@ -28,6 +28,12 @@ nav {
 	font-size: 60px;
 }
 
+.material-icons.menu {
+	font-size: 60px;
+  color:gray;
+  line-height: 95px;
+}
+
 .ncontent {
   position: relative;
   top: 20%;
