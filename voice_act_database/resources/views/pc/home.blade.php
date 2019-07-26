@@ -4,7 +4,7 @@
     <div class="col s10 push-s1">
       <div class="card">
         <div class="card-image">
-          <img src="images/home001.png">
+          <img class="materialboxed" src="images/home001.png">
           <span class="card-title"></span>
         </div>
         <div class="card-content">

@@ -1,9 +1,4 @@
-<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-
 <link href="/css/pc/library.css" rel="stylesheet" type="text/css">
-<script src="{{ asset('/js/library.js') }}"></script>
-
 
 <?php
 $checkEvent = "checked";
