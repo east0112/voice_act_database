@@ -33,7 +33,9 @@ class getDatabase
         ->join("event_type","events.event_type","=","event_type.type_id")
         ->orderByRaw("events.date DESC")
         ->orderByRaw("events.start_time DESC")
-        ->get();
+        //実験用
+        ->paginate(5);
+        //->get();
       return $items;
     }
     /**
@@ -69,7 +71,9 @@ class getDatabase
               return $query->orderByRaw("events.date ASC");
             })
             ->orderByRaw("events.start_time DESC")
-            ->get();
+            //実験用
+            ->paginate(5);
+            //->get();
         return $items;
     }
   }

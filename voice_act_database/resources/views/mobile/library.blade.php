@@ -116,6 +116,9 @@ if($sort == "old"){
     <div class="col s10 push-s1">
         <div class="card">
             <div class="card-content">
+            <ul class="pagination">
+            {{ $items->links() }}
+            </ul>
             <table class="striped" style ="font-size:25px">
                 <thead>
                     <tr>
