@@ -1,4 +1,4 @@
-<link href="/css/pc/event.css" rel="stylesheet" type="text/css">
+<link href="/css/mobile/event.css" rel="stylesheet" type="text/css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script type="text/javascript" src="https://platform.twitter.com/widgets.js"></script>
 
@@ -64,15 +64,31 @@
         </div>
     @endif
     @if(sizeof($eventUrl) >0)
-        <div class="card">
-            <div class="card-content">
-            <span class="card-title" style="font-size:30px">関連情報 Webサイト</span>
+    <div class="col s10 push-s1">
                 @foreach($eventUrl as $url)
-                    <a href={{ $url->url }}>{{ $url->url }}</a></br>
-                @endforeach
-            </div>
-        </div>
-    @endif
+                    <a href={{ $url->url }}>
+                        <div class="card horizontal">
+                            <div class="card-image" style="width: 200px;">
+                                <img class="img-link" src= <?php echo "https://s.wordpress.com/mshots/v1/".$url->url."?w=200" ?> >
+                            </div>
+                            <div class="card-stacked">
+                                <div class="card-content" style="font-size:25px">
+                                <?php
+                                    $source = @file_get_contents($url->url);
+                                    if (preg_match('/<title>(.*?)<\/title>/i', mb_convert_encoding($source, 'UTF-8', 'ASCII,JIS,UTF-8,EUC-JP,SJIS'), $result)) {
+                                        $title = $result[1];
+                                    } else {
+                                        //TITLEタグが存在しない場合
+                                        $title = $url->url;
+                                    }
+                                    echo $title;
+                                ?>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+            @endforeach
+    </div>    @endif
     @if(sizeof($eventTweetSelf) >0)
     <div class="row">
     <div class="col s10 push-s1">
@@ -86,7 +102,9 @@
                         <?php echo '"'.$tweet->tweet_id.'"' ?>,
                         document.getElementById(<?php echo '"container'.$tweet->turn.'"' ?>),
                         {
-                            theme: "white"
+                            theme: "white",
+                            align: "center",
+                            dnt:true
                         }
                     );
                 </script>
@@ -107,7 +125,9 @@
                         <?php echo '"'.$tweet->tweet_id.'"' ?>,
                         document.getElementById(<?php echo '"containerOther'.$tweet->turn.'"' ?>),
                         {
-                            theme: "white"
+                            theme: "white",
+                            align: "center",
+                            dnt:true
                         }
                     );
                 </script>

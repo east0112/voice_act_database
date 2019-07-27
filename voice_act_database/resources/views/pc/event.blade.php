@@ -70,14 +70,31 @@
     @endif
     @if(sizeof($eventUrl) >0)
     <div class="col s10 push-s1">
-        <div class="card">
-            <div class="card-content">
-            <span class="card-title">関連情報 Webサイト</span>
                 @foreach($eventUrl as $url)
-                    <a href={{ $url->url }}>{{ $url->url }}</a></br>
-                @endforeach
-            </div>
-        </div>
+                <div class="col s6 ">
+                    <a href={{ $url->url }}>
+                        <div class="card horizontal">
+                            <div class="card-image" style="width: 200px;">
+                                <img class="img-link" src= <?php echo "https://s.wordpress.com/mshots/v1/".$url->url."?w=200" ?> >
+                            </div>
+                            <div class="card-stacked">
+                                <div class="card-content">
+                                <?php
+                                    $source = @file_get_contents($url->url);
+                                    if (preg_match('/<title>(.*?)<\/title>/i', mb_convert_encoding($source, 'UTF-8', 'ASCII,JIS,UTF-8,EUC-JP,SJIS'), $result)) {
+                                        $title = $result[1];
+                                    } else {
+                                        //TITLEタグが存在しない場合
+                                        $title = $url->url;
+                                    }
+                                    echo $title;
+                                ?>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            @endforeach
     </div>
     @endif
     @if(sizeof($eventTweetSelf) >0)
@@ -92,7 +109,9 @@
                         <?php echo '"'.$tweet->tweet_id.'"' ?>,
                         document.getElementById(<?php echo '"container'.$tweet->turn.'"' ?>),
                         {
-                            theme: "white"
+                            theme: "white",
+                            align: "center",
+                            dnt:true
                         }
                     );
                 </script>
@@ -113,7 +132,9 @@
                         <?php echo '"'.$tweet->tweet_id.'"' ?>,
                         document.getElementById(<?php echo '"containerOther'.$tweet->turn.'"' ?>),
                         {
-                            theme: "white"
+                            theme: "white",
+                            align: "center",
+                            dnt:true
                         }
                     );
                 </script>
