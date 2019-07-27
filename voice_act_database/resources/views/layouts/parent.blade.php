@@ -23,8 +23,8 @@
               <li><a href="/about">About</a></li>
               <li><a href="/library">Library</a></li>
             </ul>
-            <ul class="side-nav pink accent-1" id="mobile-demo">
-            <div class="pink accent-1">
+            <ul class="side-nav" id="mobile-demo">
+            <div class="pink accent-2">
             <br>
             </div>
             <ul class="collection">

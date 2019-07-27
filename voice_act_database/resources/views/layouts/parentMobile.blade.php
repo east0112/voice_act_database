@@ -26,7 +26,7 @@
               <li><a href="/library">Library</a></li>
             </ul>
             <ul class="side-nav" id="mobile-demo">
-            <div class="pink accent-1">
+            <div class="pink accent-2">
             <br>
             </div>
             <ul class="collection">
