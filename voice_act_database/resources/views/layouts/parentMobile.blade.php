@@ -21,16 +21,16 @@
             <a href="/" data-activates="mobile-demo" class="button-collapse"><i class="large material-icons large-size">menu</i></a>
           </div>
             <ul class="right hide-on-med-and-down">
-              <li><a href="/">Home</a></li>
-              <li><a href="/about">About</a></li>
-              <li><a href="/library">Library</a></li>
+            <li <?php if( $_SERVER['REQUEST_URI'] == "/") echo "class=active"; ?>><a href="/">Home</a></li>
+              <li <?php if( strpos($_SERVER['REQUEST_URI'],"/about") !== false)  echo "class=active"; ?>><a href="/about">About</a></li>
+              <li <?php if( strpos($_SERVER['REQUEST_URI'],"/library") !== false) echo "class=active"; ?>><a href="/library">Library</a></li>
             </ul>
             <ul class="side-nav" id="mobile-demo">
             <div class="pink accent-2">
             <br>
             </div>
             <ul class="collection">
-                    <a href="/" class="collection-item" style ="font-size:30px;height:120px;line-height: 95px;">
+                    <a href="/" class="collection-item <?php if( $_SERVER['REQUEST_URI'] == "/") echo "active"; ?>" style ="font-size:30px;height:120px;line-height: 95px;">
                     <div class="row">
                       <div class="col s2">
                       <i class="material-icons menu">home</i>
@@ -40,7 +40,7 @@
                       </div>
                     </div>
                     </a>
-                    <a href="/about" class="collection-item" style ="font-size:30px;height:120px;line-height: 95px;">
+                    <a href="/about" class="collection-item <?php if( strpos($_SERVER['REQUEST_URI'],"/about") !== false)  echo "active"; ?>" style ="font-size:30px;height:120px;line-height: 95px;">
                     <div class="row">
                       <div class="col s2">
                       <i class="material-icons menu">info</i>
@@ -50,7 +50,7 @@
                       </div>
                     </div>
                     </a>
-                    <a href="/library" class="collection-item" style ="font-size:30px;height:120px;line-height: 95px;">
+                    <a href="/library" class="collection-item <?php if( strpos($_SERVER['REQUEST_URI'],"/library") !== false) echo "active"; ?>" style ="font-size:30px;height:120px;line-height: 95px;">
                     <div class="row">
                       <div class="col s2">
                       <i class="material-icons menu">library_books</i>
