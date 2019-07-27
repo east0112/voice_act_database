@@ -1,3 +1,5 @@
+<link href="{{ asset('/css/pc/home.css') }}" rel="stylesheet">
+
 @extends("layouts.parent")
 @section("content")
 <div class="row">

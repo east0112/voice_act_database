@@ -1,3 +1,5 @@
+<link href="{{ asset('/css/mobile/home.css') }}" rel="stylesheet">
+
 @extends("layouts.parentMobile")
 @section("content")
 <div class="col s10 push-s1">
