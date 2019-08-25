@@ -3,77 +3,42 @@
 @extends("layouts.parent")
 @section("content")
 <div class="row">
-    <div class="index-content hidden-xs">
-        <div class="container">
-            <div class="col-lg-12">
-                <div class="card">
-                    <img src="images/home001.png">
-                    <p>「inaminfo」は、声優・舞台女優として活躍する伊波杏樹さんのイベントやラジオ、雑誌等の出演情報をまとめた非公式ファンサイトです。</p>
-                    </br>
-                    <a href="/about" class="button">More</a>
-                </div>
+    <div class="container col-lg-2 col-md-2 col-sm-2 hidden-xs">
+    </div>
+    <div class="container col-lg-8 col-md-8 col-sm-8 col-xs-12">
+        <div class="index-content">
+            <div class="card">
+                <img src="images/home001.png">
+                <p>「inaminfo」は、声優・舞台女優として活躍する伊波杏樹さんのイベントやラジオ、雑誌等の出演情報をまとめた非公式ファンサイトです。</p>
+                </br>
+                <a href="/about" class="button">More</a>
             </div>
         </div>
-    </div>
-</div>
-<div class="index-content visible-xs">
-    <div class="card">
-        <img src="images/home001.png">
-        <p>「inaminfo」は、声優・舞台女優として活躍する伊波杏樹さんのイベントやラジオ、雑誌等の出演情報をまとめた非公式ファンサイトです。</p>
-        </br>
-        <a href="/about" class="button">More</a>
-    </div>
-</div>
-<div class="row">
-    <div class="index-content hidden-xs">
-        <div class="container">
-            <div class="col-lg-12">
-                <div class="card">
-                        <table class="table table-hover">
-                        <thead>
-                            <tr>
-                                <th class="dateCol">日時</th>
-                                <th class="typeCol">種類</th>
-                                <th class="nameCol">タイトル</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach($items as $item)
-                                <tr>
-                                <td><?php echo(date("Y/m/d",(strtotime($item->date)))) ?></td>
-                                    <td>{{ $item->type_name }}</td>
-                                    <td><a href="/library/event/{{ $item->event_id }}">{{ $item->event_name }}</a></td>
-                                </tr>
-                            @endforeach
-                        </tbody>
-                    </table>
-                    <a href="/about" class="button">More</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="index-content visible-xs">
-        <div class="card">
-                <table class="table table-hover">
-                <thead>
-                    <tr>
-                        <th class="dateCol">日時</th>
-                        <th class="typeCol">種類</th>
-                        <th class="nameCol">タイトル</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach($items as $item)
+        <div class="index-content">
+            <div class="card">
+                    <table class="table table-hover">
+                    <thead>
                         <tr>
-                        <td><?php echo(date("Y/m/d",(strtotime($item->date)))) ?></td>
-                            <td>{{ $item->type_name }}</td>
-                            <td><a href="/library/event/{{ $item->event_id }}">{{ $item->event_name }}</a></td>
+                            <th class="dateCol">日時</th>
+                            <th class="typeCol">種類</th>
+                            <th class="nameCol">タイトル</th>
                         </tr>
-                    @endforeach
-                </tbody>
-            </table>
-            <a href="/about" class="button">More</a>
+                    </thead>
+                    <tbody>
+                        @foreach($items as $item)
+                            <tr>
+                            <td><?php echo(date("Y/m/d",(strtotime($item->date)))) ?></td>
+                                <td>{{ $item->type_name }}</td>
+                                <td><a href="/library/event/{{ $item->event_id }}">{{ $item->event_name }}</a></td>
+                            </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+                <a href="/about" class="button">More</a>
+            </div>
         </div>
     </div>
+    <div class="container col-lg-2 col-md-2 col-sm-2 hidden-xs">
+    </div>
+</div>
 @endsection

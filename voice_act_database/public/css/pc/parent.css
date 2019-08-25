@@ -10,11 +10,6 @@ body {
     flex-direction: column;
     font-family: 'Hiragino Kaku Gothic Pro','ヒラギノ角ゴ Pro W3','メイリオ',Meiryo,'ＭＳ Ｐゴシック',sans-serif;
     background-image: url("../../images/bg.png");
-    /* width: calc(100vw - 15px); /*スクロールバーでズレる対応*/
-}
-
-.container {
-    margin:0 auto;
 }
 
 main {
