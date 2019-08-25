@@ -1,11 +1,12 @@
 <!doctype html>
 <html lang="ja">
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
-<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js" crossorigin="anonymous"></script>
 <link href="{{ asset('/css/pc/parent.css') }}" rel="stylesheet">
 <script src="{{ asset('/js/parent.js') }}"></script>
 
@@ -14,73 +15,53 @@
     <title>inaminfo</title>
 </head>
 <body>
-<nav class="pink accent-2">
-<div class="nav-wrapper">
-            <a href="/" class="brand-logo center"><img src="{{ asset('images/logo.png') }}" alt="inaminfo" /></a>
-            <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-            <ul class="left hide-on-med-and-down">
-              <li <?php if( $_SERVER['REQUEST_URI'] == "/") echo "class=active"; ?>><a href="/">Home</a></li>
-              <li <?php if( strpos($_SERVER['REQUEST_URI'],"/about") !== false)  echo "class=active"; ?>><a href="/about">About</a></li>
-              <li <?php if( strpos($_SERVER['REQUEST_URI'],"/library") !== false) echo "class=active"; ?>><a href="/library">Library</a></li>
-            </ul>
-            <ul class="side-nav" id="mobile-demo">
-            <div class="pink accent-2">
-            <br>
-            </div>
-            <ul class="collection">
-                    <a href="/" class="collection-item <?php if( $_SERVER['REQUEST_URI'] == "/") echo "active"; ?>" style ="font-size:30px;height:120px;line-height: 95px;">
-                    <div class="row">
-                      <div class="col s2">
-                      <i class="material-icons menu">home</i>
-                      </div>
-                      <div class="col s10">
-                      トップページ
-                      </div>
-                    </div>
-                    </a>
-                    <a href="/about" class="collection-item <?php if( strpos($_SERVER['REQUEST_URI'],"/about") !== false)  echo "active"; ?>" style ="font-size:30px;height:120px;line-height: 95px;">
-                    <div class="row">
-                      <div class="col s2">
-                      <i class="material-icons menu">info</i>
-                      </div>
-                      <div class="col s10">
-                      当サイトについて
-                      </div>
-                    </div>
-                    </a>
-                    <a href="/library" class="collection-item <?php if( strpos($_SERVER['REQUEST_URI'],"/library") !== false) echo "active"; ?>" style ="font-size:30px;height:120px;line-height: 95px;">
-                    <div class="row">
-                      <div class="col s2">
-                      <i class="material-icons menu">library_books</i>
-                      </div>
-                      <div class="col s10">
-                      データベース
-                      </div>
-                    </div>
-                    </a>
-              </ul>            </ul>
-  </div>
+<nav class="navbar navbar-default">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbarEexample7">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="#">
+				inaminfo
+			</a>
+		</div>
+		<div class="collapse navbar-collapse" id="navbarEexample7">
+			<ul class="nav navbar-nav">
+				<li class="<?php if( $_SERVER['REQUEST_URI'] == "/") echo "active"; ?>"><a href="/">Home</a></li>
+				<li class="<?php if( strpos($_SERVER['REQUEST_URI'],"/about") !== false)  echo "active"; ?>""><a href="/about">About</a></li>
+				<li class="<?php if( strpos($_SERVER['REQUEST_URI'],"/library") !== false)  echo "active"; ?>""><a href="/library">Library</a></li>
+				<li class="<?php if( strpos($_SERVER['REQUEST_URI'],"/calendar") !== false)  echo "active"; ?>""><a href="/Calendar">Calendar</a></li>
+			</ul>
+		</div>
+	</div>
 </nav>
 <main>
-    <div class="container">
+    <div class="container main-contant">
         @yield('content')
         </div>
     </body>
 </main>
-<footer class="page-footer pink accent-2">
-          <div class="container">
-            <div class="row">
-              <div class="col l6 s12">
-                <p class="grey-text text-lighten-4">当サイトは非公式ファンサイトです。{{$_SERVER['REQUEST_URI']}}</p>
-              </div>
-              <div class="col l4 offset-l2 s12">
-                <ul>
-                  <li><a class="grey-text text-lighten-3" href="http://smavoice.jp/"target="_blank">SMA VOICE</a></li>
-                  <li><a class="grey-text text-lighten-3" href="https://anjuinami.com/"target="_blank">伊波杏樹 Official Site</a></li>
-                  <li><a class="grey-text text-lighten-3" href="https://lineblog.me/anju_inami/"target="_blank">伊波杏樹 公式ブログ</a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-</footer>
+<div class="page-footer">
+  <div class="container">
+    </br>
+    <div class="row">
+      <div class="col-md-8">
+        <p>当サイトは非公式ファンサイトです。</p>
+      </div>
+      <div class="col-md-4">
+        <div class="list-group">
+          <a  href="http://smavoice.jp/" target="_blank">SMA VOICE</a>
+          </br>
+          <a  href="https://anjuinami.com/" target="_blank">伊波杏樹 Official Site</a>
+          </br>
+          <a  href="https://lineblog.me/anju_inami/" target="_blank">伊波杏樹 公式ブログ</a>
+        </div>
+      </div>
+    </div>
+    </br>
+  </div>
+</div>
 </html>

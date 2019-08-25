@@ -12,11 +12,14 @@ class common
      */
     public static function getDevice($request,$url){
       $user_agent = $request->header('User-Agent');
-      if ((strpos($user_agent, 'iPhone') == true)
+      //レスポンシブル対応による
+      /* if ((strpos($user_agent, 'iPhone') == true)
             || (strpos($user_agent, 'Android') == true)) {
         return '/mobile/'.$url;
       } else {
         return '/pc/'.$url;
       }
+      */
+      return '/pc/'.$url;
     }
   }
