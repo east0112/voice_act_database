@@ -51,61 +51,80 @@ if($sort == "old"){
 @extends("layouts.parent")
 @section("content")
 <div class="row">
-    <div class="col s10 push-s1">
-        <div class="card">
-            <div class="card-content">
-                <span class="card-title">データベース検索</span>
-                <p>イベントやラジオ、雑誌等の出演情報を検索できます。</p>
-                <form action="/library" method="POST">
-                @csrf
-                    <div class="input-field">
-                        <input name="search" type="text" placeholder="キーワードを入力してください" value={{ $textSearch }} >
-                    </div>
-                    <div class="col s2">
-                    <input type="checkbox" id="checkEvent" value="1" name="checkEvent" {{ $checkEvent }} />
-                    <label for="checkEvent">イベント</label>
-                    </div>
-                    <div class="col s2">
-                    <input type="checkbox" id="checkStage" value="5" name="checkStage" {{ $checkStage }} />
-                    <label for="checkStage">舞台</label>
-                    </div>
-                    <div class="col s2">
-                    <input type="checkbox" id="checkRadio" value="2" name="checkRadio" {{ $checkRadio }} />
-                    <label for="checkRadio">ラジオ</label>
-                    </div>
-                    <div class="col s2">
-                    <input type="checkbox" id="checkMedia" value="3" name="checkMedia" {{ $checkMedia }} />
-                    <label for="checkMedia">雑誌</label>
-                    </div>
-                    <div class="col s2">
-                    <input type="checkbox" id="checkProgram" value="4" name="checkProgram" {{ $checkProgram }} />
-                    <label for="checkProgram">番組出演</label>
-                    </div>
+    <div class="index-content hidden-xs">
+        <div class="container">
+            <div class="col-lg-12">
+                <div class="card">
+                    <img src="images/home001.png">
+                    <p>「inaminfo」は、声優・舞台女優として活躍する伊波杏樹さんのイベントやラジオ、雑誌等の出演情報をまとめた非公式ファンサイトです。</p>
                     </br>
-                    </br>
-                    <div class="row">
-                        <div class="col s3">
-                        <input type="date" id="dateFrom" name="dateFrom" value={{ $dateFrom }} ></label>
-                        </div>
-                        <div class="col s1"">
-                        <p style="text-align:center;line-height:60px;font-size:15px;">～</p>
-                        </div>
-                        <div class="col s3">
-                        <input type="date" id="dateTo" name="dateTo" value={{ $dateTo }} ></label>
-                        </div>
+                    <a href="/about" class="button">More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="index-content hidden-xs">
+        <div class="container">
+            <div class="col lg-12">
+                <div class="card">
+                    <div class="card-content">
+                        <span class="card-title">データベース検索</span>
+                        <p>イベントやラジオ、雑誌等の出演情報を検索できます。</p>
+                        <form action="/library" method="POST">
+                        @csrf
+                            <div class="input-field">
+                                <input name="search" type="text" placeholder="キーワードを入力してください" value={{ $textSearch }} >
+                            </div>
+                            <div class="col s2">
+                            <input type="checkbox" id="checkEvent" value="1" name="checkEvent" {{ $checkEvent }} />
+                            <label for="checkEvent">イベント</label>
+                            </div>
+                            <div class="col s2">
+                            <input type="checkbox" id="checkStage" value="5" name="checkStage" {{ $checkStage }} />
+                            <label for="checkStage">舞台</label>
+                            </div>
+                            <div class="col s2">
+                            <input type="checkbox" id="checkRadio" value="2" name="checkRadio" {{ $checkRadio }} />
+                            <label for="checkRadio">ラジオ</label>
+                            </div>
+                            <div class="col s2">
+                            <input type="checkbox" id="checkMedia" value="3" name="checkMedia" {{ $checkMedia }} />
+                            <label for="checkMedia">雑誌</label>
+                            </div>
+                            <div class="col s2">
+                            <input type="checkbox" id="checkProgram" value="4" name="checkProgram" {{ $checkProgram }} />
+                            <label for="checkProgram">番組出演</label>
+                            </div>
+                            </br>
+                            </br>
+                            <div class="row">
+                                <div class="col s3">
+                                <input type="date" id="dateFrom" name="dateFrom" value={{ $dateFrom }} ></label>
+                                </div>
+                                <div class="col s1"">
+                                <p style="text-align:center;line-height:60px;font-size:15px;">～</p>
+                                </div>
+                                <div class="col s3">
+                                <input type="date" id="dateTo" name="dateTo" value={{ $dateTo }} ></label>
+                                </div>
+                            </div>
+                            <div class="col s3">
+                            <input type="radio" id="radioDesc" value="new" name="radioSort" {{ $radioDesc }} />
+                            <label for="radioDesc">日時が新しい順</label>
+                            </div>
+                            <div class="col s3">
+                            <input type="radio" id="radioAsc" value="old" name="radioSort" {{ $radioAsc }} />
+                            <label for="radioAsc">日時が古い順</label>
+                            </div>
+                            </br>
+                            </br>
+                            <button class="btn waves-effect waves-light pink accent-2" type="submit" name="action">検索</button>
+                        </form>
                     </div>
-                    <div class="col s3">
-                    <input type="radio" id="radioDesc" value="new" name="radioSort" {{ $radioDesc }} />
-                    <label for="radioDesc">日時が新しい順</label>
-                    </div>
-                    <div class="col s3">
-                    <input type="radio" id="radioAsc" value="old" name="radioSort" {{ $radioAsc }} />
-                    <label for="radioAsc">日時が古い順</label>
-                    </div>
-                    </br>
-                    </br>
-                    <button class="btn waves-effect waves-light pink accent-2" type="submit" name="action">検索</button>
-                </form>
+                </div>
             </div>
         </div>
     </div>

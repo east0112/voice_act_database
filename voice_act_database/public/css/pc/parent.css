@@ -27,7 +27,7 @@ main {
 }
 
 .main-contant{
-  margin: 0 auto;
+  margin: 0 auto;;
 }
 
 .page-footer{
@@ -36,6 +36,9 @@ main {
 
 .page-footer *{
   color: #ffffff;
+}
+.navbar{
+  text-align: center ;
 }
 /* navbar 全体の背景色とボーダーカラー */
   .navbar-default {

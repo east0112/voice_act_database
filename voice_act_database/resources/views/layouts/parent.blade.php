@@ -8,7 +8,10 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js" crossorigin="anonymous"></script>
 <link href="{{ asset('/css/pc/parent.css') }}" rel="stylesheet">
+<link href="{{ asset('/css/common.css') }}" rel="stylesheet">
 <script src="{{ asset('/js/parent.js') }}"></script>
+
+
 
 <head>
     <meta charset="UTF-8">
@@ -24,7 +27,7 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="#">
+			<a class="navbar-brand" href="/">
 				inaminfo
 			</a>
 		</div>
@@ -39,7 +42,7 @@
 	</div>
 </nav>
 <main>
-    <div class="container main-contant">
+    <div class="main-contant">
         @yield('content')
         </div>
     </body>
