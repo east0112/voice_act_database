@@ -80,7 +80,7 @@ td > a{
 
   @import url(https://fonts.googleapis.com/css?family=Open+Sans);
 
-/*Checkboxes styles*/
+/*チェックボックスの設定*/
 input[type="checkbox"] { display: none; }
 
 input[type="checkbox"] + label {
@@ -123,3 +123,5 @@ input[type="checkbox"]:checked + label:before {
   -webkit-transform: rotate(45deg);
   transform: rotate(45deg);
 }
+
+/*ラジオボタンの設定*/

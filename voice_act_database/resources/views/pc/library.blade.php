@@ -105,9 +105,9 @@ if($sort == "old"){
                         </br>
                         </br>
                         <div class="row">
-                            <div class='col-md-1'>
+                            <div class='col-md-1 col-sm-1 col-xs-1'>
                             </div>
-                            <div class='col-md-3'>
+                            <div class='col-md-3 col-sm-5 col-xs-5'>
                                 <div class="form-group">
                                     <div class="input-group">
                                         <input type="text" class="form-control date" id="dateFrom" name="dateFrom" value={{ $dateFrom }} />
@@ -115,9 +115,7 @@ if($sort == "old"){
                                     </div>
                                 </div>
                             </div>
-                            <div class='col-md-1'>
-                            </div>
-                            <div class='col-md-3'>
+                            <div class='col-md-3 col-sm-5 col-xs-5'>
                                 <div class="form-group">
                                     <div class="input-group">
                                         <input type="text" class="form-control date" id="dateTo" name="dateTo" value={{ $dateTo }} />
@@ -126,17 +124,22 @@ if($sort == "old"){
                                 </div>
                             </div>
                         </div>
-                        <div class="col s3">
-                        <input type="radio" id="radioDesc" value="new" name="radioSort" {{ $radioDesc }} />
-                        <label for="radioDesc">日時が新しい順</label>
-                        </div>
-                        <div class="col s3">
-                        <input type="radio" id="radioAsc" value="old" name="radioSort" {{ $radioAsc }} />
-                        <label for="radioAsc">日時が古い順</label>
+                        <div class="row">
+                            <div class='col-md-3 col-sm-1 col-xs-1'>
+                            </div>
+                            <div class='col-md-2 col-sm-4 col-xs-4'>
+                                <input type="radio" id="radioDesc" value="new" name="radioSort" {{ $radioDesc }} />
+                                <label for="radioDesc">日時が新しい順</label>
+                            </div>
+                            <div class='col-md-2 col-sm-4 col-xs-4'>
+                                <input type="radio" id="radioAsc" value="old" name="radioSort" {{ $radioAsc }} />
+                                <label for="radioAsc">日時が古い順</label>
+                            </div>
+                            <div class='col-md-2 col-sm-4 col-xs-4 col-sm-offset-4 col-xs-offset-4'>
+                                <button class="button" type="submit" name="action">検索</button>
+                            </div>
                         </div>
                         </br>
-                        </br>
-                        <button class="btn waves-effect waves-light pink accent-2" type="submit" name="action">検索</button>
                     </form>
                 </div>
             </div>
