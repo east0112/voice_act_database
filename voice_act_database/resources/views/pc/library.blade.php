@@ -61,7 +61,7 @@ if($sort == "old"){
                 <div class="card-content">
                     <h4>データベース検索</h4>
                     <p>イベントやラジオ、雑誌等の出演情報を検索できます。</p>
-                    <form action="/library" method="POST">
+                    <form action="/library" method="GET">
                     @csrf
                         <div class="row">
                             <div class="input-group col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
