@@ -10,8 +10,6 @@ $checkProgram = "checked";
 $checkStage = "checked";
 $dateFrom = "";
 $dateTo = "";
-$radioDesc = "checked";
-$radioAsc = "";
 $textSearch = "";
 //検索キーワードの保持
 if(!empty($searchWord)){
@@ -44,10 +42,10 @@ if(!empty($to)){
     $dateTo = $to;
 }
 //ソート順の保持
-if($sort == "old"){
-    $radioDesc = "";
-    $radioAsc = "checked";
-}
+//if($sort == "old"){
+//    $radioDesc = "";
+//    $radioAsc = "checked";
+//}
 
 ?>
 @extends("layouts.parent")
@@ -164,7 +162,7 @@ if($sort == "old"){
         <div class="index-content">
             <div class="card">
             <ul class="pagination">
-            {{ $items->links() }}
+            {{ $items->appends(["radioAsc"=>$radioAsc,"radioDesc"=>$radioDesc])->links() }}
             </ul>
             <table class="table table-hover">
                     <thead>

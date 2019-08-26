@@ -33,11 +33,18 @@ class libraryController extends Controller
       $from = $request->input("dateFrom");
       $to = $request->input("dateTo");
       //リクエストの取得・ソート
+      $radioDesc = "";
+      $radioAsc = "";
+      if($request->input("radioSort") == "new"){
+        $radioDesc = "checked";
+      }else{
+        $radioAsc = "checked";
+      }
       $sort = $request->input("radioSort");
       //イベント一覧情報取得
       $items = getDatabase::searchList($searchWord,$type,$sort,$from,$to);
 
-      return view($view,["items" => $items ,"type" => $type,"sort" => $sort,"searchWord" => $searchWord,"from" => $from,"to" => $to ]);
+      return view($view,["items" => $items ,"type" => $type,"radioDesc" => $radioDesc,"radioAsc" => $radioAsc,"searchWord" => $searchWord,"from" => $from,"to" => $to ]);
     }
 
     /* 未使用関数 */
