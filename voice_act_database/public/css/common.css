@@ -2,10 +2,11 @@
 .input-group-addon > a{
     color: #0366D6 !important;
 }
-/*スクロールバー強制表示*/
+/*スクロールバー強制表示
 html {  
     overflow-y:scroll; 
-} 
+}
+*/ 
 /*tableの設定*/
 td > a{
     color: #0366D6 !important;

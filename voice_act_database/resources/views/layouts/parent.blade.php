@@ -50,7 +50,7 @@
 	</div>
 </nav>
 <main>
-    <div class="main-contant">
+    <div class="container">
         @yield('content')
         </div>
     </body>
