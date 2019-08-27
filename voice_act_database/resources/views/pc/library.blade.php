@@ -54,9 +54,9 @@ if($radioSort == "old"){
 @extends("layouts.parent")
 @section("content")
 <div class="row">
-    <div class="container col-lg-2 col-md-2 col-sm-2 hidden-xs">
+    <div class="container col-lg-1 col-md-1 col-sm-1 hidden-xs">
     </div>
-    <div class="container col-lg-6 col-md-6 col-sm-6 col-xs-12">
+    <div class="container col-lg-7 col-md-7 col-sm-10 col-xs-12">
         <div class="index-content">
             <div class="card">
                 <div class="card-content">
@@ -65,7 +65,7 @@ if($radioSort == "old"){
                     <form action="/library" method="GET">
                     @csrf
                         <div class="row">
-                            <div class="input-group col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
+                            <div class="input-group col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
                                 <input name="search" type="text" class="form-control" placeholder="キーワードを入力してください" value={{ $textSearch }} >
                                 <span class="input-group-addon" id="basic-addon2"><a href="/about">カレンダーで探す</a></span>
                             </div>
@@ -76,27 +76,25 @@ if($radioSort == "old"){
                             </div>
                             <div class="col-lg-10 col-xs-10">
                                 <div class="row">
-                                    <div class="col-md-2 col-xs-4">
+                                    <div class="col-md-4 col-xs-4">
                                     <input type="checkbox" id="checkEvent" value="1" name="checkEvent" {{ $checkEvent }} />
                                     <label for="checkEvent">イベント</label>
                                     </div>
-                                    <div class="col-md-2  col-xs-4">
+                                    <div class="col-md-4  col-xs-4">
                                     <input type="checkbox" id="checkStage" value="5" name="checkStage" {{ $checkStage }} />
                                     <label for="checkStage">舞台</label>
                                     </div>
-                                    <div class="col-md-2  col-xs-4">
+                                    <div class="col-md-4  col-xs-4">
                                     <input type="checkbox" id="checkRadio" value="2" name="checkRadio" {{ $checkRadio }} />
                                     <label for="checkRadio">ラジオ</label>
                                     </div>
-                                    <div class="visible-sm visible-xs">
-                                        <br>
-                                        <br>
-                                    </div>
-                                    <div class="col-md-2  col-xs-4">
+                                    <br>
+                                    <br>
+                                    <div class="col-md-4  col-xs-4">
                                     <input type="checkbox" id="checkMedia" value="3" name="checkMedia" {{ $checkMedia }} />
                                     <label for="checkMedia">雑誌</label>
                                     </div>
-                                    <div class="col-md-2  col-xs-4">
+                                    <div class="col-md-4  col-xs-4">
                                     <input type="checkbox" id="checkProgram" value="4" name="checkProgram" {{ $checkProgram }} />
                                     <label for="checkProgram">番組出演</label>
                                     </div>
@@ -108,7 +106,7 @@ if($radioSort == "old"){
                         <div class="row">
                             <div class='col-md-1 col-sm-1 col-xs-1'>
                             </div>
-                            <div class='col-md-3 col-sm-5 col-xs-5'>
+                            <div class='col-md-5 col-sm-8 col-xs-8'>
                                 <div class="form-group">
                                     <div class="input-group">
                                         <input type="text" class="form-control date" id="dateFrom" name="dateFrom" value={{ $from }} />
@@ -116,7 +114,12 @@ if($radioSort == "old"){
                                     </div>
                                 </div>
                             </div>
-                            <div class='col-md-3 col-sm-5 col-xs-5'>
+                            <div class='visible-sm visible-xs'>
+                                <br>
+                                <div class='col-sm-1 col-xs-1'>
+                                </div>
+                            </div>
+                            <div class='col-md-5 col-sm-8 col-xs-8'>
                                 <div class="form-group">
                                     <div class="input-group">
                                         <input type="text" class="form-control date" id="dateTo" name="dateTo" value={{ $to }} />
@@ -146,7 +149,7 @@ if($radioSort == "old"){
             </div>
         </div>
     </div>
-    <div class="container col-lg-2 col-md-2 hidden-sm hidden-xs">
+    <div class="container col-lg-3 col-md-3 hidden-sm hidden-xs">
     <div class="index-content">
             <div class="card">
                 <div class="card-content">
@@ -155,13 +158,13 @@ if($radioSort == "old"){
             </div>
         </div>
     </div>
-    <div class="container col-lg-2 col-md-2 col-sm-2 hidden-xs">
+    <div class="container col-lg-1 col-md-1 col-sm-1 hidden-xs">
     </div>
 </div>
 <div class="row">
-    <div class="container col-lg-2 col-md-2 col-sm-2 hidden-xs">
+    <div class="container col-lg-1 col-md-1 col-sm-1 hidden-xs">
     </div>
-    <div class="container col-lg-8 col-md-8 col-sm-8 col-xs-12">
+    <div class="container col-lg-10 col-md-10 col-sm-10 col-xs-12">
         <div class="index-content">
             <div class="card">
             <ul class="pagination">
@@ -189,7 +192,7 @@ if($radioSort == "old"){
         </div>
     </div>
     </div>
-    <div class="container col-lg-2 col-md-2 col-sm-2 hidden-xs">
+    <div class="container col-lg-1 col-md-1 col-sm-1 hidden-xs">
     </div>
 </div>
 @endsection
