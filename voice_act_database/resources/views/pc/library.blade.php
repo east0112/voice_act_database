@@ -8,8 +8,8 @@ $checkRadio = "checked";
 $checkMedia = "checked";
 $checkProgram = "checked";
 $checkStage = "checked";
-$dateFrom = "";
-$dateTo = "";
+$from = "";
+$to = "";
 $textSearch = "";
 //検索キーワードの保持
 if(!empty($searchWord)){
@@ -34,18 +34,21 @@ if(empty($type) == false){
     }
 }
 //日付指定の保持（From）
-if(!empty($from)){
-    $dateFrom = $from;
+if(!empty($dateFrom)){
+    $from = $dateFrom;
 }
 //日付指定の保持（To）
-if(!empty($to)){
-    $dateTo = $to;
+if(!empty($dateTo)){
+    $to = $dateTo;
 }
 //ソート順の保持
-//if($sort == "old"){
-//    $radioDesc = "";
-//    $radioAsc = "checked";
-//}
+if($radioSort == "old"){
+    $radioDesc = "";
+    $radioAsc = "checked";
+}else{
+    $radioDesc = "checked";
+    $radioAsc = "";
+}
 
 ?>
 @extends("layouts.parent")
@@ -108,7 +111,7 @@ if(!empty($to)){
                             <div class='col-md-3 col-sm-5 col-xs-5'>
                                 <div class="form-group">
                                     <div class="input-group">
-                                        <input type="text" class="form-control date" id="dateFrom" name="dateFrom" value={{ $dateFrom }} />
+                                        <input type="text" class="form-control date" id="dateFrom" name="dateFrom" value={{ $from }} />
                                         <span class="input-group-addon">から</span>
                                     </div>
                                 </div>
@@ -116,7 +119,7 @@ if(!empty($to)){
                             <div class='col-md-3 col-sm-5 col-xs-5'>
                                 <div class="form-group">
                                     <div class="input-group">
-                                        <input type="text" class="form-control date" id="dateTo" name="dateTo" value={{ $dateTo }} />
+                                        <input type="text" class="form-control date" id="dateTo" name="dateTo" value={{ $to }} />
                                         <span class="input-group-addon">まで</span>
                                     </div>
                                 </div>
@@ -162,7 +165,7 @@ if(!empty($to)){
         <div class="index-content">
             <div class="card">
             <ul class="pagination">
-            {{ $items->appends(["radioAsc"=>$radioAsc,"radioDesc"=>$radioDesc])->links() }}
+            {{ $items->appends($param)->links() }}
             </ul>
             <table class="table table-hover">
                     <thead>

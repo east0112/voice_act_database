@@ -30,22 +30,26 @@ class libraryController extends Controller
       if($request->input("checkProgram")){array_push($type,$request->input("checkProgram"));}
       if($request->input("checkMedia")){array_push($type,$request->input("checkMedia"));}
       //リクエストの取得・日付指定
-      $from = $request->input("dateFrom");
-      $to = $request->input("dateTo");
+      $dateFrom = $request->input("dateFrom");
+      $dateTo = $request->input("dateTo");
       //リクエストの取得・ソート
-      $radioDesc = "";
-      $radioAsc = "";
-      if($request->input("radioSort") == "new"){
-        $radioDesc = "checked";
-      }else{
-        $radioAsc = "checked";
-      }
-      $sort = $request->input("radioSort");
+      //$radioDesc = $request->input("radioDesc");
+      //$radioAsc = $request->input("radioAsc");
+      //if($request->input("radioAsc") == "checked"){
+      //  $radioSort = "old";
+      //}else{
+      //  $radioSort = "new";
+      //}
+      $radioSort = $request->input("radioSort");
       //イベント一覧情報取得
-      $items = getDatabase::searchList($searchWord,$type,$sort,$from,$to);
+      $items = getDatabase::searchList($searchWord,$type,$radioSort,$dateFrom,$dateTo);
 
-      return view($view,["items" => $items ,"type" => $type,"radioDesc" => $radioDesc,"radioAsc" => $radioAsc,"searchWord" => $searchWord,"from" => $from,"to" => $to ]);
+      //ページネーションの検索条件保持用
+      $param = array("type" => $type,"radioSort" => $radioSort,"searchWord" => $searchWord,"dateFrom" => $dateFrom,"dateTo" => $dateTo);
+
+      return view($view,["items" => $items ,"type" => $type,"radioSort" => $radioSort,"searchWord" => $searchWord,"dateFrom" => $dateFrom,"dateTo" => $dateTo,"param"=> $param ]);
     }
+
 
     /* 未使用関数 */
     /**
