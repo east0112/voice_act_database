@@ -76,71 +76,86 @@ if($radioSort == "old"){
                             </div>
                             <div class="col-lg-10 col-xs-10">
                                 <div class="row">
-                                    <div class="col-md-4 col-xs-4">
+                                    <div class="col-md-4 col-xs-6">
                                     <input type="checkbox" id="checkEvent" value="1" name="checkEvent" {{ $checkEvent }} />
                                     <label for="checkEvent">イベント</label>
                                     </div>
-                                    <div class="col-md-4  col-xs-4">
+                                    <div class="col-md-4 col-xs-6">
                                     <input type="checkbox" id="checkStage" value="5" name="checkStage" {{ $checkStage }} />
                                     <label for="checkStage">舞台</label>
                                     </div>
-                                    <div class="col-md-4  col-xs-4">
+                                    <div class="visible-sm visible-xs">
+                                        <br>
+                                        <br>
+                                    </div>
+                                    <div class="col-md-4 col-xs-6">
                                     <input type="checkbox" id="checkRadio" value="2" name="checkRadio" {{ $checkRadio }} />
                                     <label for="checkRadio">ラジオ</label>
                                     </div>
-                                    <br>
-                                    <br>
-                                    <div class="col-md-4  col-xs-4">
+                                    <div class="hidden-sm hidden-xs">
+                                        <br>
+                                        <br>
+                                    </div>
+                                    <div class="col-md-4 col-xs-6">
                                     <input type="checkbox" id="checkMedia" value="3" name="checkMedia" {{ $checkMedia }} />
                                     <label for="checkMedia">雑誌</label>
                                     </div>
-                                    <div class="col-md-4  col-xs-4">
+                                    <div class="visible-sm visible-xs">
+                                        <br>
+                                        <br>
+                                    </div>
+                                    <div class="col-md-4 col-xs-6">
                                     <input type="checkbox" id="checkProgram" value="4" name="checkProgram" {{ $checkProgram }} />
                                     <label for="checkProgram">番組出演</label>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        </br>
-                        </br>
                         <div class="row">
                             <div class='col-md-1 col-sm-1 col-xs-1'>
                             </div>
-                            <div class='col-md-5 col-sm-8 col-xs-8'>
-                                <div class="form-group">
-                                    <div class="input-group">
-                                        <input type="text" class="form-control date" id="dateFrom" name="dateFrom" value={{ $from }} />
-                                        <span class="input-group-addon">から</span>
+                            <div class="col-lg-10 col-xs-10">
+                                <div class="row">
+                                    <div class='col-md-6 col-sm-6 col-xs-12'>
+                                        <div class="form-group">
+                                            <div class="input-group">
+                                                <input type="text" class="form-control date" id="dateFrom" name="dateFrom" value={{ $from }} />
+                                                <span class="input-group-addon">から</span>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                            </div>
-                            <div class='visible-sm visible-xs'>
-                                <br>
-                                <div class='col-sm-1 col-xs-1'>
-                                </div>
-                            </div>
-                            <div class='col-md-5 col-sm-8 col-xs-8'>
-                                <div class="form-group">
-                                    <div class="input-group">
-                                        <input type="text" class="form-control date" id="dateTo" name="dateTo" value={{ $to }} />
-                                        <span class="input-group-addon">まで</span>
+                                    <div class='col-md-6 col-sm-6 col-xs-12'>
+                                        <div class="form-group">
+                                            <div class="input-group">
+                                                <input type="text" class="form-control date" id="dateTo" name="dateTo" value={{ $to }} />
+                                                <span class="input-group-addon">まで</span>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="row">
-                            <div class='col-md-3 col-sm-1 col-xs-1'>
+                            <div class="col-lg-1 col-xs-1">
                             </div>
-                            <div class='col-md-2 col-sm-4 col-xs-4'>
-                                <input type="radio" id="radioDesc" value="new" name="radioSort" {{ $radioDesc }} />
-                                <label for="radioDesc">日時が新しい順</label>
-                            </div>
-                            <div class='col-md-2 col-sm-4 col-xs-4'>
-                                <input type="radio" id="radioAsc" value="old" name="radioSort" {{ $radioAsc }} />
-                                <label for="radioAsc">日時が古い順</label>
-                            </div>
-                            <div class='col-md-2 col-sm-4 col-xs-4 col-sm-offset-4 col-xs-offset-4'>
-                                <button class="button" type="submit" name="action">検索</button>
+                            <div class="col-lg-10 col-xs-10">
+                                <div class="row">
+                                    <div class='col-md-4 col-sm-6 col-xs-6'>
+                                        <input type="radio" id="radioDesc" value="new" name="radioSort" {{ $radioDesc }} />
+                                        <label for="radioDesc">日時が新しい順</label>
+                                    </div>
+                                    <div class='col-md-4 col-sm-6 col-xs-6'>
+                                        <input type="radio" id="radioAsc" value="old" name="radioSort" {{ $radioAsc }} />
+                                        <label for="radioAsc">日時が古い順</label>
+                                    </div>
+                                    <div class="visible-xs">
+                                        <br>
+                                        <br>
+                                    </div>
+                                    <div class='col-md-4 col-sm-6 col-xs-6'>
+                                        <button class="button" type="submit" name="action" style="margin: 0 auto;">検索</button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         </br>
