@@ -182,9 +182,11 @@ if($radioSort == "old"){
     <div class="container col-lg-10 col-md-10 col-sm-10 col-xs-12">
         <div class="index-content">
             <div class="card">
-            <ul class="pagination">
-            {{ $items->appends($param)->links() }}
-            </ul>
+            <nav>
+                <ul class="pagination">
+                {{ $items->appends($param)->links() }}
+                </ul>
+            </nav>
             <table class="table table-hover">
                     <thead>
                         <tr>
