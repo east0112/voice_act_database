@@ -39,6 +39,7 @@ class libraryController extends Controller
       //  $radioSort = "old";
       //}else{
       //  $radioSort = "new";
+      //  $radioDesc = "checked";
       //}
       $radioSort = $request->input("radioSort");
       //イベント一覧情報取得

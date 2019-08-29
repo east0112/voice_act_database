@@ -65,7 +65,7 @@ class getDatabase
             ->when($to, function ($query) use($to) {
               return $query->whereDate("events.date","<=",$to);
             })
-            ->when($sort == "new", function ($query) use($type) {
+            ->when($sort == "", function ($query) use($type) {
               return $query->orderByRaw("events.date DESC");
             })
             ->when($sort == "old", function ($query) use($type) {

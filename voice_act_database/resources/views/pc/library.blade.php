@@ -141,7 +141,7 @@ if($radioSort == "old"){
                             <div class="col-lg-10 col-xs-10">
                                 <div class="row">
                                     <div class='col-md-4 col-sm-6 col-xs-6'>
-                                        <input type="radio" id="radioDesc" value="new" name="radioSort" {{ $radioDesc }} />
+                                        <input type="radio" id="radioDesc" value="" name="radioSort" {{ $radioDesc }} />
                                         <label for="radioDesc">日時が新しい順</label>
                                     </div>
                                     <div class='col-md-4 col-sm-6 col-xs-6'>
