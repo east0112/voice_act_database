@@ -5,50 +5,51 @@
 @extends("layouts.parent")
 @section("content")
 <div class="row">
-    <div class="col s10 push-s1">
-        <div class="card">
-            <div class="card-content">
-            <span class="card-title">{{$eventDetail->event_name}}</span>
-            <table>
-                <tbody>
-                        <tr>
-                            <th class="thcol">日時</th>
-                            <td class="tdcol">{{$eventDetail->date}} {{$eventDetail->start_time}}</td>
-                        </tr>
-                        <tr class="detail">
-                            <th class="thcol">種類</th>
-                            <td class="tdcol">{{$eventDetail->type_name}}</td>
-                        </tr>
-                        @if($eventDetail->act_name)
-                        <tr class="detail">
-                            <th class="thcol">役名</th>
-                            <td class="tdcol">{{$eventDetail->act_name}} 役</td>
-                        </tr>
-                        @endif
-                        @if($eventDetail->place_name)
-                        <tr class="detail">
-                            <th class="thcol">会場</th>
-                            <td class="tdcol">{{$eventDetail->place_name}}</td>
-                        </tr>
-                        @endif
-                        @if($eventDetail->capacity)
-                        <tr class="detail">
-                        <th class="thcol">キャパ</th>
-                        <td class="tdcol">{{$eventDetail->capacity}} 人</td>
-                        </tr>
-                        @endif
-                </tbody>
-            </table>
+    <div class="container col-lg-1 col-md-1 col-sm-1 hidden-xs">
+    </div>
+    <div class="container col-lg-10 col-md-10 col-sm-10 col-xs-12">
+        <div class="index-content">
+            <div class="card">
+                <h3>{{$eventDetail->event_name}}</h3>
+                <table class="event-detail-table">
+                    <tbody>
+                            <tr>
+                                <th class="thcol">日時</th>
+                                <td class="tdcol">{{$eventDetail->date}} {{$eventDetail->start_time}}</td>
+                            </tr>
+                            <tr class="detail">
+                                <th class="thcol">種類</th>
+                                <td class="tdcol">{{$eventDetail->type_name}}</td>
+                            </tr>
+                            @if($eventDetail->act_name)
+                            <tr class="detail">
+                                <th class="thcol">役名</th>
+                                <td class="tdcol">{{$eventDetail->act_name}} 役</td>
+                            </tr>
+                            @endif
+                            @if($eventDetail->place_name)
+                            <tr class="detail">
+                                <th class="thcol">会場</th>
+                                <td class="tdcol">{{$eventDetail->place_name}}</td>
+                            </tr>
+                            @endif
+                            @if($eventDetail->capacity)
+                            <tr class="detail">
+                            <th class="thcol">キャパ</th>
+                            <td class="tdcol">{{$eventDetail->capacity}} 人</td>
+                            </tr>
+                            @endif
+                    </tbody>
+                </table>
+                <br>
             </div>
         </div>
-    </div>
     @if(sizeof($eventSetlist) >0)
-    <div class="col s10 push-s1">
+    <div class="index-content">
         <div class="card">
-            <div class="card-content">
-            <span class="card-title">セットリスト</span>
+            <h4>セットリスト</h4>
             <br>
-            <table class="striped">
+            <table class="event-detail-table  table-striped">
                 <tbody>
                     <thead>
                         <tr>
@@ -64,44 +65,38 @@
                     @endforeach
                 </tbody>
             </table>
-            </div>
+            <br>
         </div>
     </div>
     @endif
     @if(sizeof($eventUrl) >0)
-    <div class="col s10 push-s1">
-                @foreach($eventUrl as $url)
-                <div class="col s6 ">
-                    <a href={{ $url->url }}>
-                        <div class="card horizontal">
-                            <div class="card-image" style="width: 200px;">
-                                <img class="img-link" src= <?php echo "https://s.wordpress.com/mshots/v1/".$url->url."?w=200" ?> >
-                            </div>
-                            <div class="card-stacked">
-                                <div class="card-content">
-                                <?php
-                                    $source = @file_get_contents($url->url);
-                                    if (preg_match('/<title>(.*?)<\/title>/i', mb_convert_encoding($source, 'UTF-8', 'ASCII,JIS,UTF-8,EUC-JP,SJIS'), $result)) {
-                                        $title = $result[1];
-                                    } else {
-                                        //TITLEタグが存在しない場合
-                                        $title = $url->url;
-                                    }
-                                    echo $title;
-                                ?>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
+        @foreach($eventUrl as $url)
+        <div class="container col-lg-6 col-md-6 col-sm-12 col-xs-12">
+            <a href={{ $url->url }}>
+                <div class="index-content">
+                    <div class="card">
+                        <img class="thumbnail-link" src= <?php echo "https://s.wordpress.com/mshots/v1/".$url->url."?w=200" ?> >
+                        <?php
+                            $source = @file_get_contents($url->url);
+                            if (preg_match('/<title>(.*?)<\/title>/i', mb_convert_encoding($source, 'UTF-8', 'ASCII,JIS,UTF-8,EUC-JP,SJIS'), $result)) {
+                                $title = $result[1];
+                            } else {
+                                //TITLEタグが存在しない場合
+                                $title = $url->url;
+                            }
+                            echo $title;
+                        ?>
+                    </div>
                 </div>
-            @endforeach
-    </div>
+            </a>
+        </div>
+    @endforeach
     @endif
     @if(sizeof($eventTweetSelf) >0)
-    <div class="col s5 push-s1">
-        <div class="card">
-            <div class="card-content">
-            <span class="card-title">ご本人のTwitter</span>
+    <div class="container col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="index-content">
+            <div class="card">
+            <h4>ご本人のTwitter</h4>
             @foreach($eventTweetSelf as $tweet)
                 <div id= <?php echo '"container'.$tweet->turn.'"' ?>></div>
                 <script>
@@ -121,10 +116,10 @@
     </div>
     @endif
     @if(sizeof($eventTweetOther) >0)
-    <div class="col s5 push-s1">
-        <div class="card">
-            <div class="card-content">
-            <span class="card-title">関係者のTwitter</span>
+    <div class="container col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="index-content">
+            <div class="card">
+            <h4>関係者のTwitter</h4>
             @foreach($eventTweetOther as $tweet)
                 <div id= <?php echo '"containerOther'.$tweet->turn.'"' ?>></div>
                 <script>
@@ -143,5 +138,8 @@
         </div>
     </div>
     @endif
+    </div>
+    <div class="container col-lg-1 col-md-1 col-sm-1 hidden-xs">
+    </div>
 </div>
 @endsection
