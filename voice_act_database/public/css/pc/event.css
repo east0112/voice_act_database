@@ -14,6 +14,8 @@ th.setNameCol{
   width: 85%;
 }
 
+
+
 .img-link {
 	/* 画像のフェードイン対応 */
  	animation: fadeIn 0.8s ease 0s 1 normal;
@@ -27,7 +29,7 @@ th.setNameCol{
 
 .event-detail-table{
   width:85%; 
-  margin: 0 auto;"
+  margin: 0 auto;
 }
 
 .event-detail-table tr {
