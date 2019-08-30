@@ -11,7 +11,24 @@
         <div class="modal-bg js-modal-close"></div>
             <div class="modal-content">
                 <div class="row">
-                    <p>ここにモーダルウィンドウで表示したいコンテンツを入れます。モーダルウィンドウを閉じる場合は下の「閉じる」をクリックするか、背景の黒い部分をクリックしても閉じることができます。</p>
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th class="dateCol">日時</th>
+                                <th class="typeCol">種類</th>
+                                <th class="nameCol">タイトル</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach($items as $item)
+                                <tr class={{"item".date("d",(strtotime($item->date)))}} style="display:none;">
+                                <td><?php echo(date("Y/m/d",(strtotime($item->date)))) ?></td>
+                                    <td>{{ $item->type_name }}</td>
+                                    <td><a href="/library/event/{{ $item->event_id }}">{{ $item->event_name }}</a></td>
+                                </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
                     <a class="js-modal-close">閉じる</a>
                 </div>
         </div>
@@ -48,6 +65,7 @@
                                     @else
                                     class="js-view-detail"
                                     @endif
+                                    id=<?php echo '"'.$date->day.'"' ?>
                                 >
                                     {{ $date->day }}
                                 </td>

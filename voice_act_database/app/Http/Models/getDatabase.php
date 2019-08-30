@@ -100,5 +100,21 @@ class getDatabase
         }
         return $dates;
     }
+    /**
+     * モーダル画面表示用データの取得（カレンダー検索）
+     *
+     * @return items $items
+     */
+    public static function getModalList($year,$month){
+
+      $items = DB::table("events")
+        ->join("event_type","events.event_type","=","event_type.type_id")
+        ->whereYear("events.date","=",$year)
+        ->whereMonth("events.date","=",$month)
+        ->orderByRaw("events.date ASC")
+        ->orderByRaw("events.start_time ASC")
+        ->get();
+      return $items;
+    }
 
   }

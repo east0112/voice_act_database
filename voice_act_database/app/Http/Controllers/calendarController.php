@@ -18,12 +18,15 @@ class calendarController extends Controller
     public function searchDisplay(Request $request){
       //端末判定
       $view = common::getDevice($request,"calendar");
-      //当月設定
-      $currentMonth = "8";
+      //当年設定（テスト）
+      $currentYear = "2019";
+      //当月設定（テスト）
+      $currentMonth = "7";
 
       //カレンダー情報の取得
-      $dates = getDatabase::getCalendarDates("2019",$currentMonth);
-
-      return view($view,["dates"=>$dates,"currentMonth"=>$currentMonth]);
+      $dates = getDatabase::getCalendarDates($currentYear,$currentMonth);
+      //イベント情報の取得
+      $items = getDatabase::getModalList($currentYear,$currentMonth);
+      return view($view,["dates"=>$dates,"items"=>$items,"currentMonth"=>$currentMonth]);
     }
 }
