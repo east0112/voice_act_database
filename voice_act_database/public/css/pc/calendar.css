@@ -1,15 +1,25 @@
-table thead tr{
+.calendar thead tr{
   background-color: #FF5192;
   color: #FFFFFF;
 }
 
-table tbody tr{
+.calendar tbody tr{
   height: 75px;
   font-size:10px;
 }
 
-table td{
+.calendar td{
   width: 14.28%;
+}
+
+th.dateCol{
+  width: 20%;
+}
+th.typeCol{
+  width: 20%;
+}
+th.nameCol{
+  width: 60%;
 }
 
 .bg-secondary{
@@ -37,14 +47,26 @@ position: absolute;
 top: 50%;
 transform: translate(-50%,-50%);
 }
-@media (min-width: 800px) {
-  .model-content{
-    width: 60%;
+
+.modal-close{
+  color: #0366D6 !important;
+  text-decoration: none;
+}
+
+.modal-close:hover{
+  opacity: 0.6;
+  transition: 0.2s;
+  text-decoration: none;
+}
+
+@media screen and (min-width: 800px) {
+  .modal-content{
+    width: 70%;
   }
 }
 
-@media (max-width: 800px) {
-  .model-content{
-    width: 90%;
+@media screen and (max-width: 800px) {
+  .modal-content{
+    width: 100%;
   }
 }

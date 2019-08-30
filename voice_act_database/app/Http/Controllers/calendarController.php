@@ -21,12 +21,16 @@ class calendarController extends Controller
       //当年設定（テスト）
       $currentYear = "2019";
       //当月設定（テスト）
-      $currentMonth = "7";
+      $currentMonth = "8";
 
       //カレンダー情報の取得
       $dates = getDatabase::getCalendarDates($currentYear,$currentMonth);
       //イベント情報の取得
       $items = getDatabase::getModalList($currentYear,$currentMonth);
+      //カレンダーに表示する情報を生成する
+      //foreach ($items as $item){
+      //  $day = date("d",(strtotime($item->date)));
+      //}
       return view($view,["dates"=>$dates,"items"=>$items,"currentMonth"=>$currentMonth]);
     }
 }

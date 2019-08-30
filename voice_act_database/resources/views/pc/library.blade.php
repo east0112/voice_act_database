@@ -67,7 +67,7 @@ if($radioSort == "old"){
                         <div class="row">
                             <div class="input-group col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
                                 <input name="search" type="text" class="form-control" placeholder="キーワードを入力してください" value={{ $textSearch }} >
-                                <span class="input-group-addon" id="basic-addon2"><a href="/about">カレンダーで探す</a></span>
+                                <span class="input-group-addon" id="basic-addon2"><a href="/calendar">カレンダーで探す</a></span>
                             </div>
                         </div>
                         </br>

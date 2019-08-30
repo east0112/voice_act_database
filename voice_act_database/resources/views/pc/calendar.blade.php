@@ -29,7 +29,7 @@
                             @endforeach
                         </tbody>
                     </table>
-                    <a class="js-modal-close">閉じる</a>
+                    <a class="js-modal-close modal-close">閉じる</a>
                 </div>
         </div>
     </div>
@@ -46,7 +46,7 @@
                     <div class="container col-lg-1 col-md-1 col-sm-1 hidden-xs">
                     </div>
                     <div class="container col-lg-10 col-md-10 col-sm-10 col-xs-12">
-                        <table class="table">
+                        <table class="table calendar">
                             <thead>
                                 <tr>
                                 @foreach (['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'] as $dayOfWeek)

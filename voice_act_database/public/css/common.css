@@ -11,9 +11,18 @@ html {
     overflow-y:scroll; 
 }
 */ 
+
+/* 共通 */
+
 /*tableの設定*/
-td > a{
-    color: #0366D6 !important;
+td > a, td > a:visited{
+  color: #0366D6 !important;
+  text-decoration: none;
+}
+td > a:hover{
+  opacity: 0.6;
+  transition: 0.2s;
+  text-decoration: none;
 }
 
 /*Cardの設定*/
@@ -26,7 +35,7 @@ td > a{
     margin-bottom: 20px;
   }
   
-  .index-content .row {
+  .index-content .row { 
     margin-top: 20px;
   }
   
@@ -40,7 +49,9 @@ td > a{
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
     border-radius: 4px;
-    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 2px 2px 0 rgba(0, 0, 0, 0.12), 0 2px 2px -1px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.14), 0 3px 3px 0 rgba(0, 0, 0, 0.12), 0 3px 3px -1px rgba(0, 0, 0, 0.3);
+    border: solid 2px;
+    border-color: #FFBEDA;
   }
   
   .index-content .card .thumbnail-link{
