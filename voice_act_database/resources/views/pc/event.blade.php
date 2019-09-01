@@ -10,7 +10,9 @@
     <div class="container col-lg-10 col-md-10 col-sm-10 col-xs-12">
         <div class="index-content">
             <div class="card">
-                <h3>{{$eventDetail->event_name}}</h3>
+                <div class="event-title">
+                    <h4>{{$eventDetail->event_name}}</h4>
+                </div>
                 <table class="event-detail-table">
                     <tbody>
                             <tr>
@@ -48,7 +50,6 @@
     <div class="index-content">
         <div class="card">
             <h4>セットリスト</h4>
-            <br>
             <table class="event-detail-table  table-striped">
                 <tbody>
                     <thead>

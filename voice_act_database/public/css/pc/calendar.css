@@ -22,6 +22,10 @@ th.nameCol{
   width: 60%;
 }
 
+.table-modal tr td{
+  font-size:14px;
+}
+
 .bg-secondary{
   background-color: #C0C0C0;
 }

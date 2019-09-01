@@ -1,3 +1,6 @@
+.event-title{
+  margin-left: 10px;
+}
 tr.detail {
   border-top: 1px solid #C0C0C0;
 }
@@ -13,8 +16,6 @@ th.setTrunCol{
 th.setNameCol{
   width: 85%;
 }
-
-
 
 .img-link {
 	/* 画像のフェードイン対応 */

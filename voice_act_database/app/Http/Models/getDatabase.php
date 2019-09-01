@@ -73,8 +73,7 @@ class getDatabase
             })
             ->orderByRaw("events.start_time DESC")
             //実験用
-            ->paginate(5);
-            //->get();
+            ->paginate(20);
         return $items;
     }
     /**

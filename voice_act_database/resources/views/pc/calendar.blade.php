@@ -11,7 +11,7 @@
         <div class="modal-bg js-modal-close"></div>
             <div class="modal-content">
                 <div class="row">
-                    <table class="table table-hover">
+                    <table class="table table-hover table-modal">
                         <thead>
                             <tr>
                                 <th class="dateCol">日時</th>
