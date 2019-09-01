@@ -1,3 +1,5 @@
+<meta property="og:title" content="about"/>
+
 @extends("layouts.parent")
 @section("content")
 <div class="row">

@@ -1,3 +1,5 @@
+<meta property="og:title" content="library"/>
+
 <script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
 <link href="/css/pc/library.css" rel="stylesheet" type="text/css">
 <script src="{{ asset('/js/library.js') }}"></script>

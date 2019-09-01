@@ -1,3 +1,5 @@
+<meta property="og:title" content="calendar"/>
+
 <script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
 <link href="/css/pc/calendar.css" rel="stylesheet" type="text/css">
 <script src="{{ asset('/js/calendar.js') }}"></script>
