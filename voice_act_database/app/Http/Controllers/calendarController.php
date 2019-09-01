@@ -18,19 +18,54 @@ class calendarController extends Controller
     public function searchDisplay(Request $request){
       //端末判定
       $view = common::getDevice($request,"calendar");
-      //当年設定（テスト）
-      $currentYear = "2019";
-      //当月設定（テスト）
-      $currentMonth = "8";
+      //リクエストの処理
+      if($request->input("currentYear") && $request->input("currentMonth")){
+        $currentYear = $request->input("currentYear");
+        $currentMonth = $request->input("currentMonth");
+      }else{
+        //リクエストが空の場合は当月の値を設定する
+        $currentYear = date("Y");
+        $currentMonth = date("m");
+      }
 
+      $currentMonth = 8;
       //カレンダー情報の取得
       $dates = getDatabase::getCalendarDates($currentYear,$currentMonth);
       //イベント情報の取得
       $items = getDatabase::getModalList($currentYear,$currentMonth);
-      //カレンダーに表示する情報を生成する
-      //foreach ($items as $item){
-      //  $day = date("d",(strtotime($item->date)));
-      //}
-      return view($view,["dates"=>$dates,"items"=>$items,"currentMonth"=>$currentMonth]);
+
+      //カレンダー情報にイベント情報をセットする
+      $dayEvent = array(31);
+      $dayStage = array(31);
+      $dayRadio = array(31);
+      $dayMedia = array(31);
+      $dayProgram = array(31);
+
+      for($i=0;$i<=31;$i++){
+        $dayEvent[$i] = false;
+        $dayStage[$i] = false;
+        $dayRadio[$i] = false;
+        $dayMedia[$i] = false;
+        $dayProgram[$i] = false;
+      }
+
+      foreach($items as $item){
+        if($item->type_name == "イベント"){
+          $dayEvent[date("d",(strtotime($item->date)))] = true;
+        }
+        if($item->type_name == "舞台"){
+          $dayStage[date("d",(strtotime($item->date)))] = true;
+        }
+        if($item->type_name == "ラジオ"){
+          $dayRadio[date("d",(strtotime($item->date)))] = true;
+        }
+        if($item->type_name == "雑誌"){
+          $dayMedia[date("d",(strtotime($item->date)))] = true;
+        }
+        if($item->type_name == "番組出演"){
+          $dayProgram[date("d",(strtotime($item->date)))] = true;
+        }
+      }
+      return view($view,["dates"=>$dates,"items"=>$items,"currentYear"=>$currentYear,"currentMonth"=>$currentMonth,"dayEvent"=>$dayEvent]);
     }
 }

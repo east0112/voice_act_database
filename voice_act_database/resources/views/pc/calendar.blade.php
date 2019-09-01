@@ -70,6 +70,12 @@
                                     id=<?php echo '"'.$date->day.'"' ?>
                                 >
                                     {{ $date->day }}
+                                <?php
+                                $day = (int)$date->format("d");
+                                ?>
+                                @if($dayEvent[(int)$date->format("d")])
+                                イベント
+                                @endif
                                 </td>
                                 @if ($date->dayOfWeek == 6)
                                 </tr>
