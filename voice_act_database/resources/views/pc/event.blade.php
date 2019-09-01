@@ -75,18 +75,22 @@
         <div class="container col-lg-6 col-md-6 col-sm-12 col-xs-12">
             <a href={{ $url->url }}>
                 <div class="index-content">
-                    <div class="card">
-                        <img class="thumbnail-link" src= <?php echo "https://s.wordpress.com/mshots/v1/".$url->url."?w=200" ?> >
-                        <?php
-                            $source = @file_get_contents($url->url);
-                            if (preg_match('/<title>(.*?)<\/title>/i', mb_convert_encoding($source, 'UTF-8', 'ASCII,JIS,UTF-8,EUC-JP,SJIS'), $result)) {
-                                $title = $result[1];
-                            } else {
-                                //TITLEタグが存在しない場合
-                                $title = $url->url;
-                            }
-                            echo $title;
-                        ?>
+                    <div class="card thumbnail-card">
+                        <img class="thumbnail-img" src= <?php echo "https://s.wordpress.com/mshots/v1/".$url->url."?w=200" ?> >
+                        <div class="thumbnail-text">
+                            <p>
+                            <?php
+                                $source = @file_get_contents($url->url);
+                                if (preg_match('/<title>(.*?)<\/title>/i', mb_convert_encoding($source, 'UTF-8', 'ASCII,JIS,UTF-8,EUC-JP,SJIS'), $result)) {
+                                    $title = $result[1];
+                                } else {
+                                    //TITLEタグが存在しない場合
+                                    $title = $url->url;
+                                }
+                                echo $title;
+                            ?>
+                            </p>
+                        </div>
                     </div>
                 </div>
             </a>

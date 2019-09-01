@@ -53,11 +53,11 @@ td > a:hover{
     border: solid 2px;
     border-color: #FFBEDA;
   }
-  
+  /*
   .index-content .card .thumbnail-link{
     width:200px;
   }
-
+  */
   .index-content .card img {
     width: 100%;
     border-top-left-radius: 4px;

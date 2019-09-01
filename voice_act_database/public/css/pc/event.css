@@ -36,3 +36,30 @@ th.setNameCol{
 .event-detail-table tr {
   height: 50px;
 }
+.thumbnail-card{
+  display:flex !important;
+}
+.thumbnail-text{
+  float: right;
+  text-align:center;
+}
+.thumbnail-text > p:hover{
+  color: #0366D6 !important;
+}
+.thumbnail-text > p:hover:hover{
+  opacity: 0.6;
+  transition: 0.2s;
+}
+a {
+  text-decoration: none !important;
+}
+@media screen and (min-width: 1200px) {
+  .thumbnail-img{
+    width: 200px !important;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .thumbnail-img{
+    width: 150px !important;
+  }
+}
