@@ -67,19 +67,19 @@ class calendarController extends Controller
 
       foreach($items as $item){
         if($item->type_name == "イベント"){
-          $dayEvent[date("d",(strtotime($item->date)))] = true;
+          $dayEvent[date("j",(strtotime($item->date)))] = true;
         }
         if($item->type_name == "舞台"){
-          $dayStage[date("d",(strtotime($item->date)))] = true;
+          $dayStage[date("j",(strtotime($item->date)))] = true;
         }
         if($item->type_name == "ラジオ"){
-          $dayRadio[date("d",(strtotime($item->date)))] = true;
+          $dayRadio[date("j",(strtotime($item->date)))] = true;
         }
         if($item->type_name == "雑誌"){
-          $dayMedia[date("d",(strtotime($item->date)))] = true;
+          $dayMedia[date("j",(strtotime($item->date)))] = true;
         }
         if($item->type_name == "番組出演"){
-          $dayProgram[date("d",(strtotime($item->date)))] = true;
+          $dayProgram[date("j",(strtotime($item->date)))] = true;
         }
       }
       return view($view,["dates"=>$dates,"items"=>$items,"currentYear"=>$currentYear,"currentMonth"=>$currentMonth,"dayEvent"=>$dayEvent,"dayStage"=>$dayStage,"dayRadio"=>$dayRadio,"dayMedia"=>$dayMedia,"dayProgram"=>$dayProgram]);

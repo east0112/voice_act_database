@@ -23,7 +23,7 @@
                         </thead>
                         <tbody>
                             @foreach($items as $item)
-                                <tr class={{"item".date("d",(strtotime($item->date)))}} style="display:none;">
+                                <tr class={{"item".date("j",(strtotime($item->date)))}} style="display:none;">
                                 <td><?php echo(date("Y/m/d",(strtotime($item->date)))) ?></td>
                                     <td>{{ $item->type_name }}</td>
                                     <td><a href="/library/event/{{ $item->event_id }}">{{ $item->event_name }}</a></td>
@@ -43,7 +43,6 @@
             <div class="card">
                 <h4>カレンダー検索</h4>
                 <p>イベントやラジオ、雑誌等の出演情報をカレンダーから検索できます。</p>
-                </br>
                 <div class="row">
                     <div class="col-lg-1 col-md-1 col-sm-1 hidden-xs">
                     </div>
@@ -59,7 +58,9 @@
                                     </form>
                                 </div>
                                 <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
-                                    afafa
+                                    <div class="calendar-header-date">
+                                    {{$currentYear}} . {{$currentMonth}}
+                                    </div>
                                 </div>
                                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                                     <form action="/calendar" method="GET">
