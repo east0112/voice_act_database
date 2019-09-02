@@ -97,30 +97,32 @@
                                 <?php
                                 $day = (int)$date->format("d");
                                 ?>
-                                @if($dayEvent[(int)$date->format("d")])
-                                <div class="event-tag tag-size">
-                                イベント
-                                </div>
-                                @endif
-                                @if($dayStage[(int)$date->format("d")])
-                                <div class="stage-tag tag-size">
-                                舞台
-                                </div>
-                                @endif
-                                @if($dayRadio[(int)$date->format("d")])
-                                <div class="radio-tag tag-size">
-                                ラジオ
-                                </div>
-                                @endif
-                                @if($dayMedia[(int)$date->format("d")])
-                                <div class="media-tag tag-size">
-                                雑誌
-                                </div>
-                                @endif
-                                @if($dayProgram[(int)$date->format("d")])
-                                <div class="program-tag tag-size">
-                                番組
-                                </div>
+                                @if ($date->month == $currentMonth)
+                                    @if($dayEvent[(int)$date->format("d")])
+                                    <div class="event-tag tag-size">
+                                    イベント
+                                    </div>
+                                    @endif
+                                    @if($dayStage[(int)$date->format("d")])
+                                    <div class="stage-tag tag-size">
+                                    舞台
+                                    </div>
+                                    @endif
+                                    @if($dayRadio[(int)$date->format("d")])
+                                    <div class="radio-tag tag-size">
+                                    ラジオ
+                                    </div>
+                                    @endif
+                                    @if($dayMedia[(int)$date->format("d")])
+                                    <div class="media-tag tag-size">
+                                    雑誌
+                                    </div>
+                                    @endif
+                                    @if($dayProgram[(int)$date->format("d")])
+                                    <div class="program-tag tag-size">
+                                    番組
+                                    </div>
+                                    @endif
                                 @endif
                                 </td>
                                 @if ($date->dayOfWeek == 6)
