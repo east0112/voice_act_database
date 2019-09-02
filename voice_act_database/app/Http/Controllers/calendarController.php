@@ -28,7 +28,23 @@ class calendarController extends Controller
         $currentMonth = date("m");
       }
 
-      $currentMonth = 7;
+      //年月を遷移する
+      if($request->input("pager") == "back"){
+        if($currentMonth == 1){
+          $currentYear = $currentYear-1 ;
+          $currentMonth = 12;
+        }else{
+          $currentMonth = $currentMonth-1;
+        }
+      }elseif($request->input("pager") == "next"){
+        if($currentMonth == 12){
+          $currentYear = $currentYear+1 ;
+          $currentMonth = 1;
+        }else{
+          $currentMonth = $currentMonth+1;
+        }
+      }
+
       //カレンダー情報の取得
       $dates = getDatabase::getCalendarDates($currentYear,$currentMonth);
       //イベント情報の取得

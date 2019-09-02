@@ -45,9 +45,32 @@
                 <p>イベントやラジオ、雑誌等の出演情報をカレンダーから検索できます。</p>
                 </br>
                 <div class="row">
-                    <div class="container col-lg-1 col-md-1 col-sm-1 hidden-xs">
+                    <div class="col-lg-1 col-md-1 col-sm-1 hidden-xs">
                     </div>
-                    <div class="container col-lg-10 col-md-10 col-sm-10 col-xs-12">
+                    <div class="col-lg-10 col-md-10 col-sm-10 col-xs-12">
+                        <div class="calendar-header">
+                            <div class="row">
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    <form action="/calendar" method="GET">
+                                        <input type="hidden" name="currentYear" value={{$currentYear}}>
+                                        <input type="hidden" name="currentMonth" value={{$currentMonth}}>
+                                        <input type="hidden" name="pager" value="back">
+                                        <button class="pager-button" type="submit" name="action">◀︎</button>
+                                    </form>
+                                </div>
+                                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                                    afafa
+                                </div>
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    <form action="/calendar" method="GET">
+                                        <input type="hidden" name="currentYear" value={{$currentYear}}>
+                                        <input type="hidden" name="currentMonth" value={{$currentMonth}}>
+                                        <input type="hidden" name="pager" value="next">
+                                        <button class="pager-button" type="submit" name="action">▶︎</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
                         <table class="table calendar">
                             <thead>
                                 <tr>
@@ -74,27 +97,27 @@
                                 $day = (int)$date->format("d");
                                 ?>
                                 @if($dayEvent[(int)$date->format("d")])
-                                <div class="event-tag">
+                                <div class="event-tag tag-size">
                                 イベント
                                 </div>
                                 @endif
                                 @if($dayStage[(int)$date->format("d")])
-                                <div class="stage-tag">
+                                <div class="stage-tag tag-size">
                                 舞台
                                 </div>
                                 @endif
                                 @if($dayRadio[(int)$date->format("d")])
-                                <div class="radio-tag">
+                                <div class="radio-tag tag-size">
                                 ラジオ
                                 </div>
                                 @endif
                                 @if($dayMedia[(int)$date->format("d")])
-                                <div class="media-tag">
+                                <div class="media-tag tag-size">
                                 雑誌
                                 </div>
                                 @endif
                                 @if($dayProgram[(int)$date->format("d")])
-                                <div class="program-tag">
+                                <div class="program-tag tag-size">
                                 番組
                                 </div>
                                 @endif
