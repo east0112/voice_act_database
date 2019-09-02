@@ -106,6 +106,9 @@ transform: translate(-50%,-50%);
   border-radius:3px;
   color:#fff;
 }
+.view-detail{
+  cursor:default;
+}
 .view-detail:hover{
   opacity: 0.6;
   transition: 0.2s;
