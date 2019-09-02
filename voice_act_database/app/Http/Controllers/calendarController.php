@@ -66,6 +66,6 @@ class calendarController extends Controller
           $dayProgram[date("d",(strtotime($item->date)))] = true;
         }
       }
-      return view($view,["dates"=>$dates,"items"=>$items,"currentYear"=>$currentYear,"currentMonth"=>$currentMonth,"dayEvent"=>$dayEvent]);
+      return view($view,["dates"=>$dates,"items"=>$items,"currentYear"=>$currentYear,"currentMonth"=>$currentMonth,"dayEvent"=>$dayEvent,"dayStage"=>$dayStage,"dayRadio"=>$dayRadio,"dayMedia"=>$dayMedia,"dayProgram"=>$dayProgram]);
     }
 }

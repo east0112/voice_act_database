@@ -76,6 +76,18 @@
                                 @if($dayEvent[(int)$date->format("d")])
                                 イベント
                                 @endif
+                                @if($dayStage[(int)$date->format("d")])
+                                舞台
+                                @endif
+                                @if($dayRadio[(int)$date->format("d")])
+                                ラジオ
+                                @endif
+                                @if($dayMedia[(int)$date->format("d")])
+                                雑誌
+                                @endif
+                                @if($dayProgram[(int)$date->format("d")])
+                                番組
+                                @endif
                                 </td>
                                 @if ($date->dayOfWeek == 6)
                                 </tr>

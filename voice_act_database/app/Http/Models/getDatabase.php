@@ -50,11 +50,10 @@ class getDatabase
             ->when($searchWord, function ($query) {
               return $query->leftjoin("acts","events.act_id","=","acts.act_id");
             })
-            ->when($searchWord, function ($query) use($searchWord) {
-                return $query->where("events.event_name","LIKE","%".$searchWord."%");
-            })
-            ->when($searchWord, function ($query) use($searchWord) {
-              return $query->orwhere("acts.act_name","LIKE","%".$searchWord."%");
+            ->when($searchWord, function ($query) use($searchWord)
+            {
+              $query->where("events.event_name","LIKE","%".$searchWord."%")
+                    ->orwhere("acts.act_name","LIKE","%".$searchWord."%");
             })
             ->when(!empty($type), function ($query) use($type) {
                 return $query->whereIn("events.event_type",$type);
@@ -71,8 +70,13 @@ class getDatabase
             ->when($sort == "old", function ($query) use($type) {
               return $query->orderByRaw("events.date ASC");
             })
-            ->orderByRaw("events.start_time DESC")
-            //実験用
+            ->when($sort == "", function ($query) use($type) {
+              return $query->orderByRaw("events.start_time DESC");
+            })
+            ->when($sort == "old", function ($query) use($type) {
+              return $query->orderByRaw("events.start_time ASC");
+            })
+            //->orderByRaw("events.start_time DESC")
             ->paginate(20);
         return $items;
     }
