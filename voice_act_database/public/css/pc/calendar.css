@@ -63,6 +63,37 @@ transform: translate(-50%,-50%);
   text-decoration: none;
 }
 
+.event-tag{
+  background-color:#FF5192;
+  border-radius:3px;
+  width:50%;
+  color:#fff;
+}
+.stage-tag{
+  background-color:#0366D6;
+  border-radius:3px;
+  width:50%;
+  color:#fff;
+}
+.radio-tag{
+  background-color:#FF5192;
+  border-radius:3px;
+  width:50%;
+  color:#fff;
+}
+.media-tag{
+  background-color:#008080;
+  border-radius:3px;
+  width:50%;
+  color:#fff;
+}
+.program-tag{
+  background-color:#FF3300;
+  border-radius:3px;
+  width:50%;
+  color:#fff;
+}
+
 @media screen and (min-width: 800px) {
   .modal-content{
     width: 70%;

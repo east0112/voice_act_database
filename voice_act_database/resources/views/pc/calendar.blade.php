@@ -74,19 +74,29 @@
                                 $day = (int)$date->format("d");
                                 ?>
                                 @if($dayEvent[(int)$date->format("d")])
+                                <div class="event-tag">
                                 イベント
+                                </div>
                                 @endif
                                 @if($dayStage[(int)$date->format("d")])
+                                <div class="stage-tag">
                                 舞台
+                                </div>
                                 @endif
                                 @if($dayRadio[(int)$date->format("d")])
+                                <div class="radio-tag">
                                 ラジオ
+                                </div>
                                 @endif
                                 @if($dayMedia[(int)$date->format("d")])
+                                <div class="media-tag">
                                 雑誌
+                                </div>
                                 @endif
                                 @if($dayProgram[(int)$date->format("d")])
+                                <div class="program-tag">
                                 番組
+                                </div>
                                 @endif
                                 </td>
                                 @if ($date->dayOfWeek == 6)

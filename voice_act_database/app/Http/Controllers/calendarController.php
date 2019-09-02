@@ -28,7 +28,7 @@ class calendarController extends Controller
         $currentMonth = date("m");
       }
 
-      $currentMonth = 8;
+      $currentMonth = 7;
       //カレンダー情報の取得
       $dates = getDatabase::getCalendarDates($currentYear,$currentMonth);
       //イベント情報の取得
