@@ -89,7 +89,7 @@
                                     @if ($date->month != $currentMonth)
                                     class="bg-secondary"
                                     @else
-                                    class="js-view-detail"
+                                    class="js-view-detail view-detail"
                                     @endif
                                     id=<?php echo '"'.$date->day.'"' ?>
                                 >
