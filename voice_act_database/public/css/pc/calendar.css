@@ -41,6 +41,10 @@
   font-size:25px;
   outline:none; /* キーボードで操作する奴おらんやろ */
 }
+.pager-button:hover{
+  opacity: 0.6;
+  transition: 0.2s;
+ }
 
 th.dateCol{
   width: 20%;
