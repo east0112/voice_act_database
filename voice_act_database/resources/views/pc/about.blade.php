@@ -1,4 +1,4 @@
-<meta property="og:title" content="about"/>
+<meta property="og:title" content="inaminfo about"/>
 
 @extends("layouts.parent")
 @section("content")
