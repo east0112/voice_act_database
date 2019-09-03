@@ -49,7 +49,7 @@
                     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-12">
                         <div class="calendar-header">
                             <div class="row">
-                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 left-button">
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 left-button">
                                     <form action="/calendar" method="GET">
                                         <input type="hidden" name="currentYear" value={{$currentYear}}>
                                         <input type="hidden" name="currentMonth" value={{$currentMonth}}>
@@ -57,12 +57,12 @@
                                         <button class="pager-button" type="submit" name="action">◀︎</button>
                                     </form>
                                 </div>
-                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
                                     <div class="calendar-header-date">
                                     {{$currentYear}} . {{$currentMonth}}
                                     </div>
                                 </div>
-                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 right-button">
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 right-button">
                                     <form action="/calendar" method="GET">
                                         <input type="hidden" name="currentYear" value={{$currentYear}}>
                                         <input type="hidden" name="currentMonth" value={{$currentMonth}}>

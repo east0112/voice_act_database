@@ -77,7 +77,7 @@ class getDatabase
               return $query->orderByRaw("events.start_time ASC");
             })
             //->orderByRaw("events.start_time DESC")
-            ->paginate(20);
+            ->paginate(5);
         return $items;
     }
     /**
