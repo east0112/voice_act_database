@@ -25,6 +25,14 @@
   color: #FF5192;
 }
 
+.left-button{
+  text-align:right;
+}
+
+.right-button{
+  text-align:left;
+}
+
 .pager-button{
   background-color:#fff;
   border-style:none;
