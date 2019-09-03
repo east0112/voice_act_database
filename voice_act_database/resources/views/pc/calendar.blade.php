@@ -85,46 +85,47 @@
                                 @if ($date->dayOfWeek == 0)
                                 <tr>
                                 @endif
-                                <td
-                                    @if ($date->month != $currentMonth)
-                                    class="bg-secondary"
-                                    @else
-                                    class="js-view-detail view-detail"
+                                    <td
+                                        @if ($date->month == $currentMonth)
+                                        class="view-detail js-view-detail"
+                                        @else
+                                        class="bg-secondary"
+                                        @endif
+                                        id=<?php echo '"'.$date->day.'"' ?>
+                                    >
+                                        {{ $date->day }}
+                                    <?php
+                                    $day = (int)$date->format("d");
+                                    ?>
+                                    @if ($date->month == $currentMonth)
+                                        @if($dayEvent[(int)$date->format("d")])
+                                        <div class="event-tag tag-size">
+                                        イベント
+                                        </div>
+                                        @endif
+                                        @if($dayStage[(int)$date->format("d")])
+                                        <div class="stage-tag tag-size">
+                                        舞台
+                                        </div>
+                                        @endif
+                                        @if($dayRadio[(int)$date->format("d")])
+                                        <div class="radio-tag tag-size">
+                                        ラジオ
+                                        </div>
+                                        @endif
+                                        @if($dayMedia[(int)$date->format("d")])
+                                        <div class="media-tag tag-size">
+                                        雑誌
+                                        </div>
+                                        @endif
+                                        @if($dayProgram[(int)$date->format("d")])
+                                        <div class="program-tag tag-size">
+                                        番組
+                                        </div>
+                                        @endif
                                     @endif
-                                    id=<?php echo '"'.$date->day.'"' ?>
-                                >
-                                    {{ $date->day }}
-                                <?php
-                                $day = (int)$date->format("d");
-                                ?>
-                                @if ($date->month == $currentMonth)
-                                    @if($dayEvent[(int)$date->format("d")])
-                                    <div class="event-tag tag-size">
-                                    イベント
-                                    </div>
-                                    @endif
-                                    @if($dayStage[(int)$date->format("d")])
-                                    <div class="stage-tag tag-size">
-                                    舞台
-                                    </div>
-                                    @endif
-                                    @if($dayRadio[(int)$date->format("d")])
-                                    <div class="radio-tag tag-size">
-                                    ラジオ
-                                    </div>
-                                    @endif
-                                    @if($dayMedia[(int)$date->format("d")])
-                                    <div class="media-tag tag-size">
-                                    雑誌
-                                    </div>
-                                    @endif
-                                    @if($dayProgram[(int)$date->format("d")])
-                                    <div class="program-tag tag-size">
-                                    番組
-                                    </div>
-                                    @endif
-                                @endif
-                                </td>
+                                    </td>
+                                </div>
                                 @if ($date->dayOfWeek == 6)
                                 </tr>
                                 @endif

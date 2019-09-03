@@ -97,29 +97,43 @@ transform: translate(-50%,-50%);
   background-color:#FF5192;
   border-radius:3px;
   color:#fff;
+  z-index:1;
+  pointer-events: none;
 }
 .stage-tag{
   background-color:#0366D6;
   border-radius:3px;
   color:#fff;
+  z-index:1;
+  pointer-events: none;
 }
 .radio-tag{
   background-color:#FF5192;
   border-radius:3px;
   color:#fff;
+  z-index:1;
+  pointer-events: none;
 }
 .media-tag{
   background-color:#008080;
   border-radius:3px;
   color:#fff;
+  z-index:1;
+  pointer-events: none;
 }
 .program-tag{
   background-color:#FF3300;
   border-radius:3px;
   color:#fff;
+  z-index:1;
+  pointer-events: none;
 }
 .view-detail{
   cursor:default;
+}
+.js-view-detail{
+  cursor:default;
+  z-index:2;
 }
 .view-detail:hover{
   opacity: 0.6;
