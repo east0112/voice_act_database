@@ -39,6 +39,7 @@
   /* border-radius:3px; */
   color:#FF5192;
   font-size:25px;
+  outline:none; /* キーボードで操作する奴おらんやろ */
 }
 
 th.dateCol{
