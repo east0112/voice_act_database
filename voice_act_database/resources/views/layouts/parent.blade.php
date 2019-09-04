@@ -30,10 +30,26 @@
     <title>inaminfo</title>
 </head>
 <body>
+<!--mobile nav-menu-->
+<div class="mobile-nav">
+    <div class="mobile-nav-bg js-mobile-nav-close"></div>
+        <div class="mobile-nav-content">
+        <ul>
+          <li class="<?php if( $_SERVER['REQUEST_URI'] == "/") echo "active"; ?>"><a href="/">Home</a></li>
+          <li class="<?php if( strpos($_SERVER['REQUEST_URI'],"/about") !== false)  echo "active"; ?>""><a href="/about">About</a></li>
+          <li class="<?php if( strpos($_SERVER['REQUEST_URI'],"/library") !== false)  echo "active"; ?>""><a href="/library">Library</a></li>
+          <li class="<?php if( strpos($_SERVER['REQUEST_URI'],"/calendar") !== false)  echo "active"; ?>""><a href="/calendar">Calendar</a></li>
+        </ul>
+        <!--<a class="js-mobile-nav-close mobile-nav-close">閉じる</a>-->
+        </div>
+    </div>
+</div>
+<!--mobile nav-menu-->
+
 <nav class="navbar navbar-default">
 	<div class="container-fluid">
 		<div class="navbar-header">
-			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbarEexample7">
+			<button type="button" class="navbar-toggle collapsed js-mobile-nav-click" data-toggle="collapse"">
 				<span class="sr-only">Toggle navigation</span>
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
