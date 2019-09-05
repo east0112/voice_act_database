@@ -10,16 +10,18 @@ $(function () {
         window.addEventListener( 'touchmove' , menufun , { passive: false } );
 
         //メニュー項目を表示
-        $(".mobile-nav-close").fadeIn();  
-        $(".mobile-nav").fadeIn();  
+        $(".mobile-nav").css("opacity",0);
+        //$(".mobile-nav-close").show(); 
+        $(".mobile-nav").show();  
+        $(".mobile-nav").animate({opacity:1},{duration:200}); 
         return false;
       });
       $(".js-mobile-nav-close").click(function(){
         // スクロール開始
         window.removeEventListener( 'touchmove' , menufun , { passive: false } );
         $("body").css("overflow","auto");
-        $(".js-mobile-nav-click").fadeIn();
-        $(".mobile-nav").fadeOut()
+        $(".js-mobile-nav-click").show();
+        $(".mobile-nav").fadeOut(200);  
         return false;
       });
   });
