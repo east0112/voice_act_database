@@ -29,15 +29,71 @@ html {
   width: 100%;
 }
 .mobile-nav-content{
+  width:100%;
   left: 50%;
   padding: 40px;
   position: absolute;
-  top: 50%;
+  top: 30%;
   transform: translate(-50%,-50%);
   -webkit-backface-visibility:hidden;
   backface-visibility:hidden;
 }
 
+.nav-item{
+  opacity: 0;
+  background-color:#FFF;
+  border: solid 1px #FF5192;
+  border-radius: 3px;
+  margin-bottom: 15px;
+  text-align:center;
+  align-items: center;
+  }
+.nav-item p{
+  margin-top:22.5px;
+}
+@media (max-width: 768px) {
+  .nav-item{
+    width:100%;
+    height:45px;
+  }
+}
+/* ページトップボタン */
+#page-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  font-size: 77%;
+  z-index:5;
+  display:none;
+}
+#page-top a {
+  background: #FF5192;
+  text-decoration: none;
+  color: #fff;
+  width: 80px;
+  height: 80px;
+  padding: 35px 0;
+  text-align: center;
+  display: block;
+  border-radius: 50%;
+}
+#page-top a:hover {
+  text-decoration: none;
+  background: #999;
+}
+
+
+/*
+@media (min-width: 768px) {
+  .nav-item{
+    width:80%;
+  }
+}
+*/
+
+/*
+
+/* ナビゲーションUI変更
 .mobile-nav-content ul{
    list-style:none;
    padding-left: 0;
@@ -47,7 +103,6 @@ html {
   display: flex;
   background-color:#FFF;
   border: solid 1px #FF5192;
-  /* background-color: #FF5192; */
   border-radius: 3px;
   width:150px;
   height:40px;
@@ -68,6 +123,8 @@ html {
 .mobile-nav-content ul li a:hover{
   text-decoration: none;
 }
+*/
+
 
 .mobile-nav-close{
   color: #0366D6 !important;

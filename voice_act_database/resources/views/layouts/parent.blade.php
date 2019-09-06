@@ -31,15 +31,32 @@
 </head>
 <body>
 <!--mobile nav-menu-->
+<p id="page-top"><a href="#wrap">PAGE TOP</a></p>
 <div class="mobile-nav">
     <div class="mobile-nav-bg js-mobile-nav-close"></div>
         <div class="mobile-nav-content">
-        <ul>
-          <li class="<?php if( $_SERVER['REQUEST_URI'] == "/") echo "active"; ?>"><a href="/">Home</a></li>
-          <li class="<?php if( strpos($_SERVER['REQUEST_URI'],"/about") !== false)  echo "active"; ?>""><a href="/about">About</a></li>
-          <li class="<?php if( strpos($_SERVER['REQUEST_URI'],"/library") !== false)  echo "active"; ?>""><a href="/library">Library</a></li>
-          <li class="<?php if( strpos($_SERVER['REQUEST_URI'],"/calendar") !== false)  echo "active"; ?>""><a href="/calendar">Calendar</a></li>
-        </ul>
+            <div class="row">
+              <a href="/"><div class="col-lg-4 col-md-4 col-sm-4 col-xs-6 <?php if( $_SERVER['REQUEST_URI'] == "/") echo "active"; ?>">
+              <div class="nav-item">
+              <p>Home</p>
+              </div>              
+              </div></a>
+              <a href="/about"><div class="col-lg-4 col-md-4 col-sm-4 col-xs-6 <?php if( strpos($_SERVER['REQUEST_URI'],"/about") !== false)  echo "active"; ?>">
+              <div class="nav-item">
+              <p>About</p>
+              </div>              
+              </div></a>
+              <a href="/library"><div class="col-lg-4 col-md-4 col-sm-4 col-xs-6 <?php if( strpos($_SERVER['REQUEST_URI'],"/library") !== false)  echo "active"; ?>">
+              <div class="nav-item">
+              <p>Library</p>
+              </div>              
+              </div></a>
+              <a href="/calendar"><div class="col-lg-4 col-md-4 col-sm-4 col-xs-6 <?php if( strpos($_SERVER['REQUEST_URI'],"/calendar") !== false)  echo "active"; ?>">
+              <div class="nav-item">
+              <p>Calendar</p>
+              </div>              
+              </div></a>
+            </div>
         <!--<a class="js-mobile-nav-close mobile-nav-close">閉じる</a>-->
         </div>
     </div>

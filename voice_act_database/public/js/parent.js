@@ -1,7 +1,9 @@
 $(function () {
-    var menufun = function( event ){
-      event.preventDefault();
-    }
+        var menufun = function( event ){
+        event.preventDefault();
+        }
+        var topBtn = $('#page-top');  
+        //topBtn.hide();
       $(".js-mobile-nav-click").click(function(){
         //ハンバーガーアイコン非表示
         $(".js-mobile-nav-click").fadeOut();
@@ -14,6 +16,11 @@ $(function () {
         //$(".mobile-nav-close").show(); 
         $(".mobile-nav").show();  
         $(".mobile-nav").animate({opacity:1},{duration:200}); 
+        //メニュー項目のアニメーション
+        $(".nav-item").each(function(i,elem) {
+            //$(elem).delay(100 * i).css("opacity",1);
+            $(elem).animate({opacity:1},{duration:300 * i}); 
+        });
         return false;
       });
       $(".js-mobile-nav-close").click(function(){
@@ -22,6 +29,22 @@ $(function () {
         $("body").css("overflow","auto");
         $(".js-mobile-nav-click").show();
         $(".mobile-nav").fadeOut(200);  
+        $(".nav-item").animate({opacity:0},{duration:200}); 
         return false;
       });
+    //スクロールが100に達したらボタン表示
+    $(window).scroll(function () {
+        if ($(this).scrollTop() > 100) {
+            topBtn.fadeIn();
+        } else {
+            topBtn.fadeOut();
+        }
+    });
+    //スクロールしてトップ
+    topBtn.click(function () {
+        $('body,html').animate({
+            scrollTop: 0
+        }, 500);
+        return false;
+    });
   });
