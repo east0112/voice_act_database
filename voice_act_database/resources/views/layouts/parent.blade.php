@@ -21,6 +21,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css" />
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.1.1/css/hover.css">
+
 <link href="{{ asset('/css/pc/parent.css') }}" rel="stylesheet">
 <link href="{{ asset('/css/common.css') }}" rel="stylesheet">
 <script src="{{ asset('/js/parent.js') }}"></script>
@@ -36,25 +38,17 @@
     <div class="mobile-nav-bg js-mobile-nav-close"></div>
         <div class="mobile-nav-content">
             <div class="row">
-              <a href="/"><div class="col-lg-4 col-md-4 col-sm-4 col-xs-6 <?php if( $_SERVER['REQUEST_URI'] == "/") echo "active"; ?>">
-              <div class="nav-item">
-              <p>Home</p>
-              </div>              
-              </div></a>
-              <a href="/about"><div class="col-lg-4 col-md-4 col-sm-4 col-xs-6 <?php if( strpos($_SERVER['REQUEST_URI'],"/about") !== false)  echo "active"; ?>">
-              <div class="nav-item">
-              <p>About</p>
-              </div>              
-              </div></a>
-              <a href="/library"><div class="col-lg-4 col-md-4 col-sm-4 col-xs-6 <?php if( strpos($_SERVER['REQUEST_URI'],"/library") !== false)  echo "active"; ?>">
-              <div class="nav-item">
-              <p>Library</p>
-              </div>              
-              </div></a>
-              <a href="/calendar"><div class="col-lg-4 col-md-4 col-sm-4 col-xs-6 <?php if( strpos($_SERVER['REQUEST_URI'],"/calendar") !== false)  echo "active"; ?>">
-              <div class="nav-item">
-              <p>Calendar</p>
-              </div>              
+              <a href="/"><div class="nav-item nav-item-1 <?php if( $_SERVER['REQUEST_URI'] == "/") echo "active"; ?>">
+              <p>HOME</p>
+              </div></a><br />
+              <a href="/about"><div class="nav-item nav-item-2 <?php if( strpos($_SERVER['REQUEST_URI'],"/about") !== false)  echo "active"; ?>">
+              <p>ABOUT</p>
+              </div></a><br />
+              <a href="/library"><div class="nav-item nav-item-3 <?php if( strpos($_SERVER['REQUEST_URI'],"/library") !== false)  echo "active"; ?>">
+              <p>LIBRARY</p>
+              </div></a><br />
+              <a href="/calendar"><div class="nav-item nav-item-4 <?php if( strpos($_SERVER['REQUEST_URI'],"/calendar") !== false)  echo "active"; ?>">
+              <p>CALENDAR</p>
               </div></a>
             </div>
         <!--<a class="js-mobile-nav-close mobile-nav-close">閉じる</a>-->
@@ -78,10 +72,10 @@
 		</div>
 		<div class="collapse navbar-collapse" id="navbarEexample7">
 			<ul class="nav navbar-nav">
-				<li class="<?php if( $_SERVER['REQUEST_URI'] == "/") echo "active"; ?>"><a href="/">Home</a></li>
-				<li class="<?php if( strpos($_SERVER['REQUEST_URI'],"/about") !== false)  echo "active"; ?>""><a href="/about">About</a></li>
-				<li class="<?php if( strpos($_SERVER['REQUEST_URI'],"/library") !== false)  echo "active"; ?>""><a href="/library">Library</a></li>
-				<li class="<?php if( strpos($_SERVER['REQUEST_URI'],"/calendar") !== false)  echo "active"; ?>""><a href="/calendar">Calendar</a></li>
+				<li class="<?php if( $_SERVER['REQUEST_URI'] == "/") echo "active"; ?>"><a href="/">HOME</a></li>
+				<li class="<?php if( strpos($_SERVER['REQUEST_URI'],"/about") !== false)  echo "active"; ?>""><a href="/about">ABOUT</a></li>
+				<li class="<?php if( strpos($_SERVER['REQUEST_URI'],"/library") !== false)  echo "active"; ?>""><a href="/library">LIBRARY</a></li>
+				<li class="<?php if( strpos($_SERVER['REQUEST_URI'],"/calendar") !== false)  echo "active"; ?>""><a href="/calendar">CALENDAR</a></li>
 			</ul>
 		</div>
 	</div>
