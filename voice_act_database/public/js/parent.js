@@ -3,35 +3,48 @@ $(function () {
         event.preventDefault();
         }
         var topBtn = $('#page-top');  
+        var menuStatus = false;
         //topBtn.hide();
         //ナビゲーションメニュー開始
         $(".js-mobile-nav-click").click(function(){
-            //ハンバーガーアイコン非表示
-            $(".js-mobile-nav-click").fadeOut();
-            // スクロール停止
-            $("body").css("overflow","hidden");
-            window.addEventListener( 'touchmove' , menufun , { passive: false } );
+            if(menuStatus == false){
+                //ハンバーガーアイコン非表示
+                $(".menu-trigger").toggleClass("active");
+                // スクロール停止
+                $("body").css("overflow","hidden");
+                window.addEventListener( 'touchmove' , menufun , { passive: false } );
 
-            //メニュー項目を表示
-            $(".mobile-nav").css("opacity",0);
-            //$(".mobile-nav-close").show(); 
-            $(".mobile-nav").show();  
-            $(".mobile-nav").animate({opacity:1},{duration:200}); 
-            //メニュー項目のアニメーション
-            $(".nav-item").each(function(i,elem) {
-                //$(elem).delay(100 * i).css("opacity",1);
-                $(elem).animate({opacity:1},{duration:400 * i}); 
-            });
+                //メニュー項目を表示
+                $(".mobile-nav").css("opacity",0);
+                //$(".mobile-nav-close").show(); 
+                $(".mobile-nav").show();  
+                $(".mobile-nav").animate({opacity:1},{duration:200}); 
+                //メニュー項目のアニメーション
+                $(".nav-item").each(function(i,elem) {
+                    //$(elem).delay(100 * i).css("opacity",1);
+                    $(elem).animate({opacity:1},{duration:400 * i}); 
+                });
+                menuStatus = true;
+            }else{
+                $(".menu-trigger").toggleClass("active");
+                // スクロール開始
+                window.removeEventListener( 'touchmove' , menufun , { passive: false } );
+                $("body").css("overflow","auto");
+                $(".mobile-nav").fadeOut(200);  
+                $(".nav-item").animate({opacity:0},{duration:200}); 
+                menuStatus = false;
+            }
             return false;
         });
         //ナビゲーションメニュー終了
         $(".js-mobile-nav-close").click(function(){
+            $(".menu-trigger").toggleClass("active");
             // スクロール開始
             window.removeEventListener( 'touchmove' , menufun , { passive: false } );
             $("body").css("overflow","auto");
-            $(".js-mobile-nav-click").show();
             $(".mobile-nav").fadeOut(200);  
             $(".nav-item").animate({opacity:0},{duration:200}); 
+            menuStatus = false;
             return false;
         });
         //ナビゲーションメニュー項目ホバー

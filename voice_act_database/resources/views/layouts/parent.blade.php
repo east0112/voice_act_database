@@ -61,10 +61,17 @@
 	<div class="container-fluid">
 		<div class="navbar-header">
 			<button type="button" class="navbar-toggle collapsed js-mobile-nav-click" data-toggle="collapse"">
-				<span class="sr-only">Toggle navigation</span>
+        <span class="menu-trigger">
+        <span></span>
+        <span></span>
+        <span></span>
+        </span>
+        <!--
+        <span class="sr-only">Toggle navigation</span>
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        -->
 			</button>
 			<a class="navbar-brand" href="/">
 				inaminfo
