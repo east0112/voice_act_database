@@ -185,7 +185,7 @@ if($radioSort == "old"){
         <div class="index-content">
             <div class="card">
             <nav>
-                <ul class="pagination">
+                <ul class="pagination pagination-sm">
                 {{ $items->appends($param)->links() }}
                 </ul>
             </nav>
