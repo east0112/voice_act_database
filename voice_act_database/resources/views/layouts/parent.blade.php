@@ -2,10 +2,17 @@
 <html lang="ja">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="伊波杏樹さんの出演情報をまとめた非公式ファンサイトです。"/>
+<meta name="keywords" content="SMA声優, SMA VOICE,ファンクラブ">
 <meta property="og:type" content="website"/>
 <meta property="og:description" content="伊波杏樹さんの出演情報をまとめた非公式ファンサイトです。"/>
 <meta property="og:site_name" content="inaminfo"/>
 <meta property="og:image" content="images/home001.png"/>
+<meta property="og:locale" content="ja_JP" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="inaminfo"/>
+<meta name="twitter:description" content="伊波杏樹さんの出演情報をまとめた非公式ファンサイトです。"/>
 
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
