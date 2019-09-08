@@ -62,4 +62,7 @@ a {
   .thumbnail-img{
     width: 150px !important;
   }
-}
+  .thumbnail-card{
+    height: 116.5px !important;
+  }
+  }

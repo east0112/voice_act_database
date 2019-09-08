@@ -78,7 +78,7 @@
             <a href={{ $url->url }}>
                 <div class="index-content">
                     <div class="card thumbnail-card">
-                        <img class="thumbnail-img" src= <?php echo "https://s.wordpress.com/mshots/v1/".$url->url."?w=200" ?> >
+                        <img class="thumbnail-img" src= <?php echo "https://s.wordpress.com/mshots/v1/".$url->url."?w=150" ?> >
                         <div class="thumbnail-text">
                             <p>
                             <?php

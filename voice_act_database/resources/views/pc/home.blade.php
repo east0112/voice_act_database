@@ -36,7 +36,7 @@
                         @endforeach
                     </tbody>
                 </table>
-                <a href="/about" class="button">More</a>
+                <a href="/calendar" class="button">More</a>
             </div>
         </div>
     </div>
