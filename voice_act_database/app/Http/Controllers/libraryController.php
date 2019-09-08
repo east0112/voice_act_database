@@ -23,7 +23,12 @@ class libraryController extends Controller
       //リクエストの取得・検索ワード
       $searchWord = $request->input("search");
       //リクエストの取得・種類
-      $type = array();
+      //$type = array();
+      if($request->input("type")){
+        $type= $request->input("type");
+      }else{
+        $type= array();
+      }
       if($request->input("checkEvent")){array_push($type,$request->input("checkEvent"));}
       if($request->input("checkStage")){array_push($type,$request->input("checkStage"));}
       if($request->input("checkRadio")){array_push($type,$request->input("checkRadio"));}
