@@ -142,30 +142,35 @@ html {
 }
 */
 /* ページトップボタン */
-#page-top {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  font-size: 77%;
-  z-index:5;
-  display:none;
-}
-#page-top a {
-  background: #FF5192;
-  text-decoration: none;
-  color: #fff;
-  width: 80px;
-  height: 80px;
-  padding: 35px 0;
-  text-align: center;
-  display: block;
-  border-radius: 50%;
-}
-#page-top a:hover {
-  text-decoration: none;
-  background: #999;
-}
+@media (max-width: 768px) {
+    #page-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-size: 77%;
+    z-index:5;
+    display:none;
+    border-color: #FFBEDA;
 
+  }
+  #page-top a {
+    background: #FF5192;
+    text-decoration: none;
+    color: #fff;
+    width: 80px;
+    height: 80px;
+    padding: 35px 0;
+    text-align: center;
+    display: block;
+    border-radius: 50%;
+    box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.14), 0 3px 3px 0 rgba(0, 0, 0, 0.12), 0 3px 3px -1px rgba(0, 0, 0, 0.3);
+    border: solid 1px #FFF;
+
+  }
+  #page-top a:hover {
+    text-decoration: none;
+  }
+}
 
 /*
 @media (min-width: 768px) {
