@@ -68,7 +68,7 @@ if($radioSort == "old"){
                     @csrf
                         <div class="row">
                             <div class="input-group col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
-                                <input name="search" type="text" class="form-control" placeholder="キーワードを入力してください" value={{ $textSearch }} >
+                                <input name="search" type="text" class="form-control" placeholder="検索ワードを入力" value={{ $textSearch }} >
                                 <span class="input-group-addon" id="basic-addon2"><a href="/calendar">カレンダーで探す</a></span>
                             </div>
                         </div>
@@ -121,7 +121,7 @@ if($radioSort == "old"){
                                     <div class='col-md-6 col-sm-6 col-xs-12'>
                                         <div class="form-group">
                                             <div class="input-group">
-                                                <input type="text" class="form-control date" id="dateFrom" name="dateFrom" value={{ $from }} />
+                                                <input type="text" class="form-control date" id="dateFrom" name="dateFrom"  placeholder="日付から検索"  value={{ $from }} />
                                                 <span class="input-group-addon">から</span>
                                             </div>
                                         </div>
@@ -129,7 +129,7 @@ if($radioSort == "old"){
                                     <div class='col-md-6 col-sm-6 col-xs-12'>
                                         <div class="form-group">
                                             <div class="input-group">
-                                                <input type="text" class="form-control date" id="dateTo" name="dateTo" value={{ $to }} />
+                                                <input type="text" class="form-control date" id="dateTo" name="dateTo" placeholder="日付から検索" value={{ $to }} />
                                                 <span class="input-group-addon">まで</span>
                                             </div>
                                         </div>
