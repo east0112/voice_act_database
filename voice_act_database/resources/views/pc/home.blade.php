@@ -1,4 +1,4 @@
-<meta property="og:title" content="inaminfo home" />
+<meta property="og:title" content="inaminfo" />
 
 <link href="{{ asset('/css/pc/home.css') }}" rel="stylesheet">
 

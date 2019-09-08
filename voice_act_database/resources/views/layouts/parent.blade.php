@@ -3,7 +3,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta property="og:type" content="website"/>
-<meta property="og:description" content="声優・舞台女優として活躍する伊波杏樹さんのイベントやラジオ、雑誌等の出演情報をまとめた非公式ファンサイトです。"/>
+<meta property="og:description" content="伊波杏樹さんの出演情報をまとめた非公式ファンサイトです。"/>
 <meta property="og:site_name" content="inaminfo"/>
 <meta property="og:image" content="images/home001.png"/>
 
