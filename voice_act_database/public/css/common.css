@@ -85,8 +85,8 @@ html {
 .mobile-nav-content a:hover{
   text-decoration: none;
 }
-.navbar-toggle{
-  z-index:11;
+.navbar{
+  z-index:11 !important;
 }
 
 .nav-item{

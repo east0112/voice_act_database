@@ -60,7 +60,7 @@
 <nav class="navbar navbar-default">
 	<div class="container-fluid">
 		<div class="navbar-header">
-			<button type="button" class="navbar-toggle collapsed js-mobile-nav-click" data-toggle="collapse"">
+			<button type="button" class="navbar-toggle js-mobile-nav-click">
         <span class="menu-trigger">
         <span></span>
         <span></span>
