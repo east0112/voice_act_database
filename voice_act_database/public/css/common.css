@@ -142,6 +142,10 @@ html {
 }
 */
 /* ページトップボタン */
+#page-top{
+  display:none;
+}
+
 @media (max-width: 768px) {
     #page-top {
     position: fixed;
@@ -149,7 +153,6 @@ html {
     right: 20px;
     font-size: 77%;
     z-index:5;
-    display:none;
     border-color: #FFBEDA;
 
   }
