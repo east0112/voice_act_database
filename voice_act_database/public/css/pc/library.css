@@ -9,7 +9,10 @@ th.nameCol{
 }
 tr{
   height:50px;
-}
+}t
 td{
   font-size:14px !important;
+}
+label{
+  font-weight: normal !important;
 }
