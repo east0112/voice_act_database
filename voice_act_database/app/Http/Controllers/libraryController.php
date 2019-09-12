@@ -52,7 +52,6 @@ class libraryController extends Controller
 
       //ページネーションの検索条件保持用
       $param = array("type" => $type,"radioSort" => $radioSort,"search" => $search,"dateFrom" => $dateFrom,"dateTo" => $dateTo);
-      var_dump($param);
       return view($view,["items" => $items ,"type" => $type,"radioSort" => $radioSort,"search" => $search,"dateFrom" => $dateFrom,"dateTo" => $dateTo,"param"=> $param ]);
     }
 
