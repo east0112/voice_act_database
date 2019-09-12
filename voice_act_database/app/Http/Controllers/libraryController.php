@@ -21,7 +21,7 @@ class libraryController extends Controller
       //端末判定
       $view = common::getDevice($request,"library");
       //リクエストの取得・検索ワード
-      $searchWord = $request->input("search");
+      $search = $request->input("search");
       //リクエストの取得・種類
       //$type = array();
       if($request->input("type")){
@@ -48,12 +48,12 @@ class libraryController extends Controller
       //}
       $radioSort = $request->input("radioSort");
       //イベント一覧情報取得
-      $items = getDatabase::searchList($searchWord,$type,$radioSort,$dateFrom,$dateTo);
+      $items = getDatabase::searchList($search,$type,$radioSort,$dateFrom,$dateTo);
 
       //ページネーションの検索条件保持用
-      $param = array("type" => $type,"radioSort" => $radioSort,"searchWord" => $searchWord,"dateFrom" => $dateFrom,"dateTo" => $dateTo);
-
-      return view($view,["items" => $items ,"type" => $type,"radioSort" => $radioSort,"searchWord" => $searchWord,"dateFrom" => $dateFrom,"dateTo" => $dateTo,"param"=> $param ]);
+      $param = array("type" => $type,"radioSort" => $radioSort,"search" => $search,"dateFrom" => $dateFrom,"dateTo" => $dateTo);
+      var_dump($param);
+      return view($view,["items" => $items ,"type" => $type,"radioSort" => $radioSort,"search" => $search,"dateFrom" => $dateFrom,"dateTo" => $dateTo,"param"=> $param ]);
     }
 
 

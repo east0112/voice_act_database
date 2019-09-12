@@ -14,8 +14,8 @@ $from = "";
 $to = "";
 $textSearch = "";
 //検索キーワードの保持
-if(!empty($searchWord)){
-    $textSearch = $searchWord;
+if(!empty($search)){
+    $textSearch = $search;
 }
 //チェックボックスの保持
 if(empty($type) == false){

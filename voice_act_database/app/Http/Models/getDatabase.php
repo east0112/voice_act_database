@@ -45,7 +45,7 @@ class getDatabase
      * @return items $items
      */
     public static function searchList($searchWord,$type,$sort,$from,$to){
-        $items = DB::table("events")
+      $items = DB::table("events")
             ->join("event_type","events.event_type","=","event_type.type_id")
             ->when($searchWord, function ($query) {
               return $query->leftjoin("acts","events.act_id","=","acts.act_id");
