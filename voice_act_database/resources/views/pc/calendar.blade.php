@@ -11,7 +11,7 @@
     <!--modal-->
     <div class="modal">
         <div class="modal-bg js-modal-close"></div>
-            <div class="modal-content">
+            <div class="modal-content-event modal-content">
                 <div class="row">
                     <table class="table table-hover table-modal">
                         <thead>
@@ -33,14 +33,10 @@
                     </table>
                     <a class="js-modal-close modal-close">閉じる</a>
                 </div>
-        </div>
-    </div>
-
-    <div class="modal-year">
-        <div class="modal-bg js-modal-year-close"></div>
-            <div class="modal-content">
+            </div>
+                <div class="modal-content-select-month modal-content">
                 <div class="row">
-                    <p>年や月を指定して検索できます。</p>
+                    <p>年月を指定して検索できます。</p>
                         <form name="select_search" action="/calendar" method="GET">
                             <input type="hidden" name="currentYear" value={{$currentYear}}>
                             <input type="hidden" name="currentMonth" value="">
@@ -69,7 +65,7 @@
                                 </tbody>
                             </table>
                         </form>
-                        <a class="js-modal-year-close modal-year-close">閉じる</a>
+                        <a class="js-modal-close modal-close">閉じる</a>
                 </div>
         </div>
     </div>

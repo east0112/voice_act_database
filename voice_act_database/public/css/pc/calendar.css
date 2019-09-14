@@ -83,7 +83,8 @@ height: 100vh;
 position: absolute;
 width: 100%;
 }
-.modal-content{
+.modal-content-event{
+display:none;
 background: #fff;
 left: 50%;
 padding: 40px;
@@ -91,7 +92,16 @@ position: absolute;
 top: 50%;
 transform: translate(-50%,-50%);
 }
-
+.modal-content-select-month{
+  display:none;
+  background: #fff;
+  left: 50%;
+  padding: 40px;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%,-50%);
+}
+  
 .modal-close{
   color: #0366D6 !important;
   text-decoration: none;
@@ -139,26 +149,27 @@ transform: translate(-50%,-50%);
   pointer-events: none;
 }
 .view-detail{
-  cursor:default;
+  cursor:hand;
 }
 .js-view-detail{
-  cursor:default;
+  cursor:hand;
   z-index:2;
 }
 
 .modal-year{
-  z-index: 2;
+  margin-left:0px;
+  z-index:2;
   display: none;
   height: 100vh;
   position: fixed;
   top: 0;
   width: 100%;
-
 }
-.modal-year .modal-content .table tbody tr th{
+
+.modal .modal-content .table tbody tr th{
   text-align:center;
 }
-.modal-year .modal-content .table tbody tr th:hover,.modal-year .modal-content .table tbody tr th:active{
+.modal .modal-content .table tbody tr th:hover,.modal .modal-content .table tbody tr th:active{
   text-align:center;
   background-color: #EEEEEE;
   cursor:hand;

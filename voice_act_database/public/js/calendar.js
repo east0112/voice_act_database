@@ -12,6 +12,7 @@ $(function () {
  
         $(".item" + modalId).show();
         $(".modal").fadeIn();  
+        $(".modal-content-event").fadeIn();  
       }
       return false;
     });
@@ -19,6 +20,8 @@ $(function () {
       // スクロール開始
       window.removeEventListener( 'touchmove' , movefun , { passive: false } );
       $("body").css("overflow","auto");
+      $(".modal-content-event").fadeOut();  
+      $(".modal-content-select-month").fadeOut();  
       $(".modal").fadeOut()
       $(".item" + modalId).fadeOut();
       return false;
@@ -29,18 +32,20 @@ $(function () {
       $("body").css("overflow","hidden");
       window.addEventListener( 'touchmove' , movefun , { passive: false } );
 
-      $(".modal-year").fadeIn();  
+      $(".modal").fadeIn();  
+      $(".modal-content-select-month").fadeIn();  
     return false;
     });
+    /*
     $(".js-modal-year-close").click(function(){
       // スクロール開始
       window.removeEventListener( 'touchmove' , movefun , { passive: false } );
       $("body").css("overflow","auto");
-      $(".modal-year").fadeOut()
-      $(".item" + modalId).fadeOut();
+      $(".modal-content-select-month").fadeOut();  
+      $(".modal").fadeOut()
       return false;
     });
-
+    */
     //年月指定画面・year-next
     $(".js-select-year-back").click(function(){
       var current_year = $('input:hidden[name="currentYear"]').val();
