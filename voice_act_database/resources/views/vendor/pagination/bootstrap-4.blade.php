@@ -33,9 +33,24 @@
                 $count++ ;
             }
         }
-        foreach($arrDots as $dots){
-            $arrEscape[] = $dots -1;
-            $arrEscape[] = $dots +1;
+        //3点リーダーの数と位置に応じて挙動を変える
+        if(count($arrDots) == 2){
+            //3点リーダーが2つの場合（中間ページの場合）
+            foreach($arrDots as $dots){
+                $arrEscape[] = $dots -1;
+                $arrEscape[] = $dots +1;
+            }
+        }elseif((count($arrDots) == 1) && ($paginator->currentPage() < $arrDots[0])){
+            //3点リーダが1つで、カレントページが3点リーダーより左の場合
+            $arrEscape[] = $arrDots[0] -2;
+            $arrEscape[] = $arrDots[0] -1;
+            $arrEscape[] = $arrDots[0] +1;
+        }elseif((count($arrDots) == 1) && ($paginator->currentPage() > $arrDots[0])){
+            //3点リーダが1つで、カレントページが3点リーダーより右の場合
+            $arrEscape[] = $arrDots[0] -1;
+            $arrEscape[] = $arrDots[0] +1;
+            $arrEscape[] = $arrDots[0] +2;
+            $arrEscape[] = $arrDots[0] +3;
         }
     ?>
     @foreach ($elements as $element)

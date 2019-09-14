@@ -16,3 +16,6 @@ td{
 label{
   font-weight: normal !important;
 }
+ul.pagination{
+  margin-left: 10px;
+}
