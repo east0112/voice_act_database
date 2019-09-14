@@ -35,7 +35,45 @@
                 </div>
         </div>
     </div>
-    <!--modal-->
+
+    <div class="modal-year">
+        <div class="modal-bg js-modal-year-close"></div>
+            <div class="modal-content">
+                <div class="row">
+                    <p>年や月を指定して検索できます。</p>
+                        <form name="select_search" action="/calendar" method="GET">
+                            <input type="hidden" name="currentYear" value={{$currentYear}}>
+                            <input type="hidden" name="currentMonth" value="">
+                            <div class="calendar-header">
+                                    <div class="left-button">
+                                            <div class="pager-button js-select-year-back">◀︎</div>
+                                    </div>
+                                    <div class="modal-calendar-header-date">
+                                        {{$currentYear}}
+                                    </div>
+                                    <div class="right-button">
+                                            <div class="pager-button js-select-year-next" disabled>▶︎</div>
+                                    </div>
+                            </div>
+                            <table class="table table-modal">
+                                <tbody>
+                                    <tr>
+                                        <th class="js-select-month-submit">1月</th><th class="js-select-month-submit">2月</th><th class="js-select-month-submit">3月</th><th class="js-select-month-submit">4月</th>
+                                    </tr>
+                                    <tr>
+                                        <th class="js-select-month-submit">5月</th><th class="js-select-month-submit">6月</th><th class="js-select-month-submit">7月</th><th class="js-select-month-submit">8月</th>
+                                    </tr>
+                                    <tr>
+                                        <th class="js-select-month-submit">9月</th><th class="js-select-month-submit">10月</th><th class="js-select-month-submit">11月</th><th class="js-select-month-submit">12月</th>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </form>
+                        <a class="js-modal-year-close modal-year-close">閉じる</a>
+                </div>
+        </div>
+    </div>
+<!--modal-->
     <div class="container col-lg-1 col-md-1 col-sm-1 hidden-xs">
     </div>
     <div class="container col-lg-10 col-md-10 col-sm-10 col-xs-12">
@@ -57,15 +95,17 @@
                                         <button class="pager-button" type="submit" name="action">◀︎</button>
                                     </form>
                                 </div>
-                                <div class="calendar-header-date">
+                                <div class="calendar-header-date js-view-year">
                                 {{$currentYear}} . {{$currentMonth}}
                                 </div>
-                                <form action="/calendar" method="GET">
-                                    <input type="hidden" name="currentYear" value={{$currentYear}}>
-                                    <input type="hidden" name="currentMonth" value={{$currentMonth}}>
-                                    <input type="hidden" name="pager" value="next">
-                                    <button class="pager-button" type="submit" name="action">▶︎</button>
-                                </form>
+                                <div class="right-button">
+                                    <form action="/calendar" method="GET">
+                                        <input type="hidden" name="currentYear" value={{$currentYear}}>
+                                        <input type="hidden" name="currentMonth" value={{$currentMonth}}>
+                                        <input type="hidden" name="pager" value="next">
+                                        <button class="pager-button" type="submit" name="action">▶︎</button>
+                                    </form>
+                                </div>
                             <!--</div>-->
                         </div>
                         <table class="table calendar">

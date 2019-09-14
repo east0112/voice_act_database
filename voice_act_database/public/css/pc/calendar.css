@@ -23,9 +23,11 @@
 }
 
 .calendar-header-date{
+  margin-top:3px;
   font-size:22px;
   color: #FF5192;
   width:50%;
+  cursor:hand;
 }
 
 .left-button{
@@ -68,7 +70,7 @@ th.nameCol{
   color: #C0C0C0;
 }
 
-.model{
+.modal{
 display: none;
 height: 100vh;
 position: fixed;
@@ -143,6 +145,36 @@ transform: translate(-50%,-50%);
   cursor:default;
   z-index:2;
 }
+
+.modal-year{
+  z-index: 2;
+  display: none;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  width: 100%;
+
+}
+.modal-year .modal-content .table tbody tr th{
+  text-align:center;
+}
+.modal-year .modal-content .table tbody tr th:hover,.modal-year .modal-content .table tbody tr th:active{
+  text-align:center;
+  background-color: #EEEEEE;
+  cursor:hand;
+}
+.modal-calendar-header-date{
+  margin-top:3px;
+  color: #FF5192;
+  font-size:22px;
+  width:30%;
+  margin-bottom:10px;
+}
+.modal-calendar-header-date p{
+  text-align:center;
+}
+
+
 .view-detail:hover{
   opacity: 0.6;
   transition: 0.2s;
