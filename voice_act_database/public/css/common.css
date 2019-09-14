@@ -57,6 +57,15 @@ html {
 
 /* ここまで */
 
+img{
+  animation: fadeIn 1.5s ease 0s 1 normal;
+  -webkit-animation: fadeIn 1.5s ease 0s 1 normal;
+}
+@keyframes fadeIn {
+  0% {opacity: 0}
+  100% {opacity: 1}
+}
+
 .mobile-nav{
   display: none;
   height: 100vh;
