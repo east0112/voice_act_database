@@ -263,10 +263,16 @@ td > a:hover{
     margin-bottom: 20px;
   }
   
-  .index-content .row { 
+  @media screen and (max-width: 767px) {
+    .index-content .row { 
+    margin-top: 10px;
+    }
+  }  
+  @media screen and (min-width: 768px) {
+    .index-content .row { 
     margin-top: 20px;
-  }
-  
+    }
+  }  
   .index-content a {
     color: black;
   }
