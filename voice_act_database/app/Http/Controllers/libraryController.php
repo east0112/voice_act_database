@@ -20,19 +20,43 @@ class libraryController extends Controller
     public function initDisplay(Request $request){
       //端末判定
       $view = common::getDevice($request,"library");
-      //ソート設定
-      $sort = "new";
-      //検索キーワード設定
-      $searchWord = "";
-      //日付指定
-      $from = "";
-      $to = "";
+      //リクエストの取得・検索ワード
+      $search = $request->input("search");
+      //リクエストの取得・種類
+      //$type = array();
+      if($request->input("type")){
+        $type= $request->input("type");
+      }else{
+        $type= array();
+      }
+      if($request->input("checkEvent")){array_push($type,$request->input("checkEvent"));}
+      if($request->input("checkStage")){array_push($type,$request->input("checkStage"));}
+      if($request->input("checkRadio")){array_push($type,$request->input("checkRadio"));}
+      if($request->input("checkProgram")){array_push($type,$request->input("checkProgram"));}
+      if($request->input("checkMedia")){array_push($type,$request->input("checkMedia"));}
+      //リクエストの取得・日付指定
+      $dateFrom = $request->input("dateFrom");
+      $dateTo = $request->input("dateTo");
+      //リクエストの取得・ソート
+      //$radioDesc = $request->input("radioDesc");
+      //$radioAsc = $request->input("radioAsc");
+      //if($request->input("radioAsc") == "checked"){
+      //  $radioSort = "old";
+      //}else{
+      //  $radioSort = "new";
+      //  $radioDesc = "checked";
+      //}
+      $radioSort = $request->input("radioSort");
       //イベント一覧情報取得
-      $items = getDatabase::getList();
+      $items = getDatabase::searchList($search,$type,$radioSort,$dateFrom,$dateTo);
 
-      return view($view,["items" => $items, "sort" => $sort, "searchWord" => $searchWord,"from" => $from,"to" => $to ]);
+      //ページネーションの検索条件保持用
+      $param = array("type" => $type,"radioSort" => $radioSort,"search" => $search,"dateFrom" => $dateFrom,"dateTo" => $dateTo);
+      return view($view,["items" => $items ,"type" => $type,"radioSort" => $radioSort,"search" => $search,"dateFrom" => $dateFrom,"dateTo" => $dateTo,"param"=> $param ]);
     }
 
+
+    /* 未使用関数 */
     /**
      * 一覧検索表示
      *

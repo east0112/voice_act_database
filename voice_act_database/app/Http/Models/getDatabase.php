@@ -3,6 +3,7 @@
 namespace App\Http\Models;
 
 use Illuminate\Support\Facades\DB;
+use Carbon\Carbon;
 
 class getDatabase
 {
@@ -44,16 +45,15 @@ class getDatabase
      * @return items $items
      */
     public static function searchList($searchWord,$type,$sort,$from,$to){
-        $items = DB::table("events")
+      $items = DB::table("events")
             ->join("event_type","events.event_type","=","event_type.type_id")
             ->when($searchWord, function ($query) {
               return $query->leftjoin("acts","events.act_id","=","acts.act_id");
             })
-            ->when($searchWord, function ($query) use($searchWord) {
-                return $query->where("events.event_name","LIKE","%".$searchWord."%");
-            })
-            ->when($searchWord, function ($query) use($searchWord) {
-              return $query->orwhere("acts.act_name","LIKE","%".$searchWord."%");
+            ->when($searchWord, function ($query) use($searchWord)
+            {
+              $query->where("events.event_name","LIKE","%".$searchWord."%")
+                    ->orwhere("acts.act_name","LIKE","%".$searchWord."%");
             })
             ->when(!empty($type), function ($query) use($type) {
                 return $query->whereIn("events.event_type",$type);
@@ -64,16 +64,62 @@ class getDatabase
             ->when($to, function ($query) use($to) {
               return $query->whereDate("events.date","<=",$to);
             })
-            ->when($sort == "new", function ($query) use($type) {
+            ->when($sort == "", function ($query) use($type) {
               return $query->orderByRaw("events.date DESC");
             })
             ->when($sort == "old", function ($query) use($type) {
               return $query->orderByRaw("events.date ASC");
             })
-            ->orderByRaw("events.start_time DESC")
-            //実験用
-            ->paginate(5);
-            //->get();
+            ->when($sort == "", function ($query) use($type) {
+              return $query->orderByRaw("events.start_time DESC");
+            })
+            ->when($sort == "old", function ($query) use($type) {
+              return $query->orderByRaw("events.start_time ASC");
+            })
+            //->orderByRaw("events.start_time DESC")
+            ->paginate(30);
         return $items;
     }
+    /**
+     * カレンダーの取得（検索）
+     *
+     * @return dates $dates
+     */
+
+    public static function getCalendarDates($year, $month)
+    {
+        $dateStr = sprintf('%04d-%02d-01', $year, $month);
+        $date = new Carbon($dateStr);
+        //たまに6週目まで存在する月があるため
+        //$addDay = ($date->copy()->endOfMonth()->isSunday()) ? 7 : 0;
+        // カレンダーを四角形にするため、前月となる左上の隙間用のデータを入れるためずらす
+        $date->subDay($date->dayOfWeek);
+        // 同上。右下の隙間のための計算。デフォルトで6週計算にする
+        $count = 38 + $date->dayOfWeek;
+        $count = ceil($count / 7) * 7;
+        $dates = [];
+
+        for ($i = 0; $i < $count; $i++, $date->addDay()) {
+            // copyしないと全部同じオブジェクトを入れてしまうことになる
+            $dates[] = $date->copy();
+        }
+        return $dates;
+    }
+    /**
+     * モーダル画面表示用データの取得（カレンダー検索）
+     *
+     * @return items $items
+     */
+    public static function getModalList($year,$month){
+
+      $items = DB::table("events")
+        ->join("event_type","events.event_type","=","event_type.type_id")
+        ->whereYear("events.date","=",$year)
+        ->whereMonth("events.date","=",$month)
+        ->orderByRaw("events.date ASC")
+        ->orderByRaw("events.start_time ASC")
+        ->get();
+      return $items;
+    }
+
   }

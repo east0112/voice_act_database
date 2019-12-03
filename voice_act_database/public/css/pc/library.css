@@ -1,9 +1,21 @@
 th.dateCol{
-  width: 15%;
+  width: 20%;
 }
 th.typeCol{
-  width: 10%;
+  width: 20%;
 }
 th.nameCol{
-  width: 75%;
+  width: 60%;
+}
+tr{
+  height:50px;
+}t
+td{
+  font-size:14px !important;
+}
+label{
+  font-weight: normal !important;
+}
+ul.pagination{
+  margin-left: 10px;
 }

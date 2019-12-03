@@ -1,13 +1,20 @@
+<meta property="og:title" content="inaminfo about"/>
+
 @extends("layouts.parent")
 @section("content")
 <div class="row">
-    <div class="col s10 push-s1">
-    <div class="card">
-        <div class="card-content">
-        <span class="card-title">当サイトについて</span>
-        <p>炎の四皇です</p>
+    <div class="container col-lg-1 col-md-1 col-sm-1 hidden-xs">
+    </div>
+    <div class="container col-lg-10 col-md-10 col-sm-10 col-xs-12">
+        <div class="index-content">
+            <div class="card">
+                <h4>h4</h4>
+                <p>about details</p>
+                </br>
+            </div>
         </div>
     </div>
+    <div class="container col-lg-1 col-md-1 col-sm-1 hidden-xs">
     </div>
 </div>
 @endsection

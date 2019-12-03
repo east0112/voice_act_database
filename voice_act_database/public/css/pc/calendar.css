@@ -1,0 +1,209 @@
+.calendar{
+  table-layout:fixed;
+}
+
+.calendar thead tr{
+  background-color: #FF5192;
+  color: #FFFFFF;
+}
+
+.calendar tbody tr{
+  height: 75px;
+  font-size:10px;
+}
+/*
+.calendar td{
+  width: 14.28%;
+}
+*/
+.calendar-header{
+  text-align:center;
+  display:flex;
+  justify-content: center;
+}
+
+.calendar-header-date{
+  margin-top:3px;
+  font-size:22px;
+  color: #FF5192;
+  width:50%;
+  cursor:hand;
+}
+
+.left-button{
+  text-align:right;
+}
+
+.right-button{
+  text-align:left;
+}
+
+.pager-button{
+  background-color:#fff;
+  border-style:none;
+  /* border-radius:3px; */
+  color:#FF5192;
+  font-size:25px;
+  outline:none; /* キーボードで操作する奴おらんやろ */
+}
+.pager-button:hover{
+  opacity: 0.6;
+  transition: 0.2s;
+ }
+
+th.dateCol{
+  width: 20%;
+}
+th.typeCol{
+  width: 20%;
+}
+th.nameCol{
+  width: 60%;
+}
+
+.table-modal tr td{
+  font-size:14px;
+}
+
+.bg-secondary{
+  /* background-color: #C0C0C0; */
+  color: #C0C0C0;
+}
+
+.modal{
+display: none;
+height: 100vh;
+position: fixed;
+top: 0;
+width: 100%;
+}
+.modal-bg{
+background: rgba(0,0,0,0.5);
+height: 100vh;
+position: absolute;
+width: 100%;
+}
+.modal-content-event{
+display:none;
+background: #fff;
+left: 50%;
+padding: 40px;
+position: absolute;
+top: 50%;
+transform: translate(-50%,-50%);
+}
+.modal-content-select-month{
+  display:none;
+  background: #fff;
+  left: 50%;
+  padding: 40px;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%,-50%);
+}
+  
+.modal-close{
+  color: #0366D6 !important;
+  text-decoration: none;
+}
+
+.modal-close:hover{
+  opacity: 0.6;
+  transition: 0.2s;
+  text-decoration: none;
+}
+
+.event-tag{
+  background-color:#FF5192;
+  border-radius:3px;
+  color:#fff;
+  z-index:1;
+  pointer-events: none;
+}
+.stage-tag{
+  background-color:#0366D6;
+  border-radius:3px;
+  color:#fff;
+  z-index:1;
+  pointer-events: none;
+}
+.radio-tag{
+  background-color:#FF9933;
+  border-radius:3px;
+  color:#fff;
+  z-index:1;
+  pointer-events: none;
+}
+.media-tag{
+  background-color:#008080;
+  border-radius:3px;
+  color:#fff;
+  z-index:1;
+  pointer-events: none;
+}
+.program-tag{
+  background-color:#FF3300;
+  border-radius:3px;
+  color:#fff;
+  z-index:1;
+  pointer-events: none;
+}
+.view-detail{
+  cursor:hand;
+}
+.js-view-detail{
+  cursor:hand;
+  z-index:2;
+}
+
+.modal-year{
+  margin-left:0px;
+  z-index:2;
+  display: none;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.modal .modal-content .table tbody tr th{
+  text-align:center;
+}
+.modal .modal-content .table tbody tr th:hover,.modal .modal-content .table tbody tr th:active{
+  text-align:center;
+  background-color: #EEEEEE;
+  cursor:hand;
+}
+.modal-calendar-header-date{
+  margin-top:3px;
+  color: #FF5192;
+  font-size:22px;
+  width:30%;
+  margin-bottom:10px;
+}
+.modal-calendar-header-date p{
+  text-align:center;
+}
+
+
+.view-detail:hover{
+  opacity: 0.6;
+  transition: 0.2s;
+}
+@media screen and (min-width: 800px) {
+  .modal-content{
+    width: 70%;
+  }
+  .tag-size{
+    width:80%;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .modal-content{
+    width: 100%;
+  }
+  .tag-size{
+    width:100%;
+  }
+}
