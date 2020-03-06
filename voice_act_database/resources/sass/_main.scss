@@ -1,0 +1,52 @@
+// カラー定義
+$color-main:#FF5192;
+$white:#fff;
+$black:#000;
+$color-background:#f6f6f4;
+$color-footer:#3e3e3e;
+// メディアクエリ定義
+$sp-width:992px;
+
+body{
+    background-color:$color-background;
+    font-family: -apple-system, "Segoe UI", "Helvetica Neue", "Hiragino Kaku Gothic ProN", メイリオ, meiryo, sans-serif;
+    font-size:1rem;
+    margin:0 0;
+    text-decoration-line: none;
+}
+
+a{
+    text-decoration: none;
+    &:hover{
+        text-decoration: none;
+    }
+}
+
+#container{
+    background-color:$white;
+    margin-top:20px;
+}
+
+#header-nav{
+    background-color:$color-main;
+}
+
+#footer{
+    background-color:$color-footer;
+}
+
+// SPサイズ
+@media screen and (max-width:$sp-width) { 
+    #container{
+        width:100%;
+    }
+}
+
+// PCサイズ
+@media screen and (min-width:$sp-width+1) { 
+    #container{
+        width:$sp-width;
+        margin-right:auto;
+        margin-left:auto;
+    }
+}
