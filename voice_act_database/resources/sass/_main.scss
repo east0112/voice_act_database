@@ -8,6 +8,7 @@ $color-footer:#3e3e3e;
 $sp-width:992px;
 
 body{
+    position: relative;
     background-color:$color-background;
     font-family: -apple-system, "Segoe UI", "Helvetica Neue", "Hiragino Kaku Gothic ProN", メイリオ, meiryo, sans-serif;
     font-size:1rem;
@@ -22,31 +23,110 @@ a{
     }
 }
 
+#app{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.breadcrumbs{
+    ol{
+        display:flex;
+        margin-left:0;
+        margin-bottom:0;
+        padding-left:0;
+        
+        li{
+            list-style: none;
+            &:after{
+                content:'\f105';
+                font-family:'Font Awesome 5 Free';
+                font-weight:900;
+                font-size:1em;
+                color:#808080;
+                padding:0 15px;
+            }
+            &.active:after{
+                content:'';
+            }
+        }
+    }
+}
+
 #container{
     background-color:$white;
-    margin-top:20px;
 }
 
 #header-nav{
     background-color:$color-main;
 }
 
-#footer{
+.footer{
     background-color:$color-footer;
+    margin-top: auto;
+    height:168px;
+    color:$white;
+    padding-top:20px;
+    &__content{
+        display:flex;
+    }
+    &__footer-desc{
+        width:50%;
+        padding:0 20px;
+    }
+    &__footer-link{
+        width:50%;
+    }
+    a{
+        color:$white;
+    }
 }
 
+.link-icon{
+    &--twitter{
+        opacity:0.5;
+        font-size:1em;  
+    }
+    &--outside{
+        &:after{
+            opacity:0.5;
+            content:'\f35d';
+            font-family:'Font Awesome 5 Free';
+            font-weight:900;
+            font-size:1em;
+            margin-left:20px;
+        }
+    }
+}
 // SPサイズ
 @media screen and (max-width:$sp-width) { 
+    .breadcrumbs{
+        width:100%;
+    }
     #container{
         width:100%;
+    }
+    .wrapper{
+        margin:15px;
     }
 }
 
 // PCサイズ
 @media screen and (min-width:$sp-width+1) { 
+    .breadcrumbs{
+        width:$sp-width;
+        margin-right:auto;
+        margin-left:auto;
+    }
     #container{
         width:$sp-width;
         margin-right:auto;
         margin-left:auto;
+    }
+    .footer{
+        &__content{
+            width:$sp-width;
+            margin:0 auto;
+        }
     }
 }

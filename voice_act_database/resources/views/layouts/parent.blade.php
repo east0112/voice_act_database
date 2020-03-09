@@ -22,12 +22,10 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment-with-locales.min.js"></script>
 
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.1.1/css/hover.css">
 
-<!--<link href="{{ asset('/css/pc/parent.css') }}" rel="stylesheet">-->
-<!--<link href="{{ asset('/css/common.css') }}" rel="stylesheet">-->
 <link href="{{ asset('/css/app.css') }}" rel="stylesheet">
-<script src="{{ asset('/js/parent.js') }}"></script>
 
 <head>
     <meta charset="UTF-8">
@@ -38,6 +36,9 @@
 <!-- <p id="page-top"><a href="#wrap">PAGE TOP</a></p> -->
 <div id="app">
   <header-component></header-component>
+  <div class="breadcrumbs">
+  {{ Breadcrumbs::render(Route::currentRouteName()) }}
+</div>
 <!--  <div class="mobile-nav">
       <div class="mobile-nav-bg js-mobile-nav-close"></div>
           <div class="mobile-nav-content">
@@ -65,28 +66,21 @@
         <div id="container">
           @yield('content')
           </div>
-      </body>
   </main>
-  <div class="page-footer">
-    <div class="container">
-      </br>
-      <div class="row">
-        <div class="col-md-8">
-          <p>当サイトは非公式ファンサイトです。</p>
-        </div>
-        <div class="col-md-4">
-          <div class="list-group">
-            <a  href="http://smavoice.jp/" target="_blank">SMA VOICE</a>
-            </br>
-            <a  href="https://anjuinami.com/" target="_blank">伊波杏樹 Official Site</a>
-            </br>
-            <a  href="https://lineblog.me/anju_inami/" target="_blank">伊波杏樹 公式ブログ</a>
-          </div>
-        </div>
+  <div class="footer">
+    <div class="footer__content">
+      <div class="footer__footer-desc">
+        <p>当サイトは非公式ファンサイトです。</p>
+        <i class="fab fa-twitter link-icon--twitter"></i>
       </div>
-      </br>
+      <div class="footer__footer-link">
+        <a  href="http://smavoice.jp/" target="_blank"><p class="link-icon--outside">SMA VOICE</p></a>
+        <a  href="https://anjuinami.com/" target="_blank"><p class="link-icon--outside">伊波杏樹 Official Site</p></a>
+        <a  href="https://lineblog.me/anju_inami/" target="_blank"><p class="link-icon--outside">伊波杏樹 公式ブログ</p></a>
+      </div>
     </div>
   </div>
 </div>
+</body>
 <script src=" {{ mix('js/app.js') }} "></script>
 </html>

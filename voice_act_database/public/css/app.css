@@ -17,30 +17,97 @@ a:hover {
   text-decoration: none;
 }
 
+#app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.breadcrumbs ol {
+  display: flex;
+}
+
+.breadcrumbs ol li {
+  list-style: none;
+}
+
 #container {
   background-color: #fff;
-  margin-top: 20px;
 }
 
 #header-nav {
   background-color: #FF5192;
 }
 
-#footer {
+.footer {
   background-color: #3e3e3e;
+  margin-top: auto;
+  height: 168px;
+  color: #fff;
+  padding-top: 20px;
+}
+
+.footer__content {
+  display: flex;
+}
+
+.footer__footer-desc {
+  width: 50%;
+  padding: 0 20px;
+}
+
+.footer__footer-link {
+  width: 50%;
+}
+
+.footer a {
+  color: #fff;
+}
+
+.link-icon--twitter {
+  opacity: 0.5;
+  font-size: 1em;
+}
+
+.link-icon--outside:after {
+  opacity: 0.5;
+  content: "\F35D";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  font-size: 1em;
+  margin-left: 20px;
 }
 
 @media screen and (max-width: 992px) {
+  .breadcrumbs {
+    width: 100%;
+  }
+
   #container {
     width: 100%;
+  }
+
+  .wrapper {
+    margin: 15px;
   }
 }
 
 @media screen and (min-width: 993px) {
+  .breadcrumbs {
+    width: 992px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
   #container {
     width: 992px;
     margin-right: auto;
     margin-left: auto;
+  }
+
+  .footer__content {
+    width: 992px;
+    margin: 0 auto;
   }
 }
 

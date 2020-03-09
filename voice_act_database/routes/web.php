@@ -17,8 +17,8 @@ Route::get('/', function () {
 });
 */
 
-Route::get("/","homeController@home");
-Route::get("/about","aboutController@about");
+Route::get("/","homeController@home")->name('home');
+Route::get("/about","aboutController@about")->name('about');
 Route::get("/library","libraryController@initDisplay");
 Route::post("/library","libraryController@seacrchDisplay");
 Route::get("/library/event/{id}","libraryController@seacrchEvent");
